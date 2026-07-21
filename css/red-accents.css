@@ -22,6 +22,14 @@
 .product-meta p { color: var(--red); }
 .category-card:hover small { color: var(--red); }
 
+/* Keep category labels readable without obscuring the campaign imagery. */
+.category-card::before {
+  background: linear-gradient(180deg, rgba(255,255,255,.94) 0%, rgba(255,255,255,.58) 26%, rgba(255,255,255,0) 48%, rgba(255,255,255,.56) 76%, rgba(255,255,255,.94) 100%);
+  opacity: 1;
+}
+
+.category-card:hover { color: var(--black); }
+
 .carousel-controls button:hover:not(:disabled) {
   background: var(--red);
   border-color: var(--red);
