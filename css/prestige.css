@@ -27,7 +27,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; }
 .footer-rabbit, .world-mark img { animation: none; }
 .footer-rabbit:hover, .world-mark:hover img { transform: none; }
 
-.section { padding-top: 138px; padding-bottom: 138px; }
+.section { padding-top: 80px; padding-bottom: 96px; }
 .shop-section { padding: 0; }
 .section-heading { margin-bottom: 52px; }
 .section-deck { max-width: 220px; color: #767676; font-size: 12px; letter-spacing: .01em; }
@@ -107,7 +107,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; }
 .has-motion .hero-image { animation-duration: 2.4s; }
 
 @media (max-width: 760px) {
-  .section { padding-top: 82px; padding-bottom: 82px; }
+  .section { padding-top: 56px; padding-bottom: 64px; }
   .bestsellers { padding-top: 46px; padding-bottom: 64px; }
   .collections { padding-top: 46px; padding-bottom: 64px; }
   .shop-section { padding: 0; }
