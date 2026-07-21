@@ -63,8 +63,12 @@ document.querySelectorAll('.product-details').forEach((details) => {
   if (page && !page.querySelector('.product-suggestions')) {
     const suggestions = document.createElement('section');
     suggestions.className = 'product-suggestions';
-    suggestions.innerHTML = '<p class="eyebrow">Suggested clothing</p><h2>Wear it with.</h2><div class="product-suggestions__grid"><a href="/products/washed-tracks/"><img src="/assets/images/products/washed-tracks-on-model.png" alt="Washed Tracks"><span>Washed Tracks · ₹6,800</span></a><a href="/products/broken-visions-tee/"><img src="/models/broken-visions-tee-base.png" alt="Broken Visions Tee"><span>Broken Visions Tee · ₹4,200</span></a></div></section><section class="product-services" aria-label="Shopping benefits"><div><b>□</b><span>Express delivery</span><small>Tracked worldwide</small></div><div><b>↺</b><span>Easy returns</span><small>30 days on eligible pieces</small></div><div><b>▤</b><span>Secure payment</span><small>Protected checkout</small></div></section>';
-    page.append(suggestions);
+    suggestions.innerHTML = '<p class="eyebrow">Suggested clothing</p><h2>Wear it with.</h2><div class="product-suggestions__grid"><a href="/products/washed-tracks/"><img src="/assets/images/products/washed-tracks-on-model.png" alt="Washed Tracks"><span>Washed Tracks · ₹6,800</span></a><a href="/products/broken-visions-tee/"><img src="/models/broken-visions-tee-base.png" alt="Broken Visions Tee"><span>Broken Visions Tee · ₹4,200</span></a></div>';
+    const services = document.createElement('section');
+    services.className = 'product-services';
+    services.setAttribute('aria-label', 'Customer care details');
+    services.innerHTML = '<div><b aria-hidden="true">□</b><span>Express delivery</span><small>Tracked delivery across India and worldwide.</small></div><div><b aria-hidden="true">↺</b><span>Easy returns</span><small>Return eligible pieces within 30 days.</small></div><div><b aria-hidden="true">◌</b><span>Customer service</span><small>care@innocnt.com<br>Monday–Friday, 10:00–18:00 IST</small></div><div><b aria-hidden="true">▤</b><span>Secure payment</span><small>Protected checkout on every order.</small></div>';
+    page.append(suggestions, services);
   }
 });
 
