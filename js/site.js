@@ -3,6 +3,10 @@ motionStyles.rel = 'stylesheet';
 motionStyles.href = '/css/pages-motion.css';
 document.head.append(motionStyles);
 
+const footerScript = document.createElement('script');
+footerScript.src = '/js/footer.js';
+document.head.append(footerScript);
+
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (!reduceMotion) {
   document.body.classList.add('page-motion');
