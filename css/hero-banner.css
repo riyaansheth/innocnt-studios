@@ -13,15 +13,15 @@
 }
 .category-card--tees:hover,
 .category-card--tees:focus-visible {
-  background-image: url("../assets/images/world-red/broken-visions-red.png") !important;
+  background-image: url("../assets/images/category-tshirts-red.png") !important;
 }
 .category-card--tops:hover,
 .category-card--tops:focus-visible {
-  background-image: url("../assets/images/world-red/innocnt-studios-red.png") !important;
+  background-image: url("../assets/images/category-long-sleeves-red.png") !important;
 }
 .category-card--bottoms:hover,
 .category-card--bottoms:focus-visible {
-  background-image: url("../assets/images/world-red/broken-visions-red.png") !important;
+  background-image: url("../assets/images/category-tracks-red.png") !important;
 }
 .category-card:hover,
 .category-card:focus-visible { background-position: center; }
