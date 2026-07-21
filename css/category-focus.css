@@ -32,3 +32,35 @@
   background-image: url("../assets/images/long-sleeves-category.png");
   background-position: center 18%;
 }
+
+/* A category starts with the campaign image and settles on the garment itself. */
+.category-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(.985);
+  background-color: #f4f4f4;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: opacity .42s ease, transform .7s cubic-bezier(.16, 1, .3, 1);
+}
+
+.category-card--hoodies::after { background-image: url("../assets/images/products/gods-child-hoodie-flat.png"); }
+.category-card--tops::after { background-image: url("../assets/images/products/battery-long-sleeve-flat.png"); }
+.category-card--tees::after { background-image: url("../assets/images/products/broken-visions-tee-flat.png"); }
+.category-card--bottoms::after { background-image: url("../assets/images/products/black-tracks-flat.png"); }
+
+.category-card:hover::after,
+.category-card:focus-visible::after { opacity: 1; transform: scale(1); }
+.category-card:hover,
+.category-card:focus-visible { color: var(--black); }
+.category-card:hover span { text-shadow: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .category-card::after { transition: none; }
+}

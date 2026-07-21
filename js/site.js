@@ -3,6 +3,11 @@ motionStyles.rel = 'stylesheet';
 motionStyles.href = '/css/pages-motion.css';
 document.head.append(motionStyles);
 
+const catalogueHoverStyles = document.createElement('link');
+catalogueHoverStyles.rel = 'stylesheet';
+catalogueHoverStyles.href = '/css/collection-product-hover.css';
+document.head.append(catalogueHoverStyles);
+
 const footerScript = document.createElement('script');
 footerScript.src = '/js/footer.js';
 document.head.append(footerScript);
