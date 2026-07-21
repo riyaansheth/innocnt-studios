@@ -35,24 +35,26 @@
   text-transform: uppercase;
 }
 
-/* A dark glass bar keeps navigation legible over every campaign image. */
+/* A rounded editorial bar keeps the primary navigation distinct from the page. */
 body .site-header,
 body .page-header {
-  color: var(--white);
-  background: var(--black);
-  border-bottom-color: rgba(255, 255, 255, .24);
-  backdrop-filter: blur(20px) saturate(120%);
-  -webkit-backdrop-filter: blur(20px) saturate(120%);
+  color: var(--black);
+  background: var(--white);
+  border: 0;
+  border-radius: 30px 30px 0 0;
+  box-shadow: 0 -8px 0 var(--black);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 body .site-header:hover,
 body .site-header:focus-within {
-  background: var(--black);
+  background: var(--white);
 }
 
 .brand img,
 .page-header > a:first-child img {
-  filter: invert(1);
+  filter: none;
 }
 
 body .primary-nav a,
@@ -64,25 +66,49 @@ body .primary-nav a:focus-visible,
 body .page-nav a:hover,
 body .page-nav a:focus-visible,
 body .page-nav a[aria-current="page"] {
-  color: var(--white);
+  color: var(--black);
 }
 
 body .bag-link span,
-body .page-bag span { color: var(--white); }
+body .page-bag span { color: var(--black); }
+
+/* The wordmark anchors the middle while the existing links sit to the left. */
+.brand,
+.page-header > a:first-child {
+  grid-column: 2;
+  justify-self: center;
+}
+
+.primary-nav,
+.page-nav {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+}
+
+.bag-link,
+.page-bag {
+  grid-column: 3;
+  grid-row: 1;
+}
 
 @media (max-width: 760px) {
   .site-header,
   .page-header {
     height: 58px;
     padding: 0 16px;
+    border-radius: 18px 18px 0 0;
   }
 
   .primary-nav,
   .page-nav {
-    background: var(--black);
-    border-bottom-color: rgba(255, 255, 255, .24);
+    background: var(--white);
+    border-bottom-color: rgba(0, 0, 0, .2);
   }
 
+  .brand,
+  .page-header > a:first-child { grid-column: 1; justify-self: start; }
+
   .menu-icon,
-  .menu-icon::before { background: var(--white); }
+  .menu-icon::before { background: var(--black); }
 }
