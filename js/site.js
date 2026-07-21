@@ -23,6 +23,12 @@ if (document.querySelector('.product-page .gallery')) {
     gallery.tabIndex = 0;
     gallery.setAttribute('aria-label', 'Product photos. Scroll to view the next image.');
   });
+
+  document.querySelectorAll('.product-page > .section .section-head').forEach((heading) => {
+    heading.querySelector('.eyebrow')?.remove();
+    const title = heading.querySelector('h2');
+    if (title) title.textContent = 'Keep it close.';
+  });
 }
 
 const footerScript = document.createElement('script');

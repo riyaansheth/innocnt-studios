@@ -1,4 +1,6 @@
 /* Product imagery is a full-height, tactile scroll surface on larger screens. */
+.product-page > .section .section-head h2 { white-space: nowrap; }
+
 @media (min-width: 761px) {
   .product-page {
     padding-top: 0;
