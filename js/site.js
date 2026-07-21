@@ -23,6 +23,21 @@ refinementStyles.rel = 'stylesheet';
 refinementStyles.href = '/css/refinements.css';
 document.head.append(refinementStyles);
 
+const productSectionStyles = document.createElement('link');
+productSectionStyles.rel = 'stylesheet';
+productSectionStyles.href = '/css/product-section-overrides.css';
+document.head.append(productSectionStyles);
+
+const buttonStyles = document.createElement('link');
+buttonStyles.rel = 'stylesheet';
+buttonStyles.href = '/css/button-overrides.css';
+document.head.append(buttonStyles);
+
+const globalFontStyles = document.createElement('link');
+globalFontStyles.rel = 'stylesheet';
+globalFontStyles.href = '/css/font-overrides.css';
+document.head.append(globalFontStyles);
+
 if (document.querySelector('.product-page .gallery')) {
   const productGalleryStyles = document.createElement('link');
   productGalleryStyles.rel = 'stylesheet';
@@ -67,7 +82,7 @@ document.querySelectorAll('.product-details').forEach((details) => {
     const services = document.createElement('section');
     services.className = 'product-services';
     services.setAttribute('aria-label', 'Customer care details');
-    services.innerHTML = '<div><b aria-hidden="true">□</b><span>Express delivery</span><small>Tracked delivery across India and worldwide.</small></div><div><b aria-hidden="true">↺</b><span>Easy returns</span><small>Return eligible pieces within 30 days.</small></div><div><b aria-hidden="true">◌</b><span>Customer service</span><small>care@innocnt.com<br>Monday–Friday, 10:00–18:00 IST</small></div><div><b aria-hidden="true">▤</b><span>Secure payment</span><small>Protected checkout on every order.</small></div>';
+    services.innerHTML = '<div><b aria-hidden="true">⌑</b><span>Express delivery</span><small>Tracked delivery across India and worldwide.</small></div><div><b aria-hidden="true">↺</b><span>Easy returns</span><small>Return eligible pieces within 30 days.</small></div><div><b aria-hidden="true">◌</b><span>Customer service</span><small>care@innocnt.com<br>Monday–Friday, 10:00–18:00 IST</small></div><div><b aria-hidden="true">▣</b><span>Secure payment</span><small>Protected checkout on every order.</small></div>';
     page.append(suggestions, services);
   }
 });
@@ -299,6 +314,15 @@ cartDrawer.innerHTML = `
     <footer class="cart-drawer__footer"><p class="cart-drawer__note">Add order note</p><p class="cart-drawer__shipping-note">Taxes and shipping calculated at checkout</p><input class="cart-drawer__discount" type="text" placeholder="Discount code" aria-label="Discount code"><a class="cart-drawer__checkout" href="/checkout/shipping/">Checkout · ₹<span data-cart-total>8,500</span></a></footer>
   </div>`;
 document.body.append(cartDrawer);
+
+document.querySelectorAll('.button, .cart-drawer__checkout, .contact-form button').forEach((button) => {
+  if (/[↗↘→]/.test(button.textContent)) return;
+  const arrow = document.createElement('span');
+  arrow.className = 'button-arrow';
+  arrow.setAttribute('aria-hidden', 'true');
+  arrow.textContent = '↗';
+  button.append(arrow);
+});
 
 let lastFocusedElement;
 const updateCartTotal = (quantity) => {

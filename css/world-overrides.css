@@ -53,3 +53,78 @@
   .world { display: block; }
   .world h2 { white-space: normal; }
 }
+
+/* Reserve the World hero's scale for the campaign image. */
+.world-hero h1 {
+  font-size: clamp(54px, 8vw, 124px);
+}
+
+.world-hero p:not(.eyebrow) {
+  max-width: none;
+  white-space: nowrap;
+}
+
+.world-philosophy .story h2 {
+  font-size: clamp(35px, 4.8vw, 72px);
+  margin-bottom: 20px;
+}
+
+.world-philosophy .story p {
+  font-size: 13px;
+}
+
+.world-curation .story {
+  text-align: left;
+}
+
+.world-curation .story h2 {
+  font-size: clamp(35px, 4.8vw, 72px);
+}
+
+.world-curation .story p {
+  font-size: 13px;
+}
+
+.material-process > h2 {
+  font-size: clamp(43px, 5.6vw, 90px);
+}
+
+.material-grid article {
+  display: flex;
+  min-height: 230px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.material-grid article > span {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.material-grid article h3 {
+  margin: 32px 0 10px;
+}
+
+.material-grid article p { margin: 0; }
+
+.founder-note .story-image {
+  aspect-ratio: 2048 / 360;
+}
+
+.founder-note .story h2 {
+  max-width: 1100px;
+  white-space: normal;
+}
+
+.founder-note .story p:not(.eyebrow) {
+  max-width: 1000px;
+  white-space: normal;
+}
+
+@media (max-width: 760px) {
+  .world-hero p:not(.eyebrow) { white-space: normal; }
+}

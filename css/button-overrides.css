@@ -1,0 +1,30 @@
+.button,
+.cart-drawer__checkout,
+.contact-form button {
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  text-align: center;
+}
+
+.contact-form button {
+  display: inline-flex;
+}
+
+.button-arrow { line-height: 1; }
+
+.cart-drawer__remove,
+.bag-delete {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  font-size: 0;
+}
+
+.cart-drawer__remove::after,
+.bag-delete::after {
+  content: "🗑";
+  font-size: 18px;
+  line-height: 1;
+}

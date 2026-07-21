@@ -1,0 +1,3 @@
+.collection-title {
+  font-size: clamp(48px, 7.7vw, 119px);
+}

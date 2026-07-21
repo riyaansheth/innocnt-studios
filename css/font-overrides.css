@@ -1,0 +1,7 @@
+/* Apply the INNOCNT display face consistently to every text element. */
+:root { --body: var(--display); }
+
+body,
+body * {
+  font-family: var(--display) !important;
+}

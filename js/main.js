@@ -2,6 +2,25 @@ const toggle = document.querySelector('[data-menu-toggle]');
 const nav = document.querySelector('[data-nav]');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+const buttonStyles = document.createElement('link');
+buttonStyles.rel = 'stylesheet';
+buttonStyles.href = '/css/button-overrides.css';
+document.head.append(buttonStyles);
+
+const globalFontStyles = document.createElement('link');
+globalFontStyles.rel = 'stylesheet';
+globalFontStyles.href = '/css/font-overrides.css';
+document.head.append(globalFontStyles);
+
+document.querySelectorAll('.button').forEach((button) => {
+  if (/[↗↘→]/.test(button.textContent)) return;
+  const arrow = document.createElement('span');
+  arrow.className = 'button-arrow';
+  arrow.setAttribute('aria-hidden', 'true');
+  arrow.textContent = '↗';
+  button.append(arrow);
+});
+
 toggle?.addEventListener('click', () => {
   const open = toggle.getAttribute('aria-expanded') === 'true';
   toggle.setAttribute('aria-expanded', String(!open));
