@@ -18,6 +18,11 @@ cartDrawerStyles.rel = 'stylesheet';
 cartDrawerStyles.href = '/css/cart-drawer.css';
 document.head.append(cartDrawerStyles);
 
+const refinementStyles = document.createElement('link');
+refinementStyles.rel = 'stylesheet';
+refinementStyles.href = '/css/refinements.css';
+document.head.append(refinementStyles);
+
 if (document.querySelector('.product-page .gallery')) {
   const productGalleryStyles = document.createElement('link');
   productGalleryStyles.rel = 'stylesheet';
@@ -36,6 +41,33 @@ if (document.querySelector('.product-page .gallery')) {
   });
 }
 
+document.querySelectorAll('.product-details').forEach((details) => {
+  details.querySelector('.try-on')?.remove();
+  [...details.querySelectorAll('a.button')].find((button) => /buy now/i.test(button.textContent))?.remove();
+  const sizeLabel = [...details.children].find((element) => element.matches('.eyebrow') && /size guide/i.test(element.textContent));
+  const sizes = details.querySelector('.sizes');
+  const action = [...details.querySelectorAll('p')].find((element) => /add to bag/i.test(element.textContent));
+  if (sizeLabel && sizes && action) {
+    const purchase = document.createElement('div');
+    purchase.className = 'purchase-row';
+    const sizeSlot = document.createElement('div');
+    sizeSlot.className = 'purchase-row__sizes';
+    const actionSlot = document.createElement('div');
+    actionSlot.className = 'purchase-row__action';
+    sizeSlot.append(sizeLabel, sizes);
+    actionSlot.append(action);
+    purchase.append(sizeSlot, actionSlot);
+    details.append(purchase);
+  }
+  const page = details.closest('.product-page');
+  if (page && !page.querySelector('.product-suggestions')) {
+    const suggestions = document.createElement('section');
+    suggestions.className = 'product-suggestions';
+    suggestions.innerHTML = '<p class="eyebrow">Suggested clothing</p><h2>Wear it with.</h2><div class="product-suggestions__grid"><a href="/products/washed-tracks/"><img src="/assets/images/products/washed-tracks-on-model.png" alt="Washed Tracks"><span>Washed Tracks · ₹6,800</span></a><a href="/products/broken-visions-tee/"><img src="/models/broken-visions-tee-base.png" alt="Broken Visions Tee"><span>Broken Visions Tee · ₹4,200</span></a></div></section><section class="product-services" aria-label="Shopping benefits"><div><b>□</b><span>Express delivery</span><small>Tracked worldwide</small></div><div><b>↺</b><span>Easy returns</span><small>30 days on eligible pieces</small></div><div><b>▤</b><span>Secure payment</span><small>Protected checkout</small></div></section>';
+    page.append(suggestions);
+  }
+});
+
 const footerScript = document.createElement('script');
 footerScript.src = '/js/footer.js';
 document.head.append(footerScript);
@@ -44,10 +76,6 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 if (!reduceMotion) {
   document.body.classList.add('page-motion');
 }
-
-document.querySelectorAll('.page-hero').forEach((hero) => {
-  hero.style.setProperty('--hero', "url('../assets/images/homepage-hero.png')");
-});
 
 // Keep every use of the God’s Child campaign shot on the red studio backdrop.
 const redHoodieImage = '/assets/images/gods-child-hoodie-innocnt-red.png';
@@ -262,9 +290,8 @@ cartDrawer.innerHTML = `
     <header class="cart-drawer__header"><h2 id="cart-drawer-title">Cart</h2><button class="cart-drawer__close" type="button" aria-label="Close bag">×</button></header>
     <section class="cart-drawer__item" aria-label="God’s Child Hoodie in bag">
       <img class="cart-drawer__image" src="/assets/images/gods-child-hoodie-innocnt-red.png" alt="God’s Child Hoodie">
-      <div><p class="cart-drawer__product-name">God’s Child Hoodie</p><p class="cart-drawer__price">₹8,500</p><p class="cart-drawer__variant">Washed black · M</p><div class="cart-drawer__controls"><div class="cart-drawer__quantity"><button type="button" data-cart-quantity="decrease" aria-label="Decrease quantity">−</button><output data-cart-count>1</output><button type="button" data-cart-quantity="increase" aria-label="Increase quantity">+</button></div><button class="cart-drawer__remove" type="button">Remove</button></div></div>
+      <div><p class="cart-drawer__product-name">God’s Child Hoodie</p><p class="cart-drawer__price">₹8,500</p><p class="cart-drawer__variant">Washed black · M</p><div class="cart-drawer__controls"><div class="cart-drawer__quantity"><button type="button" data-cart-quantity="decrease" aria-label="Decrease quantity">−</button><output data-cart-count>1</output><button type="button" data-cart-quantity="increase" aria-label="Increase quantity">+</button></div><button class="cart-drawer__remove" type="button" aria-label="Remove God’s Child Hoodie">⌫</button></div></div>
     </section>
-    <section class="cart-drawer__recommendation"><h3>Complete with</h3><div class="cart-drawer__suggestion"><img src="/assets/images/products/washed-tracks-on-model.png" alt="Washed Tracks"><div><p>Washed Tracks</p><span>₹6,800</span><a href="/collections/">Add to bag</a></div></div></section>
     <footer class="cart-drawer__footer"><p class="cart-drawer__note">Add order note</p><p class="cart-drawer__shipping-note">Taxes and shipping calculated at checkout</p><input class="cart-drawer__discount" type="text" placeholder="Discount code" aria-label="Discount code"><a class="cart-drawer__checkout" href="/checkout/shipping/">Checkout · ₹<span data-cart-total>8,500</span></a></footer>
   </div>`;
 document.body.append(cartDrawer);

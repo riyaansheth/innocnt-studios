@@ -23,7 +23,7 @@
 .category-card:hover small { color: var(--red); }
 
 /* Keep category labels readable without obscuring the campaign imagery. */
-.category-card::before {
+.category-card--bottoms::before {
   background: linear-gradient(180deg, rgba(255,255,255,.7) 0%, rgba(255,255,255,.26) 16%, rgba(255,255,255,0) 34%);
   opacity: 1;
 }
