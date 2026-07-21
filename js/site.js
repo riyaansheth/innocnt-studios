@@ -29,7 +29,7 @@ if (nav) {
   homeLink.textContent = 'Homepage';
   nav.prepend(homeLink);
 }
-document.querySelectorAll('a[href*="capsules/"]').forEach((link) => link.remove());
+document.querySelectorAll('a[href*="capsules/"], a[href*="#shop"]').forEach((link) => link.remove());
 if (document.querySelector('.contact-grid')) {
   const contactStyles = document.createElement('link');
   contactStyles.rel = 'stylesheet';
