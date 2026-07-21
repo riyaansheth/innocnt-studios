@@ -22,13 +22,21 @@
   .category-grid, .category-card { transition: none !important; }
 }
 
-/* Fresh on-model category imagery for the two updated apparel groups. */
+/* Homepage categories use the same Innocnt Red studio backdrop. */
+.category-card--hoodies {
+  background-image: url("../assets/images/gods-child-hoodie-innocnt-red.png");
+}
+
 .category-card--tees {
-  background-image: url("../assets/images/t-shirts-category.png");
+  background-image: url("../assets/images/t-shirts-category-innocnt-red.png");
   background-position: center 22%;
 }
 
 .category-card--tops {
-  background-image: url("../assets/images/long-sleeves-category.png");
+  background-image: url("../assets/images/long-sleeves-category-innocnt-red.png");
   background-position: center 18%;
+}
+
+.category-card--bottoms {
+  background-image: url("../assets/images/washed-tracks-on-model-innocnt-red.png");
 }
