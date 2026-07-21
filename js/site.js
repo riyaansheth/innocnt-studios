@@ -117,6 +117,46 @@ document.querySelectorAll('.product-page .gallery').forEach((gallery) => {
   });
 });
 
+document.querySelectorAll('.page-header').forEach((header) => {
+  const existingBag = header.querySelector('.page-bag')?.cloneNode(true);
+  const brand = document.createElement('a');
+  brand.href = '/';
+  brand.className = 'brand';
+  brand.setAttribute('aria-label', 'INNOCNT home');
+  brand.innerHTML = '<img src="/assets/identity/wordmark.svg" alt="INNOCNT">';
+
+  const menuButton = document.createElement('button');
+  menuButton.type = 'button';
+  menuButton.className = 'menu';
+  menuButton.dataset.menu = '';
+  menuButton.textContent = 'Menu';
+
+  const sharedNav = document.createElement('nav');
+  sharedNav.className = 'page-nav';
+  sharedNav.dataset.nav = '';
+  sharedNav.setAttribute('aria-label', 'Primary navigation');
+  [
+    ['/', 'Homepage'],
+    ['/world/', 'An Innocnt World'],
+    ['/collections/', 'Collections'],
+    ['/contact/', 'Contact'],
+  ].forEach(([href, label]) => {
+    const link = document.createElement('a');
+    link.href = href;
+    link.textContent = label;
+    if (new URL(href, window.location.origin).pathname === window.location.pathname) {
+      link.setAttribute('aria-current', 'page');
+    }
+    sharedNav.append(link);
+  });
+
+  const bag = existingBag || document.createElement('a');
+  bag.className = 'page-bag';
+  if (!bag.getAttribute('href')) bag.href = '/bag/';
+  if (!bag.textContent.trim()) bag.innerHTML = 'Bag <span>(0)</span>';
+  header.replaceChildren(brand, menuButton, sharedNav, bag);
+});
+
 const menu = document.querySelector('[data-menu]');
 const nav = document.querySelector('[data-nav]');
 if (nav) {
