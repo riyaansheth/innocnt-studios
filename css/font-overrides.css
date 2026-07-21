@@ -1,7 +1,2 @@
-/* Apply the INNOCNT display face consistently to every text element. */
-:root { --body: var(--display); }
-
-body,
-body * {
-  font-family: var(--display) !important;
-}
+/* Restore the original type pairing: display serif for headings, Neue for UI copy. */
+:root { --body: Neue, Arial, sans-serif; }
