@@ -27,13 +27,22 @@ if (nav) {
   const homeLink = document.createElement('a');
   homeLink.href = new URL('/', window.location.href);
   homeLink.textContent = 'Homepage';
-  nav.prepend(homeLink);
-  const worldLink = nav.querySelector('a[href*="world/"]');
-  const collectionsLink = nav.querySelector('a[href*="collections/"]');
-  if (worldLink) homeLink.after(worldLink);
-  if (collectionsLink) (worldLink || homeLink).after(collectionsLink);
+  const findNavLink = (path, label) => (
+    nav.querySelector(`a[href*="${path}"]`)
+    || [...nav.links].find((link) => link.textContent.trim() === label)
+  );
+
+  const navItems = [
+    homeLink,
+    findNavLink('world/', 'An Innocnt World'),
+    findNavLink('collections/', 'Collections'),
+    findNavLink('contact/', 'Contact'),
+  ].filter(Boolean);
+
+  // Each page contains legacy navigation markup. Replace it with the one
+  // canonical sequence so navigation cannot revert when a new page loads.
+  nav.replaceChildren(...navItems);
 }
-document.querySelectorAll('a[href*="capsules/"], a[href*="#shop"]').forEach((link) => link.remove());
 if (document.querySelector('.contact-grid')) {
   const contactStyles = document.createElement('link');
   contactStyles.rel = 'stylesheet';
