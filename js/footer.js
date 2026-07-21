@@ -37,9 +37,9 @@
         <a href="${toRoot('contact/')}">Customer care</a>
       </nav>
       <section class="footer-about">
-        <img class="footer-signature" src="${toRoot('assets/identity/rabbit-signature.svg')}" alt="INNOCNT rabbit mark">
         <p class="footer-kicker">About INNOCNT</p>
         <p>Innocnt is for people who still want to feel deeply, even when that makes no sense. We make pieces for the tender, the strange, and the part of you that refuses to become ordinary.</p>
+        <img class="footer-signature" src="${toRoot('assets/identity/rabbit-signature.svg')}" alt="INNOCNT rabbit mark">
       </section>
     </div>
     <div class="footer-meta">
