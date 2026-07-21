@@ -39,7 +39,7 @@
 body .site-header,
 body .page-header {
   color: var(--white);
-  background: rgba(0, 0, 0, .76);
+  background: var(--black);
   border-bottom-color: rgba(255, 255, 255, .24);
   backdrop-filter: blur(20px) saturate(120%);
   -webkit-backdrop-filter: blur(20px) saturate(120%);
@@ -47,7 +47,7 @@ body .page-header {
 
 body .site-header:hover,
 body .site-header:focus-within {
-  background: rgba(0, 0, 0, .88);
+  background: var(--black);
 }
 
 .brand img,
@@ -79,7 +79,7 @@ body .page-bag span { color: var(--white); }
 
   .primary-nav,
   .page-nav {
-    background: rgba(0, 0, 0, .92);
+    background: var(--black);
     border-bottom-color: rgba(255, 255, 255, .24);
   }
 
