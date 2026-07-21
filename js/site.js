@@ -1,3 +1,13 @@
+const motionStyles = document.createElement('link');
+motionStyles.rel = 'stylesheet';
+motionStyles.href = '/css/pages-motion.css';
+document.head.append(motionStyles);
+
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!reduceMotion) {
+  document.body.classList.add('page-motion');
+}
+
 document.querySelectorAll('.page-hero').forEach((hero) => {
   hero.style.setProperty('--hero', "url('../assets/images/homepage-hero.png')");
 });
@@ -17,6 +27,35 @@ if (document.querySelector('.contact-grid')) {
   document.head.append(contactStyles);
 }
 menu?.addEventListener('click',()=>nav.classList.toggle('open'));
+
+if (!reduceMotion) {
+  const revealSets = [
+    ['.section-head', 'left'],
+    ['.section > .split', 'scale'],
+    ['.capsule-stat', 'up'],
+    ['.product-layout', 'up'],
+    ['.checkout', 'up'],
+    ['.confirmation > div', 'up'],
+    ['.footer-top', 'up'],
+    ['.footer-bottom', 'up'],
+    ['.cards > .product, .filter-grid > .product', 'up'],
+  ];
+  revealSets.forEach(([selector, direction]) => {
+    document.querySelectorAll(selector).forEach((element, index) => {
+      element.dataset.pageReveal = direction;
+      if (selector.includes('.product')) element.style.transitionDelay = `${Math.min(index, 4) * 80}ms`;
+    });
+  });
+
+  const observer = new IntersectionObserver((entries, activeObserver) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-revealed');
+      activeObserver.unobserve(entry.target);
+    });
+  }, { threshold: .12, rootMargin: '0px 0px -40px' });
+  document.querySelectorAll('[data-page-reveal]').forEach((element) => observer.observe(element));
+}
 
 document.querySelectorAll('[data-filter]').forEach((button)=>button.addEventListener('click',()=>{
   const group=button.closest('[data-filters]'); const value=button.dataset.filter;
