@@ -98,10 +98,9 @@
 }
 
 .world-curation .story p {
-  /* 10% smaller than the previous 13px campaign copy. */
-  max-width: 430px;
+  /* Font size comes from refinements.css, shared with .world-philosophy. */
+  max-width: 560px;
   margin: 0 0 28px !important;
-  font-size: 11.7px !important;
   text-align: left !important;
 }
 
