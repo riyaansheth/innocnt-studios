@@ -28,6 +28,10 @@ if (nav) {
   homeLink.href = new URL('/', window.location.href);
   homeLink.textContent = 'Homepage';
   nav.prepend(homeLink);
+  const worldLink = nav.querySelector('a[href*="world/"]');
+  const collectionsLink = nav.querySelector('a[href*="collections/"]');
+  if (worldLink) homeLink.after(worldLink);
+  if (collectionsLink) (worldLink || homeLink).after(collectionsLink);
 }
 document.querySelectorAll('a[href*="capsules/"], a[href*="#shop"]').forEach((link) => link.remove());
 if (document.querySelector('.contact-grid')) {
