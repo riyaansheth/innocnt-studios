@@ -72,7 +72,15 @@ document.querySelectorAll('.product-details').forEach((details) => {
     sizeSlot.append(sizeLabel, sizes);
     actionSlot.append(action);
     purchase.append(sizeSlot, actionSlot);
-    details.append(purchase);
+
+    const productInfo = details.querySelector('.info-list');
+    const sizeGuideRule = productInfo?.nextElementSibling;
+    if (productInfo && sizeGuideRule?.matches('.rule')) {
+      details.insertBefore(sizeGuideRule, productInfo);
+      details.insertBefore(purchase, sizeGuideRule);
+    } else {
+      details.append(purchase);
+    }
   }
   const page = details.closest('.product-page');
   if (page && !page.querySelector('.product-suggestions')) {
