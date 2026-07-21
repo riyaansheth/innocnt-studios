@@ -92,7 +92,7 @@
 .footer-payment { display: flex; justify-content: flex-end; gap: 7px; }
 .payment-chip { min-width: 42px; padding: 7px 5px; border: 1px solid #dedede; color: #494949; font-size: 9px; font-weight: 700; letter-spacing: 0; text-align: center; text-transform: none; }
 .payment-chip:first-child { border-color: #173d9f; color: #173d9f; }
-.payment-chip:nth-child(2) { border-color: #be100b; color: #be100b; }
+.payment-chip:nth-child(2) { border-color: #c50100; color: #c50100; }
 
 @media (max-width: 900px) {
   .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 54px 32px; }

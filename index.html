@@ -144,13 +144,14 @@
       </section>
 
       <section class="newsletter" id="newsletter" aria-labelledby="newsletter-title">
-        <div>
-          <p class="eyebrow eyebrow--red">Keep in touch</p>
-          <h2 id="newsletter-title">Nothing important.<br />Just the good stuff.</h2>
+        <div class="newsletter-copy">
+          <p class="eyebrow">Keep me updated</p>
+          <h2 id="newsletter-title">Newsletter</h2>
+          <p class="newsletter-description">Subscribe to get notified about new drops, special offers and everything happening at Innocnt.</p>
         </div>
         <form class="newsletter-form" data-newsletter-form novalidate>
-          <label for="email">Your email</label>
-          <div class="email-field"><input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required /><button type="submit" aria-label="Join newsletter">↗</button></div>
+          <label for="email" class="sr-only">Your email address</label>
+          <div class="email-field"><input id="email" name="email" type="email" autocomplete="email" placeholder="E-mail" required /><button type="submit">Subscribe</button></div>
           <p class="form-message" data-form-message aria-live="polite"></p>
         </form>
       </section>
