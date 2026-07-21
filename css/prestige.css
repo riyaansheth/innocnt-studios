@@ -45,7 +45,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; }
 .collection-card h3 { font-size: clamp(74px, 9vw, 138px); }
 .collection-card .button { min-width: 185px; }
 
-.bestsellers { padding-bottom: 145px; }
+.bestsellers { padding-top: 64px; padding-bottom: 96px; }
 .product-carousel { gap: 24px; }
 .product-carousel .product-card { flex-basis: calc((100% - 72px) / 4); }
 .product-image { background: #f4f4f4; }
@@ -107,7 +107,8 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; }
 .has-motion .hero-image { animation-duration: 2.4s; }
 
 @media (max-width: 760px) {
-  .section, .bestsellers { padding-top: 82px; padding-bottom: 82px; }
+  .section { padding-top: 82px; padding-bottom: 82px; }
+  .bestsellers { padding-top: 46px; padding-bottom: 64px; }
   .collections { padding-top: 46px; padding-bottom: 64px; }
   .shop-section { padding: 0; }
   .collection-card { min-height: 500px; }
