@@ -157,6 +157,16 @@ document.querySelectorAll('.page-header').forEach((header) => {
   header.replaceChildren(brand, menuButton, sharedNav, bag);
 });
 
+if (window.location.pathname.startsWith('/bag')) {
+  document.body.classList.add('bag-page');
+  const bagStyles = document.createElement('link');
+  bagStyles.rel = 'stylesheet';
+  bagStyles.href = '/css/bag-page.css';
+  document.head.append(bagStyles);
+  const bagTitle = document.querySelector('.bag-page .section-head .title');
+  if (bagTitle) bagTitle.textContent = 'Your bag.';
+}
+
 const menu = document.querySelector('[data-menu]');
 const nav = document.querySelector('[data-nav]');
 if (nav) {

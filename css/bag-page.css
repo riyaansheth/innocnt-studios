@@ -1,0 +1,39 @@
+/* The bag is a checkout surface, so its hierarchy stays compact and immediate. */
+.bag-page .section {
+  padding: 48px 32px 72px;
+}
+
+.bag-page .section-head {
+  align-items: center;
+  margin-bottom: 34px;
+}
+
+.bag-page .section-head .title {
+  margin: 0;
+  font-size: clamp(68px, 8vw, 128px);
+  line-height: .8;
+  white-space: nowrap;
+}
+
+.bag-page .checkout {
+  max-width: 1240px;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, .6fr);
+  gap: clamp(42px, 7vw, 110px);
+}
+
+.bag-page .checkout > div:first-child > .split {
+  align-items: center;
+}
+
+.bag-page .checkout > div:first-child img {
+  height: 220px;
+  object-fit: cover;
+}
+
+@media (max-width: 760px) {
+  .bag-page .section { padding: 34px 16px 56px; }
+  .bag-page .section-head { align-items: flex-start; margin-bottom: 26px; }
+  .bag-page .section-head .title { font-size: clamp(62px, 18vw, 90px); }
+  .bag-page .checkout { grid-template-columns: 1fr; gap: 30px; }
+  .bag-page .checkout > div:first-child img { height: auto; }
+}
