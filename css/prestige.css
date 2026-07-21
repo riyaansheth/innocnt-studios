@@ -47,6 +47,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; }
 .collection-card .button { min-width: 185px; }
 
 .bestsellers { padding-top: 64px; padding-bottom: 96px; }
+.bestsellers .section-heading { margin-bottom: 28px; }
 .product-carousel { gap: 24px; }
 .product-carousel .product-card { flex-basis: calc((100% - 72px) / 4); }
 .product-image { background: #f4f4f4; }
@@ -110,6 +111,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; }
 @media (max-width: 760px) {
   .section { padding-top: 56px; padding-bottom: 64px; }
   .bestsellers { padding-top: 46px; padding-bottom: 64px; }
+  .bestsellers .section-heading { margin-bottom: 24px; }
   .collections { padding-top: 34px; padding-bottom: 52px; }
   .collections .section-heading { margin-bottom: 24px; }
   .shop-section { padding: 0; }
