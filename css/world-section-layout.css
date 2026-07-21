@@ -1,0 +1,8 @@
+/* World uses the same title-first rhythm as the homepage catalogue sections. */
+#main > .section { padding: 64px 32px 80px; }
+#main > .section .section-head { margin-bottom: 28px; }
+
+@media (max-width: 760px) {
+  #main > .section { padding: 46px 16px 56px; }
+  #main > .section .section-head { margin-bottom: 24px; }
+}

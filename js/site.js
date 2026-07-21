@@ -35,6 +35,19 @@ if (document.querySelector('.contact-grid')) {
   contactStyles.href = new URL('../css/contact.css', window.location.href);
   document.head.append(contactStyles);
 }
+
+const worldMain = document.querySelector('#main');
+if (worldMain) {
+  const worldStyles = document.createElement('link');
+  worldStyles.rel = 'stylesheet';
+  worldStyles.href = new URL('../css/world-section-layout.css', window.location.href);
+  document.head.append(worldStyles);
+
+  worldMain.querySelectorAll('.section-head').forEach((heading) => {
+    heading.querySelector('.eyebrow')?.remove();
+    heading.querySelector(':scope > p')?.remove();
+  });
+}
 menu?.addEventListener('click',()=>nav.classList.toggle('open'));
 
 if (!reduceMotion) {
