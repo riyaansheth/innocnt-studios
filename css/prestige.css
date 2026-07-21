@@ -62,7 +62,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; }
 .world-mark img { opacity: .96; }
 /* Newsletter: a quiet sign-up moment set over the current campaign image. */
 .newsletter {
-  --newsletter-image: url("../models/Kith.webp");
+  --newsletter-image: url("../assets/images/campaign-duo-banner.png");
   position: relative;
   isolation: isolate;
   min-height: 620px;
