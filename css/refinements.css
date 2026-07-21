@@ -13,3 +13,6 @@
 /* Revert the temporary white Current Capsule treatment. */
 .collection-card--featured{color:#fff}.collection-card--featured:before{background:rgba(0,0,0,.37)}.collection-card--featured .collection-card__visual{background-image:url("../assets/images/gods-child-hoodie-black.png")}.collection-card--featured .button{background:#fff;border-color:#fff;color:#000}
 @media(max-width:760px){.bag-item{grid-template-columns:100px 1fr!important}.bag-item img{width:100px!important;height:125px!important}}
+
+/* Keep the category strip black all the way through its CTA area. */
+.category-card{background-color:#000;color:#fff}.category-card::before{background:linear-gradient(180deg,rgba(0,0,0,0) 58%,#000 74%);opacity:1}.category-card,.category-card small,.category-card:hover,.category-card:hover small{color:#fff!important}
