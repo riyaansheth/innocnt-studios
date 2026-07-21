@@ -19,3 +19,6 @@
 .category-card{background-color:#000;color:#fff}.category-card::before{background:transparent;opacity:0}.category-card,.category-card small,.category-card:hover,.category-card:hover small{color:#fff!important}
 .category-grid,.category-card,.category-card:last-child{border:0!important}
 .founder-note .eyebrow{display:block;width:100%;margin-left:auto;margin-right:auto;text-align:center!important;font-size:clamp(15px,1.35vw,22px);font-weight:700;letter-spacing:.04em}.founder-note .eyebrow:before{display:none}
+
+/* Homepage CTA system: transparent, centered, and high-contrast. */
+.hero .button,.collection-card .button,.world .button{justify-content:center;min-width:280px;padding:18px 21px;background:transparent!important;border-color:#fff!important;color:#fff!important}.hero .button span,.collection-card .button span,.world .button span{display:none}.hero .button:hover,.collection-card .button:hover,.world .button:hover{background:var(--red)!important;border-color:var(--red)!important;color:#fff!important}
