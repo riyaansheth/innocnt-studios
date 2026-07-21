@@ -1,0 +1,43 @@
+/* Contact needs a quieter hierarchy than the campaign pages. */
+.contact-grid {
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, .72fr);
+  gap: clamp(38px, 6vw, 100px);
+  align-items: start;
+}
+
+.contact-grid > form {
+  max-width: 760px;
+}
+
+.contact-grid .contact-list {
+  gap: 42px;
+  padding-top: 6px;
+}
+
+.contact-grid .contact-list > div {
+  border-top: 1px solid #363636;
+  padding-top: 18px;
+}
+
+.contact-grid .contact-list a {
+  display: block;
+  width: fit-content;
+  margin: 0 0 12px;
+  font: clamp(34px, 3.4vw, 58px)/.83 var(--display);
+  letter-spacing: -.045em;
+}
+
+.contact-grid .contact-list a:hover { transform: translateX(8px); }
+.contact-grid .contact-list p:not(.eyebrow) { margin: 0; line-height: 1.4; color: #d2d2d2; }
+.contact-grid .form-stack { gap: 10px; }
+.contact-grid .form-stack input,.contact-grid .form-stack textarea,.contact-grid .form-stack select { border-color: #bdbdbd; }
+.contact-grid .form-stack textarea { min-height: 180px; }
+.contact-grid .button { margin-top: 12px; }
+
+@media (min-width: 761px) {
+  .section.black .title { font-size: clamp(72px, 8vw, 128px); }
+}
+
+@media (max-width: 760px) {
+  .contact-grid .contact-list a { font-size: 42px; }
+}

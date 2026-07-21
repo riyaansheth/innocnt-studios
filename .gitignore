@@ -1,4 +1,5 @@
 .DS_Store
+.autopush.sh
 
 # Brand source material — unreleased, not used by the site. Repo is public.
 reference/

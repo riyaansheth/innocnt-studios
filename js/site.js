@@ -1,5 +1,21 @@
+document.querySelectorAll('.page-hero').forEach((hero) => {
+  hero.style.setProperty('--hero', "url('../assets/images/homepage-hero.png')");
+});
+
 const menu = document.querySelector('[data-menu]');
 const nav = document.querySelector('[data-nav]');
+if (nav) {
+  const homeLink = document.createElement('a');
+  homeLink.href = new URL('/', window.location.href);
+  homeLink.textContent = 'Homepage';
+  nav.prepend(homeLink);
+}
+if (document.querySelector('.contact-grid')) {
+  const contactStyles = document.createElement('link');
+  contactStyles.rel = 'stylesheet';
+  contactStyles.href = new URL('../css/contact.css', window.location.href);
+  document.head.append(contactStyles);
+}
 menu?.addEventListener('click',()=>nav.classList.toggle('open'));
 
 document.querySelectorAll('[data-filter]').forEach((button)=>button.addEventListener('click',()=>{
