@@ -1,4 +1,9 @@
 /* A measured line-by-line reveal makes the opening feel like a campaign title card. */
+.hero { background: var(--red); }
+.hero-overlay {
+  background: linear-gradient(90deg, rgba(197, 1, 0, .8), rgba(197, 1, 0, .18) 62%, rgba(197, 1, 0, .42));
+}
+
 .hero h1 > span { display: block; }
 
 .has-motion .hero-copy h1 { animation: none; }
