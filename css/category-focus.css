@@ -23,6 +23,10 @@
 }
 
 /* Original campaign photography for the category cards. */
+.category-card--hoodies {
+  background-image: url("../assets/images/gods-child-hoodie-innocnt-red.png");
+}
+
 .category-card--tees {
   background-image: url("../assets/images/t-shirts-category.png");
   background-position: center 22%;

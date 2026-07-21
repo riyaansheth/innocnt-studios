@@ -38,6 +38,12 @@ document.querySelectorAll('.page-hero').forEach((hero) => {
   hero.style.setProperty('--hero', "url('../assets/images/homepage-hero.png')");
 });
 
+// Keep every use of the God’s Child campaign shot on the red studio backdrop.
+const redHoodieImage = '/assets/images/gods-child-hoodie-innocnt-red.png';
+document.querySelectorAll('img[src*="ref4-gods-child-hoodie.png"]').forEach((image) => {
+  image.src = redHoodieImage;
+});
+
 const menu = document.querySelector('[data-menu]');
 const nav = document.querySelector('[data-nav]');
 if (nav) {
