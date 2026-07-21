@@ -74,22 +74,26 @@
 }
 
 .world-curation .story {
-  text-align: left;
+  text-align: left !important;
+  justify-self: start;
 }
 
 .world-curation .story h2 {
   font-size: clamp(35px, 4.8vw, 72px);
+  text-align: left !important;
 }
 
 .world-curation .story p {
   font-size: 13px;
   margin-left: 0;
   margin-right: 0;
+  text-align: left !important;
 }
 
 .world-curation .story .button {
   margin-left: 0;
   margin-right: 0;
+  justify-content: center;
 }
 
 .material-process > h2 {
