@@ -73,26 +73,37 @@
   font-size: 13px;
 }
 
+.world-curation .split {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+/* Explicitly override the shared editorial centering in this campaign panel. */
 .world-curation .story {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-self: stretch;
   text-align: left !important;
-  justify-self: start;
 }
 
 .world-curation .story h2 {
-  font-size: clamp(35px, 4.8vw, 72px);
+  /* 20% smaller than the previous 72px campaign heading. */
+  font-size: clamp(28px, 3.84vw, 57.6px) !important;
+  width: 100%;
+  margin-right: 0;
   text-align: left !important;
 }
 
 .world-curation .story p {
-  font-size: 13px;
-  margin-left: 0;
-  margin-right: 0;
+  /* 10% smaller than the previous 13px campaign copy. */
+  max-width: 430px;
+  margin: 0 0 28px !important;
+  font-size: 11.7px !important;
   text-align: left !important;
 }
 
 .world-curation .story .button {
-  margin-left: 0;
-  margin-right: 0;
+  margin: 0;
   justify-content: center;
 }
 
