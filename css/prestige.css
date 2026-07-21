@@ -42,8 +42,6 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; }
 
 .collections { padding-top: 48px; padding-bottom: 80px; }
 .collections .section-heading { margin-bottom: 28px; }
-.collections .section-heading > div { display: flex; align-items: center; gap: clamp(26px, 3vw, 64px); }
-.collections .section-deck { max-width: 280px; margin: 0; }
 .collection-card { min-height: 620px; }
 .collection-card h3 { font-size: clamp(74px, 9vw, 138px); }
 .collection-card .button { min-width: 185px; }
@@ -114,8 +112,6 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; }
   .bestsellers { padding-top: 46px; padding-bottom: 64px; }
   .collections { padding-top: 34px; padding-bottom: 52px; }
   .collections .section-heading { margin-bottom: 24px; }
-  .collections .section-heading > div { display: block; }
-  .collections .section-deck { margin-top: 14px; }
   .shop-section { padding: 0; }
   .collection-card { min-height: 500px; }
   .product-carousel { gap: 14px; }
