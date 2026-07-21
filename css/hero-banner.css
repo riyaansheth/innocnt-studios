@@ -26,6 +26,14 @@
 .category-card:hover,
 .category-card:focus-visible { background-position: center; }
 
+/* Keep the inactive Hoodies card on its matching black campaign backdrop. */
+.category-grid:has(.category-card--tees:is(:hover, :focus-visible)) .category-card--hoodies,
+.category-grid:has(.category-card--tops:is(:hover, :focus-visible)) .category-card--hoodies,
+.category-grid:has(.category-card--bottoms:is(:hover, :focus-visible)) .category-card--hoodies {
+  background-image: url("../assets/images/category-hoodies-black.png") !important;
+  background-position: center;
+}
+
 .newsletter h2 {
   font: 500 clamp(38px, 4vw, 64px)/.95 var(--body);
   letter-spacing: .1em;
