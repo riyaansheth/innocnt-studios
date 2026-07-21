@@ -26,3 +26,30 @@
 .world-mark img {
   filter: none;
 }
+
+/* Keep the campaign statement as one centered editorial line on desktop. */
+.world {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.world-copy {
+  max-width: none;
+  text-align: center;
+}
+
+.world h2 {
+  font-size: clamp(48px, 4.5vw, 88px);
+  white-space: nowrap;
+}
+
+.world-copy > p:not(.eyebrow) {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 760px) {
+  .world { display: block; }
+  .world h2 { white-space: normal; }
+}
