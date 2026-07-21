@@ -74,6 +74,8 @@
 }
 
 .world-curation .split {
+  max-width: none;
+  margin: 0;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
 
@@ -83,6 +85,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-self: stretch;
+  padding-left: 8px;
   text-align: left !important;
 }
 
