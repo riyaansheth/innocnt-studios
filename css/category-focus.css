@@ -9,13 +9,13 @@
     transition: grid-template-columns .72s cubic-bezier(.16, 1, .3, 1);
   }
 
-  .category-grid:has(.category-card:nth-child(2):hover) { grid-template-columns: 1fr 2fr 1fr 1fr; }
-  .category-grid:has(.category-card:nth-child(3):hover) { grid-template-columns: 1fr 1fr 2fr 1fr; }
-  .category-grid:has(.category-card:nth-child(4):hover) { grid-template-columns: 1fr 1fr 1fr 2fr; }
+  .category-grid:has(.category-card--tees:is(:hover, :focus-visible)) { grid-template-columns: 1fr 2fr 1fr 1fr; }
+  .category-grid:has(.category-card--tops:is(:hover, :focus-visible)) { grid-template-columns: 1fr 1fr 2fr 1fr; }
+  .category-grid:has(.category-card--bottoms:is(:hover, :focus-visible)) { grid-template-columns: 1fr 1fr 1fr 2fr; }
 
   /* Every category now reaches the hero edge; only width changes on hover. */
   .category-card { min-width: 0; height: var(--category-feature-size); transition: color .35s ease, filter .65s cubic-bezier(.16, 1, .3, 1); }
-  .category-grid:has(.category-card:hover) .category-card:not(:hover) { filter: saturate(.72) brightness(.93); }
+  .category-grid:has(.category-card:is(:hover, :focus-visible)) .category-card:not(:hover, :focus-visible) { filter: saturate(.72) brightness(.93); }
 }
 
 @media (prefers-reduced-motion: reduce) {
