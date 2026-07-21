@@ -48,14 +48,24 @@ document.querySelectorAll('.product-page .gallery').forEach((gallery) => {
   const [modelImage, flatImage] = gallery.querySelectorAll('img');
   if (!modelImage || !flatImage) return;
 
-  const stageSources = [modelImage, modelImage, modelImage, flatImage, flatImage];
+  const stageSources = [modelImage, flatImage, null, null, null];
   const frames = stageSources.map((source, index) => {
+    if (!source) {
+      const placeholder = document.createElement('div');
+      placeholder.className = 'gallery-frame gallery-placeholder';
+      placeholder.dataset.galleryStage = String(index + 1);
+      placeholder.setAttribute('role', 'img');
+      placeholder.setAttribute('aria-label', `Product image ${index + 1} coming soon`);
+      placeholder.innerHTML = '<span>Image coming soon</span>';
+      return placeholder;
+    }
+
     const frame = source.cloneNode();
     frame.classList.add('gallery-frame');
     frame.dataset.galleryStage = String(index + 1);
-    frame.alt = index < 3
-      ? `God’s Child Hoodie campaign view ${index + 1}`
-      : `God’s Child Hoodie product detail ${index - 2}`;
+    frame.alt = index === 0
+      ? 'God’s Child Hoodie campaign view'
+      : 'God’s Child Hoodie product detail';
     return frame;
   });
 
