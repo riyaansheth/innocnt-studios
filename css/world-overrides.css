@@ -103,7 +103,8 @@
 }
 
 .world-curation .story .button {
-  margin: 0;
+  align-self: flex-start !important;
+  margin: 0 !important;
   justify-content: center;
 }
 
