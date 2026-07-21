@@ -11,7 +11,7 @@
 @media(max-width:760px){.hero-copy{top:auto;bottom:64px}.world-hero{height:58svh;padding:50px 16px 35px}.world-hero:before{background-position:center}.product-suggestions{padding:58px 0 34px}.product-suggestions__grid{gap:10px}.product-suggestions__grid img{height:250px}.product-services{grid-template-columns:1fr 1fr;gap:36px 16px;margin:25px -16px 0;padding:48px 16px}.purchase-row{grid-template-columns:1fr;gap:22px}.purchase-row__action .button{width:100%}.material-grid{grid-template-columns:1fr 1fr}.material-grid article{min-height:190px}.founder-note .story-image{aspect-ratio:auto;min-height:54vw;background-size:cover}.founder-note .story{padding:54px 16px 66px}.founder-note .story h2{white-space:normal}.bag-item{grid-template-columns:100px!important;height:125px!important}.cart-drawer__panel{width:min(100%,390px)}.contact-banner{height:calc(100svh - 58px);min-height:440px}}
 
 /* Revert the temporary white Current Capsule treatment. */
-.collection-card--featured{color:#fff}.collection-card--featured:before{background:rgba(0,0,0,.37)}.collection-card--featured .collection-card__visual{background-image:url("../assets/images/gods-child-hoodie-black.png")}.collection-card--featured .button{background:#fff;border-color:#fff;color:#000}
+.collection-card--featured{color:#fff}.collection-card--featured:before{background:rgba(0,0,0,.24)}.collection-card--featured .collection-card__visual{background-image:url("../assets/images/gods-child-hoodie-innocnt-red.png")}.collection-card--featured .button{background:#fff;border-color:#fff;color:#000}
 @media(max-width:760px){.bag-item{grid-template-columns:100px 1fr!important}.bag-item img{width:100px!important;height:125px!important}}
 
 /* Keep the category strip black all the way through its CTA area. */
