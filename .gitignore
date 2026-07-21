@@ -1,0 +1,12 @@
+.DS_Store
+
+# Brand source material — unreleased, not used by the site. Repo is public.
+reference/
+
+# Staging copies; the site loads these from assets/images/products/
+ai-products/
+
+# Unused third-party reference photos — kept local, not shipped in a public repo
+models/1663197145-luxury-streetwear-brands-main.webp
+models/VAULT_0017_*.webp
+models/WEBRESMODELSSUMMERVAULT_*.webp

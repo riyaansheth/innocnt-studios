@@ -1,0 +1,29 @@
+/* The category strip gives one silhouette the stage at a time. */
+@media (min-width: 761px) {
+  .category-grid {
+    --category-feature-size: clamp(340px, 40vw, 980px);
+    --category-card-size: 260px;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-auto-rows: var(--category-feature-size);
+    align-items: end;
+    transition: grid-template-columns .72s cubic-bezier(.16, 1, .3, 1);
+  }
+
+  .category-grid:has(.category-card:nth-child(2):hover) { grid-template-columns: 1fr 2fr 1fr 1fr; }
+  .category-grid:has(.category-card:nth-child(3):hover) { grid-template-columns: 1fr 1fr 2fr 1fr; }
+  .category-grid:has(.category-card:nth-child(4):hover) { grid-template-columns: 1fr 1fr 1fr 2fr; }
+
+  .category-card { min-width: 0; height: var(--category-card-size); transition: height .72s cubic-bezier(.16, 1, .3, 1), color .35s ease, filter .65s cubic-bezier(.16, 1, .3, 1); }
+  .category-card:first-child { height: var(--category-feature-size); }
+  .category-grid:has(.category-card:nth-child(2):hover) .category-card:first-child,
+  .category-grid:has(.category-card:nth-child(3):hover) .category-card:first-child,
+  .category-grid:has(.category-card:nth-child(4):hover) .category-card:first-child { height: var(--category-card-size); }
+  .category-grid:has(.category-card:nth-child(2):hover) .category-card:nth-child(2),
+  .category-grid:has(.category-card:nth-child(3):hover) .category-card:nth-child(3),
+  .category-grid:has(.category-card:nth-child(4):hover) .category-card:nth-child(4) { height: var(--category-feature-size); }
+  .category-grid:has(.category-card:hover) .category-card:not(:hover) { filter: saturate(.72) brightness(.93); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-grid, .category-card { transition: none !important; }
+}

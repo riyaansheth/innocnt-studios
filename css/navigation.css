@@ -1,0 +1,21 @@
+/* Persistent navigation: translucent enough to feel connected to the page, solid enough to read. */
+body { padding-top: 74px; }
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  background: rgba(255, 255, 255, .48);
+  border-bottom-color: rgba(0, 0, 0, .62);
+  backdrop-filter: blur(16px) saturate(145%);
+  -webkit-backdrop-filter: blur(16px) saturate(145%);
+  transition: background .35s ease, border-color .35s ease;
+}
+
+.site-header:hover,
+.site-header:focus-within {
+  background: rgba(255, 255, 255, .68);
+}
+
+@media (max-width: 760px) {
+  body { padding-top: 58px; }
+}

@@ -1,0 +1,74 @@
+/* Prestige comes from clarity: the garment leads, the interface recedes. */
+html, body { scrollbar-width: none; -ms-overflow-style: none; }
+html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; }
+
+.site-header {
+  background: rgba(255, 255, 255, .34);
+  border-bottom-color: rgba(0, 0, 0, .22);
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
+}
+
+.site-header:hover,
+.site-header:focus-within { background: rgba(255, 255, 255, .52); }
+.primary-nav { gap: 30px; }
+.primary-nav a, .bag-link { font-size: 11px; letter-spacing: .055em; }
+
+.hero .button {
+  min-width: 280px;
+  padding: 18px 21px;
+  font-size: 13px;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, .18);
+}
+
+/* Keep the identity clean and unforced. */
+.brand::after { display: none; }
+.brand:hover img, .brand:focus-visible img { animation: none; }
+.footer-rabbit, .world-mark img { animation: none; }
+.footer-rabbit:hover, .world-mark:hover img { transform: none; }
+
+.section { padding-top: 138px; padding-bottom: 138px; }
+.shop-section { padding: 0; }
+.section-heading { margin-bottom: 52px; }
+.section-deck { max-width: 220px; color: #767676; font-size: 12px; letter-spacing: .01em; }
+
+/* Remove the red transition panels; images arrive without announcement. */
+.category-card::after, .collection-card::after { display: none; }
+.category-grid { border: 0; }
+.category-card { border: 0; border-right: 1px solid #e3e3e3; }
+.category-card:last-child { border-right: 0; }
+.category-card::before { background: linear-gradient(180deg, rgba(0, 0, 0, .48), transparent 58%); }
+.category-card:hover { color: var(--white); }
+
+.collections { padding-top: 132px; padding-bottom: 132px; }
+.collection-card { min-height: 620px; }
+.collection-card h3 { font-size: clamp(74px, 9vw, 138px); }
+.collection-card .button { min-width: 185px; }
+
+.bestsellers { padding-bottom: 145px; }
+.product-carousel { gap: 24px; }
+.product-carousel .product-card { flex-basis: calc((100% - 72px) / 4); }
+.product-image { background: #f4f4f4; }
+.product-meta { margin-top: 15px; font-size: 12px; }
+.product-detail { font-size: 10px; letter-spacing: .015em; color: #777; }
+.product-tag { background: var(--black); font-size: 9px; letter-spacing: .04em; }
+.product-image--placeholder { background: #f6f6f4; color: var(--black); border: 1px solid #d8d8d5; }
+.product-image--placeholder::before { border-color: rgba(0,0,0,.16); }
+.product-image--red { background: #f6f6f4; }
+
+.world { min-height: 700px; }
+.world-mark img { opacity: .96; }
+.newsletter { padding-top: 132px; padding-bottom: 132px; }
+
+/* One measured reveal, never a pop. */
+.has-motion [data-reveal] { transition-duration: 1.25s, 1.35s; }
+.has-motion [data-reveal="scale"] { transform: scale(.985); }
+.has-motion .hero-image { animation-duration: 2.4s; }
+
+@media (max-width: 760px) {
+  .section, .collections, .bestsellers, .newsletter { padding-top: 82px; padding-bottom: 82px; }
+  .shop-section { padding: 0; }
+  .collection-card { min-height: 500px; }
+  .product-carousel { gap: 14px; }
+  .product-carousel .product-card { flex-basis: 78vw; }
+}

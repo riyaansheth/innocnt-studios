@@ -1,0 +1,58 @@
+/* The page moves like a campaign sequence: quick arrival, then slow drift. */
+:root { --motion-ease: cubic-bezier(.16, 1, .3, 1); }
+
+.has-motion [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+  transition: opacity 1.05s var(--motion-ease), transform 1.15s var(--motion-ease);
+}
+
+.has-motion [data-reveal="left"] { transform: translate3d(-48px, 0, 0); }
+.has-motion [data-reveal="right"] { transform: translate3d(48px, 0, 0); }
+.has-motion [data-reveal="scale"] { transform: scale(.975); }
+.has-motion [data-reveal].is-visible { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+
+.has-motion .hero-image { animation: hero-arrival 2s var(--motion-ease) both; will-change: transform; }
+.has-motion .hero-overlay { animation: overlay-arrival 1.2s var(--motion-ease) both; }
+.has-motion .hero-copy > * { animation: hero-copy-in .8s var(--motion-ease) both; }
+.has-motion .hero-copy .eyebrow { animation-delay: .3s; }
+.has-motion .hero-copy h1 { animation-delay: .42s; }
+.has-motion .hero-copy .button { animation-delay: .58s; }
+.has-motion .hero-index { animation: hero-copy-in .6s .74s var(--motion-ease) both; }
+
+.has-motion .category-card:nth-child(2),
+.has-motion .collection-card:nth-child(2),
+.has-motion .product-card:nth-child(2) { transition-delay: .09s; }
+.has-motion .category-card:nth-child(3),
+.has-motion .product-card:nth-child(3) { transition-delay: .18s; }
+.has-motion .category-card:nth-child(4),
+.has-motion .product-card:nth-child(4) { transition-delay: .27s; }
+
+.category-card::after,
+.collection-card::after { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: var(--red); transform: scaleX(1); transform-origin: right; transition: transform .7s var(--motion-ease); }
+.category-card.is-visible::after,
+.collection-card.is-visible::after { transform: scaleX(0); }
+.product-card.is-visible .product-image { animation: image-lift 1.1s var(--motion-ease) both; }
+.product-card:hover .product-image__worn { transform: scale(1.025); }
+
+.brand, .footer-bottom > img, .footer-rabbit, .world-mark img { isolation: isolate; }
+.brand::after { content: ""; position: absolute; width: 42px; height: 2px; left: 0; bottom: -9px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .45s var(--motion-ease); }
+.brand:hover::after, .brand:focus-visible::after { transform: scaleX(1); }
+.brand:hover img, .brand:focus-visible img { animation: logo-flicker .55s steps(2, end); }
+.footer-bottom > img, .footer-rabbit { transition: transform .65s var(--motion-ease); }
+.footer-bottom > img:hover { transform: skewX(-9deg) scaleX(1.08); }
+.footer-rabbit:hover { transform: translateX(16px); }
+.world-mark img { animation: rabbit-float 4.8s ease-in-out infinite; }
+.world-mark:hover img { animation-play-state: paused; transform: rotate(-8deg) scale(1.06); }
+
+@keyframes hero-arrival { from { opacity: 0; transform: scale(1.035); } to { opacity: 1; transform: scale(1); } }
+@keyframes overlay-arrival { from { opacity: 0; } to { opacity: 1; } }
+@keyframes hero-copy-in { from { opacity: 0; transform: translateY(34px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes image-lift { from { clip-path: inset(100% 0 0 0); transform: translateY(24px); } to { clip-path: inset(0); transform: translateY(0); } }
+@keyframes logo-flicker { 0% { transform: translateX(0); filter: none; } 26% { transform: translateX(-2px); filter: drop-shadow(4px 0 var(--red)); } 52% { transform: translateX(2px); filter: drop-shadow(-3px 0 var(--red)); } 100% { transform: translateX(0); filter: none; } }
+@keyframes rabbit-float { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-12px) rotate(2deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .001ms !important; }
+  .has-motion [data-reveal] { opacity: 1; transform: none; }
+}

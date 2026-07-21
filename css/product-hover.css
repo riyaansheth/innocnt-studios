@@ -1,0 +1,30 @@
+/* Product cards reveal the garment reference without moving the card layout. */
+.product-image__flat {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--white);
+  object-fit: contain !important;
+  opacity: 0;
+  transform: scale(.98);
+  transition: opacity .35s ease, transform .5s ease;
+}
+
+.product-image:hover .product-image__flat,
+.product-image:focus-visible .product-image__flat {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.product-image:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+.product-image .product-tag {
+  z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-image__flat { transition: none; }
+}

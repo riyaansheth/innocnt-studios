@@ -1,0 +1,29 @@
+/* A product switches from campaign view to garment view as two distinct moments. */
+.product-image:has(.product-image__flat) { background: var(--white); }
+
+.product-image:has(.product-image__flat) .product-image__worn {
+  transition: opacity .2s ease, transform 1.1s var(--motion-ease);
+}
+
+.product-image:has(.product-image__flat) .product-image__flat {
+  opacity: 0;
+  transform: scale(.985);
+  transition: opacity .82s .14s var(--motion-ease), transform 1.1s .14s var(--motion-ease);
+}
+
+.product-image:has(.product-image__flat):hover .product-image__worn,
+.product-image:has(.product-image__flat):focus-visible .product-image__worn {
+  opacity: 0;
+  transform: scale(1.015);
+}
+
+.product-image:has(.product-image__flat):hover .product-image__flat,
+.product-image:has(.product-image__flat):focus-visible .product-image__flat {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-image:has(.product-image__flat) .product-image__worn,
+  .product-image:has(.product-image__flat) .product-image__flat { transition: none; }
+}

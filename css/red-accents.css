@@ -1,0 +1,34 @@
+/* INNOCNT red is used as a signal, never as a surface. */
+::selection { background: var(--red); color: var(--white); }
+
+.primary-nav a, .bag-link, .text-link, .product-meta p, .carousel-controls button {
+  transition: color .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.primary-nav a:hover, .primary-nav a:focus-visible,
+.bag-link:hover, .bag-link:focus-visible,
+.text-link:hover, .text-link:focus-visible { color: var(--red); }
+
+.section-heading .eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 8px 1px 0;
+  background: var(--red);
+  vertical-align: middle;
+}
+
+.product-meta p { color: var(--red); }
+.category-card:hover small { color: var(--red); }
+
+.carousel-controls button:hover:not(:disabled) {
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--white);
+}
+
+.footer-label::before {
+  content: "— ";
+  color: var(--red);
+}
