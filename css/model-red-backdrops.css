@@ -1,0 +1,39 @@
+/* A single campaign backdrop ties every on-model frame to Innocnt Red. */
+.hero-overlay {
+  background: linear-gradient(90deg, rgba(197, 1, 0, .74), rgba(197, 1, 0, .2) 62%, rgba(197, 1, 0, .46));
+}
+
+.category-card::before {
+  background: linear-gradient(180deg, rgba(197, 1, 0, .66), rgba(197, 1, 0, .18) 64%, rgba(197, 1, 0, .34));
+  opacity: 1;
+}
+
+.collection-card::before {
+  background: linear-gradient(120deg, rgba(197, 1, 0, .68), rgba(197, 1, 0, .22) 68%, rgba(197, 1, 0, .46));
+}
+
+.product-image:has(.product-image__worn)::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  background: rgba(197, 1, 0, .56);
+  mix-blend-mode: multiply;
+  transition: opacity .32s ease;
+}
+
+.product-image:has(.product-image__worn):hover::after,
+.product-image:has(.product-image__worn):focus-visible::after {
+  opacity: 0;
+}
+
+.product-tag { z-index: 2; }
+
+.newsletter::before {
+  background: linear-gradient(90deg, rgba(197, 1, 0, .7), rgba(197, 1, 0, .28) 50%, rgba(197, 1, 0, .62));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-image:has(.product-image__worn)::after { transition: none; }
+}
