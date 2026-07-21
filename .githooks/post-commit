@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+# Keep the currently checked-out remote branch in sync after each commit.
+branch=$(git branch --show-current)
+[ -n "$branch" ] && git push origin "$branch"

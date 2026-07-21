@@ -8,6 +8,23 @@ catalogueHoverStyles.rel = 'stylesheet';
 catalogueHoverStyles.href = '/css/collection-product-hover.css';
 document.head.append(catalogueHoverStyles);
 
+const sharedNavigationStyles = document.createElement('link');
+sharedNavigationStyles.rel = 'stylesheet';
+sharedNavigationStyles.href = '/css/navigation-shared.css';
+document.head.append(sharedNavigationStyles);
+
+if (document.querySelector('.product-page .gallery')) {
+  const productGalleryStyles = document.createElement('link');
+  productGalleryStyles.rel = 'stylesheet';
+  productGalleryStyles.href = '/css/product-gallery.css';
+  document.head.append(productGalleryStyles);
+
+  document.querySelectorAll('.product-page .gallery').forEach((gallery) => {
+    gallery.tabIndex = 0;
+    gallery.setAttribute('aria-label', 'Product photos. Scroll to view the next image.');
+  });
+}
+
 const footerScript = document.createElement('script');
 footerScript.src = '/js/footer.js';
 document.head.append(footerScript);

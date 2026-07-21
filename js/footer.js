@@ -20,7 +20,11 @@
           <button type="submit">Subscribe</button>
           <p class="footer-message" aria-live="polite"></p>
         </form>
-        <div class="footer-social" aria-label="Social links"><a href="#footer">Instagram</a><a href="#footer">WhatsApp</a><a href="#footer">TikTok</a></div>
+        <nav class="footer-social" aria-label="Social links">
+          <a href="#footer" aria-label="Instagram"><img src="${toRoot('assets/icons/instagram.svg')}" alt=""></a>
+          <a href="#footer" aria-label="WhatsApp"><img src="${toRoot('assets/icons/whatsapp.svg')}" alt=""></a>
+          <a href="#footer" aria-label="TikTok"><img src="${toRoot('assets/icons/tiktok.svg')}" alt=""></a>
+        </nav>
       </section>
       <nav class="footer-nav" aria-label="Shop footer navigation">
         <p class="footer-kicker">Shop</p>
@@ -44,7 +48,12 @@
     <div class="footer-meta">
       <p class="footer-location">Mumbai, India / INR</p>
       <img class="footer-mark" src="${toRoot('assets/identity/wordmark.svg')}" alt="INNOCNT">
-      <div class="footer-payment" aria-label="Accepted payment methods"><span class="payment-chip">VISA</span><span class="payment-chip">MC</span><span class="payment-chip">UPI</span><span class="payment-chip">AMEX</span></div>
+      <div class="footer-payment" aria-label="Accepted payment methods">
+        <img class="payment-icon payment-icon--visa" src="${toRoot('assets/icons/visa.svg')}" alt="Visa">
+        <img class="payment-icon payment-icon--mastercard" src="${toRoot('assets/icons/mastercard.svg')}" alt="Mastercard">
+        <img class="payment-icon payment-icon--upi" src="${toRoot('assets/icons/upi.svg')}" alt="UPI">
+        <img class="payment-icon payment-icon--amex" src="${toRoot('assets/icons/americanexpress.svg')}" alt="American Express">
+      </div>
     </div>`;
 
   footer.querySelector('[data-footer-subscribe]')?.addEventListener('submit', (event) => {

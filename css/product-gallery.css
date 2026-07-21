@@ -1,0 +1,57 @@
+/* Product imagery is a full-height, tactile scroll surface on larger screens. */
+@media (min-width: 761px) {
+  .product-page {
+    padding-top: 0;
+  }
+
+  .product-page .product-layout {
+    align-items: start;
+    gap: 38px;
+  }
+
+  .product-page .gallery {
+    height: calc(100svh - 74px);
+    display: block;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    scrollbar-color: #111 transparent;
+    scrollbar-width: thin;
+  }
+
+  .product-page .gallery img {
+    width: 100%;
+    height: calc(100svh - 74px);
+    margin: 0;
+    object-fit: cover;
+    object-position: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .product-page .gallery::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .product-page .gallery::-webkit-scrollbar-thumb {
+    background: #111;
+  }
+
+  .product-page .gallery::-webkit-scrollbar-track {
+    background: #ececea;
+  }
+}
+
+@media (max-width: 760px) {
+  .product-page .gallery {
+    display: grid;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .product-page .gallery img {
+    height: auto;
+    scroll-snap-align: none;
+  }
+}

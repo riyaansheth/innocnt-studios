@@ -1,0 +1,44 @@
+/* One navigation rhythm for the homepage and every inner page. */
+.site-header,
+.page-header {
+  height: 74px;
+  padding: 0 32px;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+}
+
+.brand img,
+.page-header > a:first-child img {
+  width: 114px;
+  height: auto;
+}
+
+.primary-nav,
+.page-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.bag-link,
+.page-bag {
+  justify-self: end;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .site-header,
+  .page-header {
+    height: 58px;
+    padding: 0 16px;
+  }
+}
