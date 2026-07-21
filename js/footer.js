@@ -12,19 +12,10 @@
   footer.id = 'footer';
   footer.innerHTML = `
     <div class="footer-grid">
-      <section>
-        <p class="footer-kicker">Newsletter</p>
-        <p class="footer-copy">A note when something new arrives. No noise, no filler.</p>
-        <form class="footer-subscribe" data-footer-subscribe novalidate>
-          <input name="email" type="email" autocomplete="email" placeholder="E-mail" aria-label="Email address" required>
-          <button type="submit">Subscribe</button>
-          <p class="footer-message" aria-live="polite"></p>
-        </form>
-        <nav class="footer-social" aria-label="Social links">
-          <a href="#footer" aria-label="Instagram"><img src="${toRoot('assets/icons/instagram.svg')}" alt=""></a>
-          <a href="#footer" aria-label="WhatsApp"><img src="${toRoot('assets/icons/whatsapp.svg')}" alt=""></a>
-          <a href="#footer" aria-label="TikTok"><img src="${toRoot('assets/icons/tiktok.svg')}" alt=""></a>
-        </nav>
+      <section class="footer-about">
+        <p class="footer-kicker">About INNOCNT</p>
+        <p>Innocnt is for people who still want to feel deeply, even when that makes no sense. We make pieces for the tender, the strange, and the part of you that refuses to become ordinary.</p>
+        <img class="footer-signature" src="${toRoot('assets/identity/rabbit-signature.svg')}" alt="INNOCNT rabbit mark">
       </section>
       <nav class="footer-nav" aria-label="Shop footer navigation">
         <p class="footer-kicker">Shop</p>
@@ -39,10 +30,19 @@
         <a href="${toRoot('bag/')}">Shipping &amp; returns</a>
         <a href="${toRoot('contact/')}">Customer care</a>
       </nav>
-      <section class="footer-about">
-        <p class="footer-kicker">About INNOCNT</p>
-        <p>Innocnt is for people who still want to feel deeply, even when that makes no sense. We make pieces for the tender, the strange, and the part of you that refuses to become ordinary.</p>
-        <img class="footer-signature" src="${toRoot('assets/identity/rabbit-signature.svg')}" alt="INNOCNT rabbit mark">
+      <section>
+        <p class="footer-kicker">Newsletter</p>
+        <p class="footer-copy">A note when something new arrives. No noise, no filler.</p>
+        <form class="footer-subscribe" data-footer-subscribe novalidate>
+          <input name="email" type="email" autocomplete="email" placeholder="E-mail" aria-label="Email address" required>
+          <button type="submit">Subscribe</button>
+          <p class="footer-message" aria-live="polite"></p>
+        </form>
+        <nav class="footer-social" aria-label="Social links">
+          <a href="#footer" aria-label="Instagram"><img src="${toRoot('assets/icons/instagram.svg')}" alt=""></a>
+          <a href="#footer" aria-label="WhatsApp"><img src="${toRoot('assets/icons/whatsapp.svg')}" alt=""></a>
+          <a href="#footer" aria-label="TikTok"><img src="${toRoot('assets/icons/tiktok.svg')}" alt=""></a>
+        </nav>
       </section>
     </div>
     <div class="footer-meta">
