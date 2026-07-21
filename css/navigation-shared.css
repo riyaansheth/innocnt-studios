@@ -38,8 +38,8 @@
 /* A rounded editorial bar keeps the primary navigation distinct from the page. */
 body .site-header,
 body .page-header {
-  color: var(--black);
-  background: var(--white);
+  color: var(--white);
+  background: var(--black);
   border: 0;
   border-radius: 30px 30px 0 0;
   box-shadow: 0 -8px 0 var(--black);
@@ -49,12 +49,12 @@ body .page-header {
 
 body .site-header:hover,
 body .site-header:focus-within {
-  background: var(--white);
+  background: var(--black);
 }
 
 .brand img,
 .page-header > a:first-child img {
-  filter: none;
+  filter: invert(1);
 }
 
 body .primary-nav a,
@@ -66,11 +66,11 @@ body .primary-nav a:focus-visible,
 body .page-nav a:hover,
 body .page-nav a:focus-visible,
 body .page-nav a[aria-current="page"] {
-  color: var(--black);
+  color: var(--white);
 }
 
 body .bag-link span,
-body .page-bag span { color: var(--black); }
+body .page-bag span { color: var(--white); }
 
 /* The wordmark anchors the middle while the existing links sit to the left. */
 .brand,
@@ -102,13 +102,13 @@ body .page-bag span { color: var(--black); }
 
   .primary-nav,
   .page-nav {
-    background: var(--white);
-    border-bottom-color: rgba(0, 0, 0, .2);
+    background: var(--black);
+    border-bottom-color: rgba(255, 255, 255, .24);
   }
 
   .brand,
   .page-header > a:first-child { grid-column: 1; justify-self: start; }
 
   .menu-icon,
-  .menu-icon::before { background: var(--black); }
+  .menu-icon::before { background: var(--white); }
 }
