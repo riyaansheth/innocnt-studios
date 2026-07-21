@@ -21,3 +21,14 @@
 @media (prefers-reduced-motion: reduce) {
   .category-grid, .category-card { transition: none !important; }
 }
+
+/* Fresh on-model category imagery for the two updated apparel groups. */
+.category-card--tees {
+  background-image: url("../assets/images/t-shirts-category.png");
+  background-position: center 22%;
+}
+
+.category-card--tops {
+  background-image: url("../assets/images/long-sleeves-category.png");
+  background-position: center 18%;
+}
