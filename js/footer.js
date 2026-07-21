@@ -25,7 +25,6 @@
       <nav class="footer-nav" aria-label="Shop footer navigation">
         <p class="footer-kicker">Shop</p>
         <a href="${toRoot('collections/')}">Collections</a>
-        <a href="${toRoot('capsules/')}">Capsules</a>
         <a href="${toRoot('collections/')}">T-shirts</a>
         <a href="${toRoot('collections/')}">Hoodies</a>
       </nav>
