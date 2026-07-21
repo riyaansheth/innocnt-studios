@@ -40,7 +40,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; }
 .category-card::before { background: linear-gradient(180deg, rgba(0, 0, 0, .48), transparent 58%); }
 .category-card:hover { color: var(--white); }
 
-.collections { padding-top: 132px; padding-bottom: 132px; }
+.collections { padding-top: 64px; padding-bottom: 96px; }
 .collection-card { min-height: 620px; }
 .collection-card h3 { font-size: clamp(74px, 9vw, 138px); }
 .collection-card .button { min-width: 185px; }
@@ -107,7 +107,8 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; }
 .has-motion .hero-image { animation-duration: 2.4s; }
 
 @media (max-width: 760px) {
-  .section, .collections, .bestsellers { padding-top: 82px; padding-bottom: 82px; }
+  .section, .bestsellers { padding-top: 82px; padding-bottom: 82px; }
+  .collections { padding-top: 46px; padding-bottom: 64px; }
   .shop-section { padding: 0; }
   .collection-card { min-height: 500px; }
   .product-carousel { gap: 14px; }
