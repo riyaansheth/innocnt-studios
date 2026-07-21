@@ -16,4 +16,5 @@
 
 /* Keep the category strip black all the way through its CTA area. */
 .category-card{background-color:#000;color:#fff}.category-card::before{background:linear-gradient(180deg,rgba(0,0,0,0) 58%,#000 74%);opacity:1}.category-card,.category-card small,.category-card:hover,.category-card:hover small{color:#fff!important}
+.category-grid,.category-card,.category-card:last-child{border:0!important}
 .founder-note .eyebrow{font-size:clamp(15px,1.35vw,22px);font-weight:700;letter-spacing:.04em}.founder-note .eyebrow:before{display:none}
