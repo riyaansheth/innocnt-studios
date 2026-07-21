@@ -65,29 +65,40 @@ document.querySelectorAll('.product-page .gallery').forEach((gallery) => {
   const progress = document.createElement('nav');
   progress.className = 'gallery-progress';
   progress.setAttribute('aria-label', 'Product image sequence');
+  let activeStage = 0;
+  const setActiveStage = (index) => {
+    const nextStage = Math.max(0, Math.min(index, frames.length - 1));
+    activeStage = nextStage;
+    dots.forEach((dot, dotIndex) => dot.setAttribute('aria-current', String(dotIndex === nextStage)));
+    frames.forEach((frame, frameIndex) => frame.classList.toggle('is-gallery-active', frameIndex === nextStage));
+  };
+
   const dots = frames.map((frame, index) => {
     const dot = document.createElement('button');
     dot.type = 'button';
     dot.dataset.galleryDot = String(index + 1);
     dot.setAttribute('aria-label', `Show product image ${index + 1} of ${frames.length}`);
     dot.setAttribute('aria-current', index === 0 ? 'true' : 'false');
-    dot.addEventListener('click', () => {
-      gallery.scrollTo({ top: frame.offsetTop, behavior: 'smooth' });
-    });
+    dot.addEventListener('click', () => setActiveStage(index));
     progress.append(dot);
     return dot;
   });
   gallery.closest('.product-layout')?.append(progress);
+  setActiveStage(0);
 
-  const setActiveDot = (index) => {
-    dots.forEach((dot, dotIndex) => dot.setAttribute('aria-current', String(dotIndex === index)));
-  };
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) setActiveDot(frames.indexOf(entry.target));
-    });
-  }, { root: gallery, threshold: .65 });
-  frames.forEach((frame) => observer.observe(frame));
+  let wheelLocked = false;
+  gallery.addEventListener('wheel', (event) => {
+    if (Math.abs(event.deltaY) < 5 || wheelLocked) return;
+    event.preventDefault();
+    setActiveStage(activeStage + (event.deltaY > 0 ? 1 : -1));
+    wheelLocked = true;
+    window.setTimeout(() => { wheelLocked = false; }, 650);
+  }, { passive: false });
+  gallery.addEventListener('keydown', (event) => {
+    if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+    event.preventDefault();
+    setActiveStage(activeStage + (event.key === 'ArrowDown' ? 1 : -1));
+  });
 });
 
 const menu = document.querySelector('[data-menu]');
