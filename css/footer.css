@@ -16,9 +16,9 @@
 
 .footer-kicker {
   margin: 0 0 34px;
-  font-size: 11px;
+  font-size: clamp(14px, 1.05vw, 18px);
   line-height: 1;
-  letter-spacing: .2em;
+  letter-spacing: .16em;
   text-transform: uppercase;
 }
 
