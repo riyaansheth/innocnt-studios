@@ -44,6 +44,52 @@ document.querySelectorAll('img[src*="ref4-gods-child-hoodie.png"]').forEach((ima
   image.src = redHoodieImage;
 });
 
+document.querySelectorAll('.product-page .gallery').forEach((gallery) => {
+  const [modelImage, flatImage] = gallery.querySelectorAll('img');
+  if (!modelImage || !flatImage) return;
+
+  const stageSources = [modelImage, modelImage, modelImage, flatImage, flatImage];
+  const frames = stageSources.map((source, index) => {
+    const frame = source.cloneNode();
+    frame.classList.add('gallery-frame');
+    frame.dataset.galleryStage = String(index + 1);
+    frame.alt = index < 3
+      ? `God’s Child Hoodie campaign view ${index + 1}`
+      : `God’s Child Hoodie product detail ${index - 2}`;
+    return frame;
+  });
+
+  gallery.replaceChildren(...frames);
+  gallery.classList.add('gallery--sequence');
+
+  const progress = document.createElement('nav');
+  progress.className = 'gallery-progress';
+  progress.setAttribute('aria-label', 'Product image sequence');
+  const dots = frames.map((frame, index) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.dataset.galleryDot = String(index + 1);
+    dot.setAttribute('aria-label', `Show product image ${index + 1} of ${frames.length}`);
+    dot.setAttribute('aria-current', index === 0 ? 'true' : 'false');
+    dot.addEventListener('click', () => {
+      gallery.scrollTo({ top: frame.offsetTop, behavior: 'smooth' });
+    });
+    progress.append(dot);
+    return dot;
+  });
+  gallery.closest('.product-layout')?.append(progress);
+
+  const setActiveDot = (index) => {
+    dots.forEach((dot, dotIndex) => dot.setAttribute('aria-current', String(dotIndex === index)));
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) setActiveDot(frames.indexOf(entry.target));
+    });
+  }, { root: gallery, threshold: .65 });
+  frames.forEach((frame) => observer.observe(frame));
+});
+
 const menu = document.querySelector('[data-menu]');
 const nav = document.querySelector('[data-nav]');
 if (nav) {
