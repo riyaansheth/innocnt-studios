@@ -22,21 +22,13 @@
   .category-grid, .category-card { transition: none !important; }
 }
 
-/* Homepage categories use the same Innocnt Red studio backdrop. */
-.category-card--hoodies {
-  background-image: url("../assets/images/gods-child-hoodie-innocnt-red.png");
-}
-
+/* Original campaign photography for the category cards. */
 .category-card--tees {
-  background-image: url("../assets/images/t-shirts-category-innocnt-red.png");
+  background-image: url("../assets/images/t-shirts-category.png");
   background-position: center 22%;
 }
 
 .category-card--tops {
-  background-image: url("../assets/images/long-sleeves-category-innocnt-red.png");
+  background-image: url("../assets/images/long-sleeves-category.png");
   background-position: center 18%;
-}
-
-.category-card--bottoms {
-  background-image: url("../assets/images/washed-tracks-on-model-innocnt-red.png");
 }
