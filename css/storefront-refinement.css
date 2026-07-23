@@ -1,0 +1,113 @@
+/* Storefront system: Neue Montreal is the working typeface; the house face is reserved for imagery. */
+:root {
+  --display: Neue, Arial, sans-serif;
+  --body: Neue, Arial, sans-serif;
+  --red: #000;
+}
+
+body, button, input, select, textarea,
+h1, h2, h3, .title, .page-hero h1, .section-head h2,
+.product-details h1, .collection-card h3, .footer-top p {
+  font-family: var(--body) !important;
+}
+
+/* Transparent, centered identity with the section links grouped alongside it. */
+body .site-header,
+body .page-header {
+  background: transparent;
+  color: var(--black);
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.site-header { position: absolute; inset: 0 0 auto; }
+.site-header .brand img { filter: invert(1); }
+.site-header .primary-nav a,
+.site-header .bag-link { color: var(--white); }
+.page-header .brand img,
+.page-header > a:first-child img { filter: none; }
+.page-header .page-nav a,
+.page-header .page-bag { color: var(--black); }
+
+/* Editorial and contact headers sit directly on dark campaign imagery. */
+body:has(.page-hero) .page-header,
+body.contact-page .page-header { color: var(--white); }
+body:has(.page-hero) .page-header > a:first-child img,
+body.contact-page .page-header > a:first-child img { filter: invert(1); }
+body:has(.page-hero) .page-header .page-nav a,
+body:has(.page-hero) .page-header .page-bag,
+body.contact-page .page-header .page-nav a,
+body.contact-page .page-header .page-bag { color: var(--white); }
+
+.primary-nav, .page-nav { gap: 22px; }
+.primary-nav a, .page-nav a, .bag-link, .page-bag {
+  font-size: 10px;
+  letter-spacing: .08em;
+}
+
+/* Buttons act as quiet text actions rather than visual blocks. */
+.button, .footer-subscribe button, .contact-form button {
+  min-width: 0;
+  padding: 0 0 4px;
+  gap: 8px;
+  color: currentColor;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  font-size: 10px;
+  line-height: 1.1;
+  letter-spacing: .08em;
+}
+.button:hover, .button--light:hover, .button--dark:hover,
+.footer-subscribe button:hover, .contact-form button:hover {
+  color: inherit;
+  background: transparent;
+  border-color: currentColor;
+  transform: none;
+}
+
+/* Catalogue is edge-to-edge, with the price treated as product data. */
+.filter-grid { gap: 0; }
+.filter-grid .product-visual { height: clamp(300px, 39vw, 600px); }
+.filter-grid .product-meta { margin: 9px 10px 3px; }
+.filter-grid .product small { display: block; margin: 0 10px; }
+.filter-grid .product-meta p, .product-details .price { color: var(--black) !important; font-size: 12px; }
+.filter-grid .product-meta h3 { font-size: 12px; }
+
+/* Product detail follows a restrained, compact editorial commerce layout. */
+.product-page { padding: 0 0 72px; }
+.product-layout { grid-template-columns: minmax(0, 1.42fr) minmax(310px, .58fr); gap: 0; }
+.gallery { gap: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.product-details { top: 86px; padding: 34px clamp(24px, 3vw, 52px); }
+.product-details h1 { font-size: clamp(30px, 3.1vw, 52px); line-height: .94; letter-spacing: -.04em; }
+.product-details .price { margin-bottom: 26px; }
+.product-details .eyebrow::before, .eyebrow::before { display: none; }
+.product-details .eyebrow { font-size: 10px; letter-spacing: .08em; }
+.product-services { display: none; }
+
+/* Footer stays monochrome, compact, and entirely uppercase. */
+#footer.editorial-footer {
+  --footer-ink: #fff;
+  background: #000 !important;
+  color: #fff !important;
+  border-top: 0;
+}
+#footer.editorial-footer, #footer.editorial-footer * { text-transform: uppercase; }
+#footer .footer-copy, #footer .footer-about p, #footer .footer-nav a { color: #b7b7b7; }
+#footer .footer-about > p:last-child { max-width: 370px; }
+#footer .footer-signature { width: 74px; height: 74px; object-fit: contain; filter: invert(1); }
+#footer .footer-subscribe input { color: #fff; background: transparent; border-color: #666; }
+#footer .footer-meta { border-color: #444; color: #aaa; }
+#footer .footer-social img, #footer .footer-mark, #footer .payment-icon { filter: invert(1) grayscale(1); }
+
+@media (max-width: 760px) {
+  .primary-nav, .page-nav { gap: 15px; }
+  .site-header .primary-nav { background: rgba(0, 0, 0, .92); }
+  .page-header .page-nav { background: rgba(255, 255, 255, .96); }
+  .gallery { grid-template-columns: 1fr; }
+  .product-layout { grid-template-columns: 1fr; }
+  .product-details { padding: 28px 16px; }
+  .filter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

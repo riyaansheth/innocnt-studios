@@ -83,15 +83,12 @@ document.querySelectorAll('.product-details').forEach((details) => {
     }
   }
   const page = details.closest('.product-page');
-  if (page && !page.querySelector('.product-suggestions')) {
-    const suggestions = document.createElement('section');
-    suggestions.className = 'product-suggestions';
-    suggestions.innerHTML = '<p class="eyebrow">Suggested clothing</p><h2>Wear it with.</h2><div class="product-suggestions__grid"><a href="/products/washed-tracks/"><img src="/assets/images/products/washed-tracks-on-model.png" alt="Washed Tracks"><span>Washed Tracks · ₹6,800</span></a><a href="/products/broken-visions-tee/"><img src="/models/broken-visions-tee-base.png" alt="Broken Visions Tee"><span>Broken Visions Tee · ₹4,200</span></a></div>';
+  if (page && !page.querySelector('.product-services')) {
     const services = document.createElement('section');
     services.className = 'product-services';
     services.setAttribute('aria-label', 'Customer care details');
     services.innerHTML = '<div><b aria-hidden="true">⌑</b><span>Express delivery</span><small>Tracked delivery across India and worldwide.</small></div><div><b aria-hidden="true">↺</b><span>Easy returns</span><small>Return eligible pieces within 30 days.</small></div><div><b aria-hidden="true">◌</b><span>Customer service</span><small>care@innocnt.com<br>Monday–Friday, 10:00–18:00 IST</small></div><div><b aria-hidden="true">▣</b><span>Secure payment</span><small>Protected checkout on every order.</small></div>';
-    page.append(suggestions, services);
+    page.append(services);
   }
 });
 
@@ -110,72 +107,10 @@ document.querySelectorAll('img[src*="ref4-gods-child-hoodie.png"]').forEach((ima
   image.src = redHoodieImage;
 });
 
-document.querySelectorAll('.product-page .gallery').forEach((gallery) => {
-  const [modelImage, flatImage] = gallery.querySelectorAll('img');
-  if (!modelImage || !flatImage) return;
-
-  const stageSources = [modelImage, flatImage, null, null, null];
-  const frames = stageSources.map((source, index) => {
-    if (!source) {
-      const placeholder = document.createElement('div');
-      placeholder.className = 'gallery-frame gallery-placeholder';
-      placeholder.dataset.galleryStage = String(index + 1);
-      placeholder.setAttribute('role', 'img');
-      placeholder.setAttribute('aria-label', `Product image ${index + 1} coming soon`);
-      placeholder.innerHTML = '<span>Image coming soon</span>';
-      return placeholder;
-    }
-
-    const frame = source.cloneNode();
-    frame.classList.add('gallery-frame');
-    frame.dataset.galleryStage = String(index + 1);
-    frame.alt = index === 0
-      ? 'God’s Child Hoodie campaign view'
-      : 'God’s Child Hoodie product detail';
-    return frame;
-  });
-
-  gallery.replaceChildren(...frames);
-  gallery.classList.add('gallery--sequence');
-
-  const progress = document.createElement('nav');
-  progress.className = 'gallery-progress';
-  progress.setAttribute('aria-label', 'Product image sequence');
-  let activeStage = 0;
-  const setActiveStage = (index) => {
-    const nextStage = Math.max(0, Math.min(index, frames.length - 1));
-    activeStage = nextStage;
-    dots.forEach((dot, dotIndex) => dot.setAttribute('aria-current', String(dotIndex === nextStage)));
-    frames.forEach((frame, frameIndex) => frame.classList.toggle('is-gallery-active', frameIndex === nextStage));
-  };
-
-  const dots = frames.map((frame, index) => {
-    const dot = document.createElement('button');
-    dot.type = 'button';
-    dot.dataset.galleryDot = String(index + 1);
-    dot.setAttribute('aria-label', `Show product image ${index + 1} of ${frames.length}`);
-    dot.setAttribute('aria-current', index === 0 ? 'true' : 'false');
-    dot.addEventListener('click', () => setActiveStage(index));
-    progress.append(dot);
-    return dot;
-  });
-  gallery.closest('.product-layout')?.append(progress);
-  setActiveStage(0);
-
-  let wheelLocked = false;
-  gallery.addEventListener('wheel', (event) => {
-    if (Math.abs(event.deltaY) < 5 || wheelLocked) return;
-    event.preventDefault();
-    setActiveStage(activeStage + (event.deltaY > 0 ? 1 : -1));
-    wheelLocked = true;
-    window.setTimeout(() => { wheelLocked = false; }, 650);
-  }, { passive: false });
-  gallery.addEventListener('keydown', (event) => {
-    if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
-    event.preventDefault();
-    setActiveStage(activeStage + (event.key === 'ArrowDown' ? 1 : -1));
-  });
-});
+const storefrontRefinementStyles = document.createElement('link');
+storefrontRefinementStyles.rel = 'stylesheet';
+storefrontRefinementStyles.href = '/css/storefront-refinement.css';
+document.head.append(storefrontRefinementStyles);
 
 document.querySelectorAll('.page-header').forEach((header) => {
   const existingBag = header.querySelector('.page-bag')?.cloneNode(true);
@@ -196,7 +131,6 @@ document.querySelectorAll('.page-header').forEach((header) => {
   sharedNav.dataset.nav = '';
   sharedNav.setAttribute('aria-label', 'Primary navigation');
   [
-    ['/', 'Homepage'],
     ['/world/', 'An Innocnt World'],
     ['/collections/', 'Collections'],
     ['/contact/', 'Contact'],
@@ -230,16 +164,12 @@ if (window.location.pathname.startsWith('/bag')) {
 const menu = document.querySelector('[data-menu]');
 const nav = document.querySelector('[data-nav]');
 if (nav) {
-  const homeLink = document.createElement('a');
-  homeLink.href = new URL('/', window.location.href);
-  homeLink.textContent = 'Homepage';
   const findNavLink = (path, label) => (
     nav.querySelector(`a[href*="${path}"]`)
     || [...nav.links].find((link) => link.textContent.trim() === label)
   );
 
   const navItems = [
-    homeLink,
     findNavLink('world/', 'An Innocnt World'),
     findNavLink('collections/', 'Collections'),
     findNavLink('contact/', 'Contact'),
