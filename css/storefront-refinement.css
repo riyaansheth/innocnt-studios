@@ -26,9 +26,9 @@ body .page-header {
   -webkit-backdrop-filter: blur(16px) saturate(125%);
 }
 
-.site-header .brand img { filter: invert(1); }
+.site-header .brand img { filter: none; }
 .site-header .primary-nav a,
-.site-header .bag-link { color: var(--white); }
+.site-header .bag-link { color: var(--black); }
 .page-header .brand img,
 .page-header > a:first-child img { filter: none; }
 .page-header .page-nav a,
