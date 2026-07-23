@@ -113,7 +113,7 @@ body .page-bag span { color: var(--white); }
   .menu-icon::before { background: var(--white); }
 }
 
-/* Liquid glass: a clear, edge-to-edge lens over the campaign imagery. */
+/* Clear, edge-to-edge navigation. */
 html body .site-header {
   position: fixed;
   inset: 0 0 auto;
@@ -124,13 +124,13 @@ html body .site-header {
   overflow: visible;
   isolation: isolate;
   color: #111;
-  background: rgba(255,255,255,.012);
+  background: transparent;
   border: 0;
-  border-bottom: 1px solid rgba(255,255,255,.18);
+  border-bottom: 0;
   border-radius: 0;
-  box-shadow: inset 0 -1px 0 rgba(0,0,0,.035);
-  backdrop-filter: blur(24px) saturate(160%) brightness(1.04);
-  -webkit-backdrop-filter: blur(24px) saturate(160%) brightness(1.04);
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   transition: transform .35s cubic-bezier(.2,.8,.2,1), background .35s ease, box-shadow .35s ease;
 }
 
@@ -141,18 +141,16 @@ html body .site-header::before {
   inset: 0;
   pointer-events: none;
   border-radius: 0;
-  background: linear-gradient(105deg, rgba(255,255,255,.055), transparent 30%, rgba(255,255,255,.012) 50%, transparent 69%, rgba(255,255,255,.05));
-  background-size: 220% 100%;
-  animation: liquid-glass-flow 14s ease-in-out infinite alternate;
-  will-change: background-position;
+  background: transparent;
+  animation: none;
 }
 
 html body .site-header:hover,
 html body .site-header:focus-within {
   transform: none;
-  background: rgba(255,255,255,.025);
-  border-bottom-color: rgba(255,255,255,.26);
-  box-shadow: inset 0 -1px 0 rgba(0,0,0,.05);
+  background: transparent;
+  border-bottom-color: transparent;
+  box-shadow: none;
 }
 
 html body .site-header .brand img { filter: none; }
@@ -175,20 +173,11 @@ html body .site-header .bag-link span { color: #111; }
     right: 0;
     padding: 12px 14px 16px;
     border: 0;
-    border-bottom: 1px solid rgba(255,255,255,.18);
+    border-bottom: 0;
     border-radius: 0;
-    background: rgba(255,255,255,.025);
+    background: transparent;
     box-shadow: none;
-    backdrop-filter: blur(24px) saturate(165%);
-    -webkit-backdrop-filter: blur(24px) saturate(165%);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
-}
-
-@keyframes liquid-glass-flow {
-  from { background-position: 0% 50%; }
-  to { background-position: 100% 50%; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html body .site-header::before { animation: none; }
 }
