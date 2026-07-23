@@ -167,6 +167,15 @@ html body .site-header:hover .menu-icon::before,
 html body .site-header:focus-within .menu-icon,
 html body .site-header:focus-within .menu-icon::before { background: #fff; }
 
+html body .site-header.is-on-dark .primary-nav a,
+html body .site-header.is-on-dark .bag-link,
+html body .site-header.is-on-dark .bag-link span,
+html body .site-header.is-on-dark .menu-toggle { color: #fff; }
+
+html body .site-header.is-on-dark .brand img { filter: invert(1); }
+html body .site-header.is-on-dark .menu-icon,
+html body .site-header.is-on-dark .menu-icon::before { background: #fff; }
+
 html body .site-header .brand img { filter: none; }
 html body .site-header .primary-nav a,
 html body .site-header .bag-link,

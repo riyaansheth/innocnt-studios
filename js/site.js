@@ -299,3 +299,7 @@ document.querySelectorAll('[data-demo-form]').forEach((form)=>form.addEventListe
 
 const target=document.querySelector('[data-countdown]');
 if(target){let seconds=target.dataset.countdown*1||86400;const render=()=>{const units=[[86400,'d'],[3600,'h'],[60,'m'],[1,'s']];target.innerHTML=units.map(([n,label])=>`<div><strong>${String(Math.floor(seconds/n)% (label==='d'?365:60)).padStart(2,'0')}</strong><span>${label}</span></div>`).join('');seconds=Math.max(0,seconds-1)};render();setInterval(render,1000)}
+
+const navigationContrastScript = document.createElement('script');
+navigationContrastScript.src = '/js/navigation-contrast.js';
+document.body.append(navigationContrastScript);

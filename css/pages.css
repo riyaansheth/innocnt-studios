@@ -82,6 +82,14 @@ html body .page-header:focus-within .page-bag span,
 html body .page-header:hover .menu,
 html body .page-header:focus-within .menu { color: #fff; }
 
+html body .page-header.is-on-dark .page-nav a,
+html body .page-header.is-on-dark .page-bag,
+html body .page-header.is-on-dark .page-bag span,
+html body .page-header.is-on-dark .menu { color: #fff; }
+
+html body .page-header.is-on-dark .brand img,
+html body .page-header.is-on-dark > a:first-child img { filter: invert(1); }
+
 html body .page-header > a:first-child img { filter: none; }
 html body .page-header .page-nav a,
 html body .page-header .page-bag,
