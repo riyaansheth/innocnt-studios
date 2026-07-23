@@ -73,6 +73,15 @@ html body .page-header:focus-within {
   box-shadow: none;
 }
 
+html body .page-header:hover .page-nav a,
+html body .page-header:focus-within .page-nav a,
+html body .page-header:hover .page-bag,
+html body .page-header:focus-within .page-bag,
+html body .page-header:hover .page-bag span,
+html body .page-header:focus-within .page-bag span,
+html body .page-header:hover .menu,
+html body .page-header:focus-within .menu { color: #fff; }
+
 html body .page-header > a:first-child img { filter: none; }
 html body .page-header .page-nav a,
 html body .page-header .page-bag,

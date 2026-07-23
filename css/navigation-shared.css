@@ -153,6 +153,20 @@ html body .site-header:focus-within {
   box-shadow: none;
 }
 
+html body .site-header:hover .primary-nav a,
+html body .site-header:focus-within .primary-nav a,
+html body .site-header:hover .bag-link,
+html body .site-header:focus-within .bag-link,
+html body .site-header:hover .bag-link span,
+html body .site-header:focus-within .bag-link span,
+html body .site-header:hover .menu-toggle,
+html body .site-header:focus-within .menu-toggle { color: #fff; }
+
+html body .site-header:hover .menu-icon,
+html body .site-header:hover .menu-icon::before,
+html body .site-header:focus-within .menu-icon,
+html body .site-header:focus-within .menu-icon::before { background: #fff; }
+
 html body .site-header .brand img { filter: none; }
 html body .site-header .primary-nav a,
 html body .site-header .bag-link,
