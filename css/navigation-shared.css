@@ -170,7 +170,10 @@ html body .site-header:focus-within .menu-icon::before { background: #fff; }
 html body .site-header .brand img { filter: none; }
 html body .site-header .primary-nav a,
 html body .site-header .bag-link,
-html body .site-header .bag-link span { color: #111; }
+html body .site-header .bag-link span {
+  color: #111;
+  font-size: 12px;
+}
 
 /* The campaign image begins at the viewport edge; the transparent nav layers over it. */
 body { padding-top: 0; }
@@ -202,6 +205,9 @@ body .hero-image {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }
+
+  html body .site-header .primary-nav a,
+  html body .site-header .menu-toggle { font-size: 11px; }
 
   body .hero,
   body .hero-image {
