@@ -112,3 +112,71 @@ body .page-bag span { color: var(--white); }
   .menu-icon,
   .menu-icon::before { background: var(--white); }
 }
+
+/* Liquid glass: an optically soft floating surface that lets campaign imagery
+   inform the navigation without ever competing with the controls. */
+html body .site-header {
+  position: fixed;
+  inset: 12px 16px auto;
+  z-index: 100;
+  width: auto;
+  height: 62px;
+  padding: 0 24px;
+  overflow: visible;
+  isolation: isolate;
+  color: #111;
+  background: linear-gradient(135deg, rgba(255,255,255,.64), rgba(255,255,255,.26));
+  border: 1px solid rgba(255,255,255,.64);
+  border-bottom-color: rgba(255,255,255,.34);
+  border-radius: 19px;
+  box-shadow: 0 16px 35px rgba(0,0,0,.13), inset 0 1px 0 rgba(255,255,255,.78), inset 0 -1px 0 rgba(255,255,255,.12);
+  backdrop-filter: blur(28px) saturate(175%) brightness(1.05);
+  -webkit-backdrop-filter: blur(28px) saturate(175%) brightness(1.05);
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), background .35s ease, box-shadow .35s ease;
+}
+
+html body .site-header::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 1px;
+  pointer-events: none;
+  border-radius: 18px;
+  background: linear-gradient(112deg, rgba(255,255,255,.48), transparent 36%, rgba(255,255,255,.08) 72%, rgba(255,255,255,.32));
+}
+
+html body .site-header:hover,
+html body .site-header:focus-within {
+  transform: translateY(1px);
+  background: linear-gradient(135deg, rgba(255,255,255,.76), rgba(255,255,255,.34));
+  border-bottom-color: rgba(255,255,255,.46);
+  box-shadow: 0 20px 42px rgba(0,0,0,.16), inset 0 1px 0 rgba(255,255,255,.86), inset 0 -1px 0 rgba(255,255,255,.18);
+}
+
+html body .site-header .brand img { filter: none; }
+html body .site-header .primary-nav a,
+html body .site-header .bag-link,
+html body .site-header .bag-link span { color: #111; }
+
+@media (max-width: 760px) {
+  html body .site-header {
+    inset: 8px 10px auto;
+    height: 52px;
+    padding: 0 14px;
+    border-radius: 16px;
+  }
+
+  html body .site-header::before { border-radius: 15px; }
+  html body .site-header .primary-nav {
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    padding: 12px 14px 16px;
+    border: 1px solid rgba(255,255,255,.6);
+    border-radius: 16px;
+    background: rgba(255,255,255,.72);
+    box-shadow: 0 16px 30px rgba(0,0,0,.15), inset 0 1px 0 rgba(255,255,255,.8);
+    backdrop-filter: blur(24px) saturate(165%);
+    -webkit-backdrop-filter: blur(24px) saturate(165%);
+  }
+}
