@@ -29,6 +29,18 @@ body .page-header {
 .site-header .brand img { filter: none; }
 .site-header .primary-nav a,
 .site-header .bag-link { color: var(--black); }
+
+/* Keep the homepage header identical at rest, hover, and keyboard focus. */
+body .site-header:hover,
+body .site-header:focus-within {
+  background: rgba(255, 255, 255, .18);
+  border-bottom-color: rgba(255, 255, 255, .32);
+}
+body .site-header:hover .primary-nav a,
+body .site-header:focus-within .primary-nav a,
+body .site-header:hover .bag-link,
+body .site-header:focus-within .bag-link { color: var(--black); }
+
 .page-header .brand img,
 .page-header > a:first-child img { filter: none; }
 .page-header .page-nav a,
