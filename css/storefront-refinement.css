@@ -28,7 +28,8 @@ body .page-header {
 
 .site-header .brand img { filter: none; }
 .site-header .primary-nav a,
-.site-header .bag-link { color: var(--black); }
+.site-header .bag-link,
+.site-header .bag-link span { color: var(--black); }
 
 /* Keep the homepage header identical at rest, hover, and keyboard focus. */
 body .site-header:hover,
@@ -39,12 +40,15 @@ body .site-header:focus-within {
 body .site-header:hover .primary-nav a,
 body .site-header:focus-within .primary-nav a,
 body .site-header:hover .bag-link,
-body .site-header:focus-within .bag-link { color: var(--black); }
+body .site-header:focus-within .bag-link,
+body .site-header:hover .bag-link span,
+body .site-header:focus-within .bag-link span { color: var(--black); }
 
 .page-header .brand img,
 .page-header > a:first-child img { filter: none; }
 .page-header .page-nav a,
-.page-header .page-bag { color: var(--black); }
+.page-header .page-bag,
+.page-header .page-bag span { color: var(--black); }
 
 /* The frosted surface keeps every navigation item readable over campaign imagery. */
 body:has(.page-hero) .page-header,
@@ -53,8 +57,10 @@ body:has(.page-hero) .page-header > a:first-child img,
 body.contact-page .page-header > a:first-child img { filter: none; }
 body:has(.page-hero) .page-header .page-nav a,
 body:has(.page-hero) .page-header .page-bag,
+body:has(.page-hero) .page-header .page-bag span,
 body.contact-page .page-header .page-nav a,
-body.contact-page .page-header .page-bag { color: var(--black); }
+body.contact-page .page-header .page-bag,
+body.contact-page .page-header .page-bag span { color: var(--black); }
 
 .primary-nav, .page-nav { gap: 22px; }
 .primary-nav a, .page-nav a, .bag-link, .page-bag {
