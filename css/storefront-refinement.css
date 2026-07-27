@@ -92,10 +92,20 @@ body.contact-page .page-header .page-bag span { color: var(--black); }
 /* Catalogue is edge-to-edge, with the price treated as product data. */
 .filter-grid { column-gap: 0; row-gap: 100px; }
 .filter-grid .product-visual { height: clamp(300px, 39vw, 600px); }
-.filter-grid .product-meta { margin: 9px 10px 3px; }
-.filter-grid .product small { display: block; margin: 0 10px; }
-.filter-grid .product-meta p, .product-details .price { color: var(--black) !important; font-size: 12px; }
-.filter-grid .product-meta h3 { font-size: 12px; }
+.filter-grid .product-meta {
+  display: grid;
+  justify-content: start;
+  gap: 8px;
+  margin: 14px 10px 0;
+}
+.filter-grid .product small { display: none; }
+.filter-grid .product-meta h3,
+.filter-grid .product-meta p {
+  font-size: 16px;
+  font-weight: 400;
+}
+.filter-grid .product-meta p,
+.product-details .price { color: var(--black) !important; }
 
 /* Product detail follows a restrained, compact editorial commerce layout. */
 .product-page { padding: 0 0 72px; }
