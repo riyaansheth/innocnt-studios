@@ -82,6 +82,24 @@ document.querySelectorAll('.product-details').forEach((details) => {
       details.append(purchase);
     }
   }
+  if (document.querySelector('.product-page') && sizes) {
+    if (![...sizes.querySelectorAll('button')].some((button) => button.textContent.trim() === 'XXL')) {
+      const xxl = document.createElement('button');
+      xxl.type = 'button';
+      xxl.dataset.size = '';
+      xxl.textContent = 'XXL';
+      sizes.append(xxl);
+    }
+    if (!details.querySelector('.size-availability')) {
+      const availability = document.createElement('p');
+      availability.className = 'size-availability';
+      availability.textContent = 'S is unavailable';
+      const detailsLabel = document.createElement('p');
+      detailsLabel.className = 'details-label';
+      detailsLabel.textContent = 'Details';
+      sizes.after(availability, detailsLabel);
+    }
+  }
   const page = details.closest('.product-page');
   if (page && !page.querySelector('.product-services')) {
     const services = document.createElement('section');

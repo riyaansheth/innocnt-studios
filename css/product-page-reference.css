@@ -71,15 +71,27 @@
 
   .product-page .product-details h1 {
     margin: 295px 0 8px;
-    font-family: var(--display) !important;
+    font-family: Neue, Arial, sans-serif !important;
     font-size: 21px;
     font-weight: 400;
     line-height: 1.15;
     letter-spacing: 0;
+    text-transform: uppercase;
   }
 
   .product-page .product-details h1 br {
-    display: none;
+    display: inline;
+    content: " ";
+  }
+
+  .product-page .product-details h1 br::after {
+    content: " ";
+  }
+
+  .product-page .product-details h1::before {
+    content: "INNOCNT";
+    display: block;
+    margin-bottom: 4px;
   }
 
   .product-page .product-details .price {
@@ -154,8 +166,15 @@
     text-underline-offset: 5px;
   }
 
-  .product-page .product-details .sizes + p {
-    margin-top: 78px !important;
+  .product-page .size-availability {
+    margin: 48px 0 0;
+    color: #8a8a8a;
+    font-size: 16px;
+  }
+
+  .product-page .details-label {
+    margin: 116px 0 0;
+    font-size: 16px;
   }
 }
 
