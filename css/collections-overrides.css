@@ -1,3 +1,14 @@
 .collection-title {
   font-size: clamp(48px, 7.7vw, 119px);
 }
+
+/* Separate each catalogue row from the product details above it. */
+.filter-grid {
+  row-gap: 100px;
+}
+
+@media (max-width: 760px) {
+  .filter-grid {
+    row-gap: 64px;
+  }
+}
