@@ -21,7 +21,8 @@
 
   body:has(.product-page) .page-header .page-nav--left {
     grid-column: 1;
-    justify-self: start;
+    justify-self: end;
+    margin-right: 64px;
     gap: 28px;
   }
 

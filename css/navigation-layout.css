@@ -14,7 +14,8 @@
   .page-nav--left {
     grid-column: 1;
     grid-row: 1;
-    justify-self: start;
+    justify-self: end;
+    margin-right: 64px;
   }
 
   .primary-nav--right,
@@ -22,15 +23,16 @@
     display: flex;
     grid-column: 3;
     grid-row: 1;
-    justify-self: end;
-    margin-right: 74px;
+    justify-self: start;
+    margin-left: 64px;
   }
 
   .bag-link,
   .page-bag {
     grid-column: 3;
     grid-row: 1;
-    justify-self: end;
+    justify-self: start;
+    margin-left: 155px;
   }
 }
 
