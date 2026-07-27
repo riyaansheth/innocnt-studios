@@ -1,0 +1,26 @@
+/* Focused home-page typography and CTA refinements. */
+.collections .section-heading h2,
+.collections .collection-card h3 {
+  letter-spacing: -.02em;
+}
+
+.collections .collection-card h3 {
+  font-size: clamp(32px, 4.5vw, 68px);
+}
+
+/* Keep the CTA directional cue visible without adding a hover fill. */
+.collections .collection-card .button span {
+  display: inline;
+}
+
+.collections .collection-card .button:hover,
+.collections .collection-card .button:focus-visible {
+  background: transparent !important;
+  border-color: #c50100 !important;
+  color: #c50100 !important;
+}
+
+.collections .text-link:hover,
+.collections .text-link:focus-visible {
+  color: #c50100;
+}
