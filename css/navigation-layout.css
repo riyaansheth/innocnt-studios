@@ -5,13 +5,18 @@
 
   .brand,
   .page-header .brand {
+    position: absolute;
+    left: 50%;
     grid-column: 2;
     grid-row: 1;
     justify-self: center;
+    transform: translateX(-50%);
   }
 
   .primary-nav--left,
   .page-nav--left {
+    position: absolute;
+    right: calc(50% + 104px);
     grid-column: 1;
     grid-row: 1;
     justify-self: start;
@@ -20,14 +25,18 @@
   .primary-nav--right,
   .page-nav--right {
     display: flex;
+    position: absolute;
+    left: calc(50% + 104px);
     grid-column: 3;
     grid-row: 1;
     justify-self: end;
-    margin-right: 74px;
+    margin-right: 0;
   }
 
   .bag-link,
   .page-bag {
+    position: absolute;
+    left: calc(50% + 190px);
     grid-column: 3;
     grid-row: 1;
     justify-self: end;
