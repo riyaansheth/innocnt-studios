@@ -90,7 +90,7 @@ body.contact-page .page-header .page-bag span { color: var(--black); }
 }
 
 /* Catalogue is edge-to-edge, with the price treated as product data. */
-.filter-grid { gap: 0; }
+.filter-grid { column-gap: 0; row-gap: 100px; }
 .filter-grid .product-visual { height: clamp(300px, 39vw, 600px); }
 .filter-grid .product-meta { margin: 9px 10px 3px; }
 .filter-grid .product small { display: block; margin: 0 10px; }
@@ -130,5 +130,5 @@ body.contact-page .page-header .page-bag span { color: var(--black); }
   .gallery { grid-template-columns: 1fr; }
   .product-layout { grid-template-columns: 1fr; }
   .product-details { padding: 28px 16px; }
-  .filter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .filter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 64px; }
 }
