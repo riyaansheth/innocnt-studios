@@ -18,6 +18,17 @@
   display: inline;
 }
 
+.hero .button span {
+  display: inline;
+}
+
+.hero .button:hover,
+.hero .button:focus-visible {
+  background: transparent !important;
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
 .collections .collection-card .button:hover,
 .collections .collection-card .button:focus-visible {
   background: transparent !important;
