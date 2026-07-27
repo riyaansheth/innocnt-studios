@@ -1,14 +1,17 @@
 /* Storefront system: Neue Montreal is the working typeface; the house face is reserved for imagery. */
 :root {
-  --display: Neue, Arial, sans-serif;
+  --display: Innocnt, serif;
   --body: Neue, Arial, sans-serif;
   --red: #000;
 }
 
-body, button, input, select, textarea,
+body, button, input, select, textarea {
+  font-family: var(--body) !important;
+}
+
 h1, h2, h3, .title, .page-hero h1, .section-head h2,
 .product-details h1, .collection-card h3, .footer-top p {
-  font-family: var(--body) !important;
+  font-family: var(--display) !important;
 }
 
 /* Transparent, centered identity with the section links grouped alongside it. */
