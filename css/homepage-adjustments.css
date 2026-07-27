@@ -6,7 +6,11 @@
 }
 
 .collections .collection-card h3 {
-  font-size: clamp(32px, 4.5vw, 68px);
+  font-size: clamp(30px, 3.8vw, 58px);
+}
+
+.collections .section-heading h2 {
+  font-size: clamp(30px, 3.4vw, 52px);
 }
 
 /* Keep the CTA directional cue visible without adding a hover fill. */
