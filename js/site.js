@@ -62,7 +62,7 @@ document.querySelectorAll('.product-details').forEach((details) => {
   const sizeLabel = [...details.children].find((element) => element.matches('.eyebrow') && /size guide/i.test(element.textContent));
   const sizes = details.querySelector('.sizes');
   const action = [...details.querySelectorAll('p')].find((element) => /add to bag/i.test(element.textContent));
-  if (sizeLabel && sizes && action) {
+  if (sizeLabel && sizes && action && !document.querySelector('.product-page')) {
     const purchase = document.createElement('div');
     purchase.className = 'purchase-row';
     const sizeSlot = document.createElement('div');
@@ -111,6 +111,13 @@ const storefrontRefinementStyles = document.createElement('link');
 storefrontRefinementStyles.rel = 'stylesheet';
 storefrontRefinementStyles.href = '/css/storefront-refinement.css';
 document.head.append(storefrontRefinementStyles);
+
+if (document.querySelector('.product-page')) {
+  const productPageReferenceStyles = document.createElement('link');
+  productPageReferenceStyles.rel = 'stylesheet';
+  productPageReferenceStyles.href = '/css/product-page-reference.css';
+  document.head.append(productPageReferenceStyles);
+}
 
 document.querySelectorAll('.page-header').forEach((header) => {
   const existingBag = header.querySelector('.page-bag')?.cloneNode(true);
