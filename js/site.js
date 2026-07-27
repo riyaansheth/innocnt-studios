@@ -112,6 +112,11 @@ storefrontRefinementStyles.rel = 'stylesheet';
 storefrontRefinementStyles.href = '/css/storefront-refinement.css';
 document.head.append(storefrontRefinementStyles);
 
+const navigationLayoutStyles = document.createElement('link');
+navigationLayoutStyles.rel = 'stylesheet';
+navigationLayoutStyles.href = '/css/navigation-layout.css';
+document.head.append(navigationLayoutStyles);
+
 if (document.querySelector('.product-page')) {
   const productPageReferenceStyles = document.createElement('link');
   productPageReferenceStyles.rel = 'stylesheet';
@@ -134,13 +139,12 @@ document.querySelectorAll('.page-header').forEach((header) => {
   menuButton.textContent = 'Menu';
 
   const sharedNav = document.createElement('nav');
-  sharedNav.className = 'page-nav';
+  sharedNav.className = 'page-nav page-nav--left';
   sharedNav.dataset.nav = '';
   sharedNav.setAttribute('aria-label', 'Primary navigation');
   [
     ['/world/', 'An Innocnt World'],
     ['/collections/', 'Collections'],
-    ['/contact/', 'Contact'],
   ].forEach(([href, label]) => {
     const link = document.createElement('a');
     link.href = href;
@@ -151,11 +155,20 @@ document.querySelectorAll('.page-header').forEach((header) => {
     sharedNav.append(link);
   });
 
+  const secondaryNav = document.createElement('nav');
+  secondaryNav.className = 'page-nav page-nav--right';
+  secondaryNav.setAttribute('aria-label', 'Secondary navigation');
+  const contactLink = document.createElement('a');
+  contactLink.href = '/contact/';
+  contactLink.textContent = 'Contact';
+  if (window.location.pathname === '/contact/') contactLink.setAttribute('aria-current', 'page');
+  secondaryNav.append(contactLink);
+
   const bag = existingBag || document.createElement('a');
   bag.className = 'page-bag';
   if (!bag.getAttribute('href')) bag.href = '/bag/';
   if (!bag.textContent.trim()) bag.innerHTML = 'Bag <span>(0)</span>';
-  header.replaceChildren(brand, menuButton, sharedNav, bag);
+  header.replaceChildren(brand, menuButton, sharedNav, secondaryNav, bag);
 });
 
 if (window.location.pathname.startsWith('/bag')) {
@@ -170,6 +183,7 @@ if (window.location.pathname.startsWith('/bag')) {
 
 const menu = document.querySelector('[data-menu]');
 const nav = document.querySelector('[data-nav]');
+const pageNavs = document.querySelectorAll('.page-nav');
 if (nav) {
   const findNavLink = (path, label) => (
     nav.querySelector(`a[href*="${path}"]`)
@@ -179,7 +193,6 @@ if (nav) {
   const navItems = [
     findNavLink('world/', 'An Innocnt World'),
     findNavLink('collections/', 'Collections'),
-    findNavLink('contact/', 'Contact'),
   ].filter(Boolean);
 
   // Each page contains legacy navigation markup. Replace it with the one
@@ -205,7 +218,7 @@ if (worldMain) {
     heading.querySelector(':scope > p')?.remove();
   });
 }
-menu?.addEventListener('click',()=>nav.classList.toggle('open'));
+menu?.addEventListener('click',()=>pageNavs.forEach((navigation) => navigation.classList.toggle('open')));
 
 if (!reduceMotion) {
   const revealSets = [

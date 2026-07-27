@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/refinements.css" />
     <link rel="stylesheet" href="css/storefront-refinement.css" />
     <link rel="stylesheet" href="css/homepage-adjustments.css" />
+    <link rel="stylesheet" href="css/navigation-layout.css" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -34,9 +35,11 @@
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-menu-toggle>
         <span class="menu-label">Menu</span><span class="menu-icon" aria-hidden="true"></span>
       </button>
-      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation" data-nav>
+      <nav class="primary-nav primary-nav--left" id="primary-nav" aria-label="Primary navigation" data-nav>
         <a href="world/">An Innocnt World</a>
         <a href="collections/">Collections</a>
+      </nav>
+      <nav class="primary-nav primary-nav--right" aria-label="Secondary navigation">
         <a href="contact/">Contact</a>
       </nav>
       <a class="bag-link" href="bag/" aria-label="Shopping bag, 0 items">Bag <span>(0)</span></a>

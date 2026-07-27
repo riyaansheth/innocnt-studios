@@ -10,18 +10,18 @@
   }
 
   body:has(.product-page) .page-header .brand {
-    grid-column: 1;
-    justify-self: start;
+    grid-column: 2;
+    justify-self: center;
   }
 
   body:has(.product-page) .page-header .brand img {
-    width: 165px;
+    width: 114px;
     filter: none;
   }
 
-  body:has(.product-page) .page-header .page-nav {
-    grid-column: 2;
-    justify-self: center;
+  body:has(.product-page) .page-header .page-nav--left {
+    grid-column: 1;
+    justify-self: start;
     gap: 28px;
   }
 
