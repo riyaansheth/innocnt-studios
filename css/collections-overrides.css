@@ -1,5 +1,12 @@
 .collection-title {
   font-size: clamp(48px, 7.7vw, 119px);
+  margin-bottom: 0;
+}
+
+/* Keep the catalogue title and filters on the same measured rhythm. */
+.section:has(.filter-grid) .section-head,
+.section:has(.filter-grid) .filters {
+  margin-bottom: 32px;
 }
 
 /* Separate each catalogue row from the product details above it. */

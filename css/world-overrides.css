@@ -65,8 +65,8 @@
 }
 
 .world-philosophy .story h2 {
-  font-family: Neue, Arial, sans-serif !important;
-  font-size: clamp(28px, 3.3vw, 48px);
+  font-family: var(--display) !important;
+  font-size: clamp(34px, 4vw, 62px);
   font-weight: 400;
   line-height: .98;
   letter-spacing: -.035em;
@@ -94,8 +94,8 @@
 }
 
 .world-curation .story h2 {
-  font-family: Neue, Arial, sans-serif !important;
-  font-size: clamp(26px, 3vw, 42px) !important;
+  font-family: var(--display) !important;
+  font-size: clamp(32px, 3.8vw, 58px) !important;
   font-weight: 400;
   line-height: .98;
   letter-spacing: -.035em;
@@ -118,8 +118,8 @@
 }
 
 .material-process > h2 {
-  font-family: Neue, Arial, sans-serif !important;
-  font-size: clamp(30px, 3.6vw, 52px);
+  font-family: var(--display) !important;
+  font-size: clamp(38px, 4.5vw, 70px);
   font-weight: 400;
   line-height: .98;
   letter-spacing: -.035em;
@@ -153,7 +153,9 @@
 
 .founder-note .story h2 {
   max-width: 1100px;
-  white-space: normal;
+  font-family: var(--display) !important;
+  font-size: clamp(30px, 3vw, 62px) !important;
+  white-space: nowrap;
 }
 
 .founder-note .story p:not(.eyebrow) {
@@ -161,6 +163,23 @@
   white-space: normal;
 }
 
+/* World chapter titles use the house display face and remain single statements. */
+.world-hero h1,
+.world-philosophy .story h2,
+.world-curation .story h2,
+.material-process > h2,
+.founder-note .story h2 {
+  font-family: var(--display) !important;
+  text-transform: none;
+  white-space: nowrap;
+}
+
 @media (max-width: 760px) {
   .world-hero p:not(.eyebrow) { white-space: normal; }
+
+  .world-hero h1,
+  .world-philosophy .story h2,
+  .world-curation .story h2,
+  .material-process > h2,
+  .founder-note .story h2 { white-space: normal; }
 }

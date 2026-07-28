@@ -248,7 +248,7 @@ const worldMain = document.querySelector('#main');
 if (worldMain) {
   const worldStyles = document.createElement('link');
   worldStyles.rel = 'stylesheet';
-  worldStyles.href = new URL('../css/world-section-layout.css', window.location.href);
+  worldStyles.href = new URL('../css/world-section-layout.css?revision=world-display-headings-20260728', window.location.href);
   document.head.append(worldStyles);
 
   worldMain.querySelectorAll('.section-head').forEach((heading) => {
