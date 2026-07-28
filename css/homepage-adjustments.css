@@ -43,6 +43,8 @@
   border: 0;
   border-bottom: 1px solid currentColor !important;
   color: #fff !important;
+  font-size: 12px;
+  line-height: 1;
 }
 
 #bestsellers .product-meta {
