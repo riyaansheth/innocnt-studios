@@ -24,8 +24,9 @@
 
 .collections .section-heading h2,
 .bestsellers .section-heading h2 {
-  font-size: clamp(26px, 2.8vw, 42px);
+  font-size: clamp(20px, 2vw, 30px);
   line-height: .9;
+  text-transform: uppercase;
 }
 
 /* Collection actions are deliberately reduced to copy and a direction cue. */
