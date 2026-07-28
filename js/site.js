@@ -33,6 +33,11 @@ buttonStyles.rel = 'stylesheet';
 buttonStyles.href = '/css/button-overrides.css';
 document.head.append(buttonStyles);
 
+const productPageFixes = document.createElement('link');
+productPageFixes.rel = 'stylesheet';
+productPageFixes.href = '/css/product-page-fixes.css';
+document.head.append(productPageFixes);
+
 const globalFontStyles = document.createElement('link');
 globalFontStyles.rel = 'stylesheet';
 globalFontStyles.href = '/css/font-overrides.css';
@@ -57,6 +62,8 @@ if (document.querySelector('.product-page .gallery')) {
 }
 
 document.querySelectorAll('.product-details').forEach((details) => {
+  const productName = details.querySelector('h1');
+  if (productName) productName.textContent = productName.innerText.replace(/\s+/g, ' ').trim();
   details.querySelector('.try-on')?.remove();
   [...details.querySelectorAll('a.button')].find((button) => /buy now/i.test(button.textContent))?.remove();
   const sizeLabel = [...details.children].find((element) => element.matches('.eyebrow') && /size guide/i.test(element.textContent));

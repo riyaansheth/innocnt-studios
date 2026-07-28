@@ -1,0 +1,89 @@
+/* Product details: compact single-line naming and a clear left-aligned purchase flow. */
+.product-page .product-details h1 {
+  white-space: nowrap;
+  margin: 0 0 12px;
+  font-family: Neue, Arial, sans-serif !important;
+  font-size: clamp(22px, 2vw, 32px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -.035em;
+  text-transform: none;
+}
+
+.product-page .product-details h1::before {
+  display: none;
+}
+
+.product-page .product-details h1 br {
+  display: none;
+}
+
+.product-page .product-details .price {
+  margin: 0 0 20px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.product-page .product-details .info-list,
+.product-page .product-details .info-list div,
+.product-page .product-details .info-list span,
+.product-page .product-details .info-list span:last-child {
+  text-align: left;
+}
+
+.product-page .product-details .info-list div {
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.product-page .product-details .info-list span:first-child {
+  margin-right: 0;
+}
+
+.product-page .product-details .info-list span:last-child::before {
+  content: none;
+}
+
+.product-page .product-details > p:last-child {
+  margin-top: 28px !important;
+}
+
+.product-page .product-details > p:last-child .button.dark {
+  justify-content: center;
+  min-width: 190px;
+  padding: 14px 16px;
+  background: #000 !important;
+  border: 1px solid #000 !important;
+  color: #fff !important;
+}
+
+@media (min-width: 761px) {
+  .product-page .product-details {
+    padding: 38px clamp(28px, 4vw, 68px);
+  }
+
+  .product-page .product-details h1 {
+    margin: 36px 0 12px;
+  }
+
+  .product-page .product-details .info-list {
+    margin-top: 34px;
+  }
+
+  .product-page .product-details .info-list div:last-child {
+    display: flex;
+  }
+
+  .product-page .product-details .info-list span:first-child {
+    display: inline;
+  }
+
+  .product-page .product-details .info-list + .rule + .eyebrow {
+    margin: 34px 0 12px;
+  }
+
+  .product-page .product-details .sizes {
+    margin: 0;
+    gap: 12px;
+  }
+}
