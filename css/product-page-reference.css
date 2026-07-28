@@ -1,9 +1,9 @@
 /* Product detail layout: restrained two-column editorial commerce. */
 @media (min-width: 761px) {
   body:has(.product-page) .page-header {
-    height: 150px;
-    padding: 0 80px;
-    grid-template-columns: auto 1fr auto;
+    height: 74px;
+    padding: 0 32px;
+    grid-template-columns: 1fr auto 1fr;
     background: #fff !important;
     color: #111 !important;
     border-bottom: 1px solid #f0f0f0;
@@ -21,9 +21,21 @@
 
   body:has(.product-page) .page-header .page-nav--left {
     grid-column: 1;
+    justify-self: start;
+    margin-right: 0;
+    gap: 22px;
+  }
+
+  body:has(.product-page) .page-header .page-nav--right {
+    grid-column: 3;
+    justify-self: start;
+    margin-left: 32px;
+  }
+
+  body:has(.product-page) .page-header .page-bag {
+    grid-column: 3;
     justify-self: end;
-    margin-right: 64px;
-    gap: 28px;
+    margin-left: 0;
   }
 
   body:has(.product-page) .page-header .page-bag,
@@ -33,27 +45,27 @@
   }
 
   .product-page {
-    padding: 150px 0 0 !important;
+    padding: 74px 0 0 !important;
   }
 
   .product-page .product-layout {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 0;
-    min-height: calc(100svh - 150px);
+    min-height: calc(100svh - 74px);
   }
 
   .product-page .gallery {
-    height: calc(100svh - 150px);
+    height: calc(100svh - 74px);
   }
 
   .product-page .gallery img {
-    height: calc(100svh - 150px);
+    height: calc(100svh - 74px);
   }
 
   .product-page .product-details {
     position: static;
-    padding: 0 60px;
-    min-height: calc(100svh - 150px);
+    padding: 38px clamp(28px, 4vw, 68px);
+    min-height: calc(100svh - 74px);
   }
 
   .product-page .product-details > .eyebrow:first-child {
@@ -70,11 +82,11 @@
   }
 
   .product-page .product-details h1 {
-    margin: 295px 0 8px;
+    margin: clamp(160px, 27vh, 240px) 0 2px;
     font-family: Neue, Arial, sans-serif !important;
     font-size: 21px;
     font-weight: 400;
-    line-height: 1.15;
+    line-height: 1.05;
     letter-spacing: 0;
     text-transform: uppercase;
   }
@@ -91,7 +103,7 @@
   .product-page .product-details h1::before {
     content: "INNOCNT";
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 1px;
   }
 
   .product-page .product-details .price {
@@ -110,7 +122,7 @@
 
   .product-page .product-details .info-list {
     display: block;
-    margin-top: 120px;
+    margin-top: 42px;
   }
 
   .product-page .product-details .info-list div:last-child {
