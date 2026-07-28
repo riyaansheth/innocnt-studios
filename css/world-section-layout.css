@@ -2,6 +2,15 @@
 #main > .section { padding: 64px 32px 80px; }
 #main > .section .section-head { margin-bottom: 28px; }
 
+/* Match World supporting copy to the compact product-detail subtext. */
+.world-hero p:not(.eyebrow),
+.world-philosophy .story p,
+.world-curation .story p,
+.founder-note .story p:not(.eyebrow) {
+  font-size: 14px;
+  line-height: 1.45;
+}
+
 /* Let the opening statement occupy the full editorial spread. */
 #main > .section:first-of-type { padding-top: 20px; }
 #main > .section:first-of-type .section-head h2 {
