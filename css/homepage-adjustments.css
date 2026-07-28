@@ -16,7 +16,7 @@
 
 .collections .section-heading h2,
 .bestsellers .section-heading h2 {
-  font-size: clamp(32px, 3.6vw, 56px);
+  font-size: clamp(26px, 2.8vw, 42px);
   line-height: .9;
 }
 
