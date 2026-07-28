@@ -59,6 +59,17 @@ body:has(.filter-grid) .page-header .page-bag span {
   color: #111 !important;
 }
 
+/* Keep catalogue metadata in the same utilitarian Neue Montreal system. */
+body:has(.filter-grid) .filter-grid .product-meta {
+  gap: 2px !important;
+}
+
+body:has(.filter-grid) .filter-grid .product-meta h3 {
+  font-family: Neue, Arial, sans-serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -.02em;
+}
+
 @media (max-width: 760px) {
   body:has(.filter-grid) .page-header {
     height: 58px !important;
