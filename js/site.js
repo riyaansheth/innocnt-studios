@@ -64,6 +64,19 @@ if (document.querySelector('.product-page .gallery')) {
 document.querySelectorAll('.product-details').forEach((details) => {
   const productName = details.querySelector('h1');
   if (productName) productName.textContent = productName.innerText.replace(/\s+/g, ' ').trim();
+  const collectionByProduct = {
+    'God’s Child Hoodie': 'God’s Child',
+    'Child Hoodie': 'God’s Child',
+    'Broken Visions Tee': 'Broken Visions',
+    'Black Tracks': 'Broken Visions',
+    'Battery Long Sleeve': 'Broken Visions',
+    'Washed Tracks': 'Broken Visions',
+    'Tiremark Tracks': 'Broken Visions',
+    'Too Innocnt Tee': 'Broken Visions',
+  };
+  const collectionLabel = details.querySelector('.eyebrow');
+  const collection = collectionByProduct[productName?.textContent];
+  if (collectionLabel && collection) collectionLabel.textContent = `Collection: ${collection}`;
   details.querySelector('.try-on')?.remove();
   [...details.querySelectorAll('a.button')].find((button) => /buy now/i.test(button.textContent))?.remove();
   const sizeLabel = [...details.children].find((element) => element.matches('.eyebrow') && /size guide/i.test(element.textContent));

@@ -11,8 +11,9 @@ body:has(.filter-grid) .filter-grid .product-meta h3 {
 
 body:has(.filter-grid) .collection-title {
   font-family: Neue, Arial, sans-serif !important;
-  font-size: clamp(32px, 4vw, 56px) !important;
+  font-size: clamp(20px, 2vw, 30px) !important;
   font-weight: 400;
-  line-height: .95;
+  line-height: .9;
   letter-spacing: -.045em;
+  text-transform: uppercase;
 }

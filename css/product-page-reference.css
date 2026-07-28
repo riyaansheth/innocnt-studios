@@ -27,14 +27,13 @@
   .product-page .product-details > .eyebrow:first-child {
     margin: 2px 0 0;
     color: #4c4c4c;
-    font-size: 0;
-    letter-spacing: 0;
-    text-transform: none;
+    font-size: 14px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
   }
 
   .product-page .product-details > .eyebrow:first-child::after {
-    content: "Collection";
-    font-size: 14px;
+    content: none;
   }
 
   .product-page .product-details h1 {
