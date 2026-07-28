@@ -40,3 +40,46 @@
   .primary-nav--right,
   .page-nav--right { display: none; }
 }
+
+/* The shared navigation uses a light surface. Hover and focus must preserve
+   the dark ink instead of inheriting the legacy white-on-image treatment. */
+html body .site-header:hover .primary-nav a,
+html body .site-header:focus-within .primary-nav a,
+html body .site-header:hover .bag-link,
+html body .site-header:focus-within .bag-link,
+html body .site-header:hover .bag-link span,
+html body .site-header:focus-within .bag-link span,
+html body .site-header.is-on-dark .primary-nav a,
+html body .site-header.is-on-dark .bag-link,
+html body .site-header.is-on-dark .bag-link span,
+html body .page-header:hover .page-nav a,
+html body .page-header:focus-within .page-nav a,
+html body .page-header:hover .page-bag,
+html body .page-header:focus-within .page-bag,
+html body .page-header:hover .page-bag span,
+html body .page-header:focus-within .page-bag span,
+html body .page-header.is-on-dark .page-nav a,
+html body .page-header.is-on-dark .page-bag,
+html body .page-header.is-on-dark .page-bag span {
+  color: #111 !important;
+}
+
+html body .site-header:hover .menu-toggle,
+html body .site-header:focus-within .menu-toggle,
+html body .site-header.is-on-dark .menu-toggle,
+html body .page-header:hover .menu,
+html body .page-header:focus-within .menu,
+html body .page-header.is-on-dark .menu {
+  color: #111 !important;
+}
+
+html body .site-header:hover .menu-icon,
+html body .site-header:hover .menu-icon::before,
+html body .site-header:focus-within .menu-icon,
+html body .site-header:focus-within .menu-icon::before,
+html body .site-header.is-on-dark .menu-icon,
+html body .site-header.is-on-dark .menu-icon::before { background: #111; }
+
+html body .site-header.is-on-dark .brand img,
+html body .page-header.is-on-dark .brand img,
+html body .page-header.is-on-dark > a:first-child img { filter: none; }
