@@ -65,6 +65,23 @@ body.contact-page .page-header .page-nav a,
 body.contact-page .page-header .page-bag,
 body.contact-page .page-header .page-bag span { color: var(--black); }
 
+/* Keep inner-page navigation legible while the transparent header is hovered
+   or the contrast script detects the campaign imagery beneath it. */
+body .page-header:hover .page-nav a,
+body .page-header:focus-within .page-nav a,
+body .page-header:hover .page-bag,
+body .page-header:focus-within .page-bag,
+body .page-header:hover .page-bag span,
+body .page-header:focus-within .page-bag span,
+body .page-header.is-on-dark .page-nav a,
+body .page-header.is-on-dark .page-bag,
+body .page-header.is-on-dark .page-bag span {
+  color: var(--black);
+}
+
+body .page-header.is-on-dark .brand img,
+body .page-header.is-on-dark > a:first-child img { filter: none; }
+
 .primary-nav, .page-nav { gap: 22px; }
 .primary-nav a, .page-nav a, .bag-link, .page-bag {
   font-size: 10px;
