@@ -28,7 +28,8 @@
 
 /* Match the homepage Collections and Bestsellers heading treatment. */
 .world-philosophy .story h2,
-.world-curation .story h2 {
+.world-curation .story h2,
+.material-process > h2 {
   font-family: Neue, Arial, sans-serif !important;
   font-size: clamp(20px, 2vw, 30px) !important;
   font-weight: 400;
