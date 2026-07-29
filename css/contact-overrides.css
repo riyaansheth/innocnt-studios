@@ -14,6 +14,7 @@
 
 /* Match the home collection CTA typography. */
 .contact-page .contact-form button {
+  justify-self: center;
   font-size: 12px;
   line-height: 1;
   letter-spacing: .08em;
