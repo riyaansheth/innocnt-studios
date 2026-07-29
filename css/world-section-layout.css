@@ -53,8 +53,12 @@
   text-transform: none;
 }
 
+/* Subtext tracks the heading's width at every viewport: font-size is a fixed
+   0.1717x of the heading clamp(54px,8vw,124px), so the line ends exactly where
+   "Soft is a refusal." ends. Heading is Georgia (system serif) so this ratio
+   holds across machines. */
 .world-hero p:not(.eyebrow) {
-  font-size: clamp(16px, 1.5vw, 22px);
+  font-size: clamp(9.27px, 1.374vw, 21.29px);
 }
 
 /* Let the opening statement occupy the full editorial spread. */
