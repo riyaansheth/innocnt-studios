@@ -130,7 +130,6 @@
   min-height: 230px;
   flex-direction: column;
   align-items: flex-start;
-  font-family: var(--display);
 }
 
 .material-grid article > span {
@@ -147,6 +146,12 @@
 }
 
 .material-grid article p { margin: 0; }
+
+.material-grid article > span,
+.material-grid article h3,
+.material-grid article p {
+  font-family: var(--display) !important;
+}
 
 .founder-note .story-image {
   aspect-ratio: 2048 / 360;
