@@ -32,7 +32,7 @@
   bottom: -6px;
   left: 0;
   height: 1px;
-  background: var(--red);
+  background: currentColor;
   transform: scaleX(0);
   transform-origin: right;
   transition: transform .42s var(--page-motion-ease);
