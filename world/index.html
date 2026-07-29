@@ -7,7 +7,7 @@
   <link rel="icon" href="../assets/identity/rabbit-signature.svg">
   <link rel="stylesheet" href="../css/pages.css">
   <link rel="stylesheet" href="../css/refinements.css">
-  <link rel="stylesheet" href="../css/world-overrides.css?revision=world-curation-cta-copy-20260729">
+  <link rel="stylesheet" href="../css/world-overrides.css?revision=world-hero-subtext-fix-20260729">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -21,7 +21,7 @@
   </header>
   <main id="main">
     <section class="page-hero world-hero" style="--hero:url('../assets/images/btsshoot/a-photographer-model-and-make-up-artist-on-set-of-a-fashion-shoot-innocnt-hero-4k.png')">
-      <div class="world-hero__copy"><h1>Soft is a refusal.</h1><p>A place for the emotionally overqualified, under-explained, and slightly out of place.</p></div>
+      <h1>Soft is a refusal.</h1><p>A place for the emotionally overqualified, under-explained, and slightly out of place.</p>
     </section>
     <section class="section world-philosophy">
       <div class="split">
@@ -41,28 +41,5 @@
   </main>
   <footer class="footer"><div class="footer-top"><img src="../assets/identity/rabbit-black.svg" alt=""><p>Still soft.<br>Somehow.</p></div><div class="footer-bottom"><img src="../assets/identity/wordmark.svg" alt="INNOCNT"><p>© 2026 Innocnt Studios</p><a href="#main">Back to top ↑</a></div></footer>
   <script src="../js/site.js?revision=world-display-headings-20260728"></script>
-  <script>
-    (() => {
-      const heading = document.querySelector(".world-hero h1");
-      const subtext = document.querySelector(".world-hero p:not(.eyebrow)");
-      if (!heading || !subtext) return;
-
-      const alignSubtext = () => {
-        const headingStyle = window.getComputedStyle(heading);
-        const canvas = document.createElement("canvas");
-        const context = canvas.getContext("2d");
-        context.font = `${headingStyle.fontStyle} ${headingStyle.fontWeight} ${headingStyle.fontSize} ${headingStyle.fontFamily}`;
-        const text = heading.textContent.trim();
-        const letterSpacing = parseFloat(headingStyle.letterSpacing) || 0;
-        const naturalHeadingWidth = context.measureText(text).width + letterSpacing * (text.length - 1);
-        const renderedHeadingWidth = heading.getBoundingClientRect().width;
-        subtext.style.width = `${Math.min(naturalHeadingWidth, renderedHeadingWidth)}px`;
-      };
-
-      window.addEventListener("resize", alignSubtext);
-      document.fonts?.ready.then(alignSubtext);
-      alignSubtext();
-    })();
-  </script>
 </body>
 </html>
