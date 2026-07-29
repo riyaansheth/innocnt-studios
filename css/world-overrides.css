@@ -115,6 +115,23 @@
   align-self: flex-start !important;
   margin: 0 !important;
   justify-content: center;
+  min-width: 0;
+  padding: 0 0 4px;
+  gap: 8px;
+  color: currentColor;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  font-size: 10px;
+  line-height: 1.1;
+  letter-spacing: .08em;
+}
+
+.world-curation .story .button:hover {
+  color: inherit;
+  background: transparent;
+  border-color: currentColor;
+  transform: none;
 }
 
 .material-process > h2 {
