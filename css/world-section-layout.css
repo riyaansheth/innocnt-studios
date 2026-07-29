@@ -26,6 +26,17 @@
   text-transform: none;
 }
 
+/* Match the homepage Collections and Bestsellers heading treatment. */
+.world-philosophy .story h2,
+.world-curation .story h2 {
+  font-family: Neue, Arial, sans-serif !important;
+  font-size: clamp(20px, 2vw, 30px) !important;
+  font-weight: 400;
+  line-height: .9;
+  letter-spacing: -.035em;
+  text-transform: uppercase;
+}
+
 /* Let the opening statement occupy the full editorial spread. */
 #main > .section:first-of-type { padding-top: 20px; }
 #main > .section:first-of-type .section-head h2 {
