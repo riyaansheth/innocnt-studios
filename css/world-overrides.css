@@ -114,9 +114,11 @@
 
 .world-curation .story p {
   /* Font size comes from refinements.css, shared with .world-philosophy. */
-  max-width: 560px;
+  width: 100%;
+  max-width: none;
   margin: 0 0 28px !important;
-  text-align: left !important;
+  text-align: justify !important;
+  text-align-last: justify;
 }
 
 .world-curation .story .button {
@@ -130,8 +132,8 @@
   background: transparent;
   border: 0;
   border-bottom: 1px solid currentColor;
-  font-size: 10px;
-  line-height: 1.1;
+  font-size: 12px;
+  line-height: 1;
   letter-spacing: .08em;
 }
 
