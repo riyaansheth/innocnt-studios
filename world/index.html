@@ -53,9 +53,14 @@
           subtext.style.removeProperty("width");
           return;
         }
-        const range = document.createRange();
-        range.selectNodeContents(heading);
-        subtext.style.width = `${range.getBoundingClientRect().width}px`;
+        const headingStyle = window.getComputedStyle(heading);
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("2d");
+        context.font = `${headingStyle.fontStyle} ${headingStyle.fontWeight} ${headingStyle.fontSize} ${headingStyle.fontFamily}`;
+        const text = heading.textContent.trim();
+        const letterSpacing = parseFloat(headingStyle.letterSpacing) || 0;
+        const headingWidth = context.measureText(text).width + letterSpacing * (text.length - 1);
+        subtext.style.width = `${headingWidth}px`;
       };
 
       window.addEventListener("resize", alignSubtext);
