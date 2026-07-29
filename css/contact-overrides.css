@@ -11,3 +11,10 @@
   font-size: clamp(14px, 1.15vw, 18px);
   margin-top: 18px;
 }
+
+/* Match the home collection CTA typography. */
+.contact-page .contact-form button {
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: .08em;
+}
