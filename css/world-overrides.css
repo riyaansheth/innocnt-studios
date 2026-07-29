@@ -62,7 +62,7 @@
 .world-hero p:not(.eyebrow) {
   max-width: none;
   white-space: nowrap;
-  font-size: clamp(9.7px, .63vw, 11.65px);
+  font-size: clamp(8px, .55vw, 10px);
 }
 
 .world-philosophy .story h2 {
