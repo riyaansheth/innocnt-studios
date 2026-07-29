@@ -59,10 +59,19 @@
   font-size: clamp(54px, 8vw, 124px);
 }
 
+.world-hero__copy {
+  align-self: flex-start;
+  width: max-content;
+  max-width: 100%;
+}
+
 .world-hero p:not(.eyebrow) {
+  width: 100%;
   max-width: none;
   white-space: nowrap;
   font-size: clamp(14px, 1vw, 18px);
+  text-align: justify;
+  text-align-last: justify;
 }
 
 .world-philosophy .story h2 {
@@ -199,7 +208,7 @@
 }
 
 @media (max-width: 760px) {
-  .world-hero p:not(.eyebrow) { white-space: normal; }
+  .world-hero p:not(.eyebrow) { white-space: normal; text-align: left; text-align-last: auto; }
 
   .world-hero h1,
   .world-philosophy .story h2,
