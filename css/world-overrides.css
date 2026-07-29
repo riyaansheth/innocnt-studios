@@ -67,7 +67,7 @@
 .world-hero p:not(.eyebrow) {
   max-width: none;
   white-space: nowrap;
-  font-size: clamp(12px, .8vw, 15px);
+  font-size: clamp(10px, .65vw, 12px);
   text-align: justify;
   text-align-last: justify;
 }
