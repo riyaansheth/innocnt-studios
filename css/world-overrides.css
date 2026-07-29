@@ -61,12 +61,10 @@
 
 .world-hero__copy {
   align-self: flex-start;
-  width: max-content;
   max-width: 100%;
 }
 
 .world-hero p:not(.eyebrow) {
-  width: 100%;
   max-width: none;
   white-space: nowrap;
   font-size: clamp(12px, .8vw, 15px);

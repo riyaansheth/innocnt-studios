@@ -7,7 +7,7 @@
   <link rel="icon" href="../assets/identity/rabbit-signature.svg">
   <link rel="stylesheet" href="../css/pages.css">
   <link rel="stylesheet" href="../css/refinements.css">
-  <link rel="stylesheet" href="../css/world-overrides.css?revision=world-hero-subtext-small-20260729">
+  <link rel="stylesheet" href="../css/world-overrides.css?revision=world-hero-exact-alignment-20260729">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -41,5 +41,28 @@
   </main>
   <footer class="footer"><div class="footer-top"><img src="../assets/identity/rabbit-black.svg" alt=""><p>Still soft.<br>Somehow.</p></div><div class="footer-bottom"><img src="../assets/identity/wordmark.svg" alt="INNOCNT"><p>© 2026 Innocnt Studios</p><a href="#main">Back to top ↑</a></div></footer>
   <script src="../js/site.js?revision=world-display-headings-20260728"></script>
+  <script>
+    (() => {
+      const heading = document.querySelector(".world-hero h1");
+      const subtext = document.querySelector(".world-hero p:not(.eyebrow)");
+      const desktop = window.matchMedia("(min-width: 761px)");
+      if (!heading || !subtext) return;
+
+      const alignSubtext = () => {
+        if (!desktop.matches) {
+          subtext.style.removeProperty("width");
+          return;
+        }
+        const range = document.createRange();
+        range.selectNodeContents(heading);
+        subtext.style.width = `${range.getBoundingClientRect().width}px`;
+      };
+
+      window.addEventListener("resize", alignSubtext);
+      desktop.addEventListener("change", alignSubtext);
+      document.fonts?.ready.then(alignSubtext);
+      alignSubtext();
+    })();
+  </script>
 </body>
 </html>
