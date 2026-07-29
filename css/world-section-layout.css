@@ -37,6 +37,11 @@
   text-transform: uppercase;
 }
 
+/* Keep the material labels subordinate to their section title. */
+.material-grid article h3 {
+  font-size: clamp(18px, 1.6vw, 24px) !important;
+}
+
 /* Let the opening statement occupy the full editorial spread. */
 #main > .section:first-of-type { padding-top: 20px; }
 #main > .section:first-of-type .section-head h2 {
