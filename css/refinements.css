@@ -22,3 +22,6 @@
 
 /* Homepage CTA system: transparent, centered, and high-contrast. */
 .hero .button,.collection-card .button,.world .button{justify-content:center;min-width:280px;padding:18px 21px;background:transparent!important;border-color:#fff!important;color:#fff!important}.hero .button span,.collection-card .button span,.world .button span{display:none}.hero .button:hover,.collection-card .button:hover,.world .button:hover{background:var(--red)!important;border-color:var(--red)!important;color:#fff!important}
+
+/* Keep each cart item's details within the same vertical span as its image. */
+.cart-drawer__item{--cart-item-height:145px;align-items:start}.cart-drawer__image,.cart-drawer__item>div{height:var(--cart-item-height)}.cart-drawer__item>div{display:flex;min-width:0;flex-direction:column}.cart-drawer__product-name{line-height:1.1}.cart-drawer__price{margin-top:6px}.cart-drawer__variant{margin-top:10px}.cart-drawer__controls{margin-top:auto}.cart-drawer__quantity{height:40px}.cart-drawer__quantity button{font-size:22px}.cart-drawer__quantity output{font-size:17px}@media(max-width:640px){.cart-drawer__item{--cart-item-height:125px}.cart-drawer__price{margin-top:5px}.cart-drawer__variant{margin-top:7px}.cart-drawer__controls{margin-top:auto}.cart-drawer__quantity{height:36px}}
