@@ -150,7 +150,7 @@
 .material-grid article > span,
 .material-grid article h3,
 .material-grid article p {
-  font-family: var(--display) !important;
+  font-family: Neue, Arial, sans-serif !important;
 }
 
 .founder-note .story-image {
