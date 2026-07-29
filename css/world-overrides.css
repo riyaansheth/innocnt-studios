@@ -206,7 +206,7 @@
 }
 
 @media (max-width: 760px) {
-  .world-hero p:not(.eyebrow) { white-space: normal; text-align: left; text-align-last: auto; }
+  .world-hero p:not(.eyebrow) { white-space: normal; }
 
   .world-hero h1,
   .world-philosophy .story h2,

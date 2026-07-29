@@ -7,7 +7,7 @@
   <link rel="icon" href="../assets/identity/rabbit-signature.svg">
   <link rel="stylesheet" href="../css/pages.css">
   <link rel="stylesheet" href="../css/refinements.css">
-  <link rel="stylesheet" href="../css/world-overrides.css?revision=world-hero-exact-alignment-20260729">
+  <link rel="stylesheet" href="../css/world-overrides.css?revision=world-hero-all-sizes-20260729">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -45,26 +45,21 @@
     (() => {
       const heading = document.querySelector(".world-hero h1");
       const subtext = document.querySelector(".world-hero p:not(.eyebrow)");
-      const desktop = window.matchMedia("(min-width: 761px)");
       if (!heading || !subtext) return;
 
       const alignSubtext = () => {
-        if (!desktop.matches) {
-          subtext.style.removeProperty("width");
-          return;
-        }
         const headingStyle = window.getComputedStyle(heading);
         const canvas = document.createElement("canvas");
         const context = canvas.getContext("2d");
         context.font = `${headingStyle.fontStyle} ${headingStyle.fontWeight} ${headingStyle.fontSize} ${headingStyle.fontFamily}`;
         const text = heading.textContent.trim();
         const letterSpacing = parseFloat(headingStyle.letterSpacing) || 0;
-        const headingWidth = context.measureText(text).width + letterSpacing * (text.length - 1);
-        subtext.style.width = `${headingWidth}px`;
+        const naturalHeadingWidth = context.measureText(text).width + letterSpacing * (text.length - 1);
+        const renderedHeadingWidth = heading.getBoundingClientRect().width;
+        subtext.style.width = `${Math.min(naturalHeadingWidth, renderedHeadingWidth)}px`;
       };
 
       window.addEventListener("resize", alignSubtext);
-      desktop.addEventListener("change", alignSubtext);
       document.fonts?.ready.then(alignSubtext);
       alignSubtext();
     })();
