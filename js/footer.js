@@ -70,7 +70,7 @@
     .search-overlay.is-open .search-panel{transform:translateY(0)}
     .search-bar{display:flex;align-items:center;gap:16px;border-bottom:1px solid #111;padding-bottom:14px}
     .search-bar svg{width:22px;height:22px;flex:none}
-    .search-bar input{flex:1;border:0;outline:0;background:none;font:400 clamp(20px,3vw,32px) var(--body,Arial);color:#111}
+    .search-bar input{flex:1;border:0;outline:0;background:none;font:400 clamp(15px,1.4vw,18px) var(--body,Arial);color:#111}
     .search-bar input::placeholder{color:#bbb}
     .search-close{border:0;background:none;font:24px/1 Arial;color:#111;cursor:pointer}
     .search-results{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:22px;margin-top:26px}
