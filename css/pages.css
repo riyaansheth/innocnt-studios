@@ -173,3 +173,5 @@ html body .page-header .page-bag span {
 .eyebrow--titlecase{text-transform:none;letter-spacing:.02em}
 
 .contact-assistance{padding-top:clamp(56px,6vw,96px)}
+
+.order-summary strong{font-weight:500}
