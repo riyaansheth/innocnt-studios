@@ -144,7 +144,7 @@ html body .page-header .page-bag span {
 .reco-block__name{margin:10px 0 2px;font-size:12px;line-height:1.3}
 .reco-block__price{margin:0;color:#777;font-size:12px}
 .field-group{border:0;padding:0;margin:0 0 30px;display:grid;gap:12px}
-.field-group legend{padding:0;margin:0 0 4px;font:700 13px/1 var(--body);letter-spacing:.02em;text-transform:uppercase;color:#1a1a1a}
+.field-group legend{padding:0;margin:0 0 4px;font:500 13px/1 var(--body);letter-spacing:.02em;text-transform:uppercase;color:#1a1a1a}
 @media(max-width:760px){.checkout--shipping{grid-template-columns:1fr}.checkout-side{position:static}}
 
 .reco-block__title{margin:0 0 6px;font-size:14px}

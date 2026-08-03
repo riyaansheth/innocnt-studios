@@ -34,7 +34,7 @@
 .collection-tile{position:relative;aspect-ratio:1/1;overflow:hidden;background:#111;display:block}
 .collection-tile img{width:100%;height:100%;object-fit:cover;object-position:center 28%;transition:transform .8s cubic-bezier(.16,1,.3,1)}
 .collection-tile:hover img,.collection-tile:focus-visible img{transform:scale(1.04)}
-.collection-tile__label{position:absolute;left:clamp(20px,2.5vw,44px);bottom:clamp(20px,2.5vw,44px);color:#fff;font:700 clamp(17px,1.5vw,24px)/1 var(--body);letter-spacing:.04em;text-transform:uppercase}
+.collection-tile__label{position:absolute;left:clamp(20px,2.5vw,44px);bottom:clamp(20px,2.5vw,44px);color:#fff;font:500 clamp(17px,1.5vw,24px)/1 var(--body);letter-spacing:.04em;text-transform:uppercase}
 @media(max-width:760px){.collection-tiles{grid-template-columns:1fr}.collection-tile{aspect-ratio:3/4}}
 
 /* ===== World intro: heading left, body right (no image) ===== */
