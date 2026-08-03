@@ -148,3 +148,14 @@ html body .page-header .page-bag span {
 @media(max-width:760px){.checkout--shipping{grid-template-columns:1fr}.checkout-side{position:static}}
 
 .reco-block__title{margin:0 0 6px;font-size:14px}
+
+/* Checkout form CTAs (Continue to payment, Place order): proper filled buttons,
+   not thin bars. Overrides the global minimal .button style in the form grid. */
+.form-stack .button.dark{
+  width:100%;min-width:0;justify-content:center;
+  padding:17px 20px;border:0;
+  background:#000;color:#fff;
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  transition:background .25s ease;
+}
+.form-stack .button.dark:hover{background:var(--red);color:#fff}
