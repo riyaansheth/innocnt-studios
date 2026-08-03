@@ -324,7 +324,7 @@ cartDrawer.innerHTML = `
       </div>
     </section>
     <section class="cart-drawer__recommendation" aria-label="You may also like">
-      <h3>You may also like</h3>
+      <h3>You May Also Like</h3>
       <div class="cart-drawer__reco-row">
         <article class="cart-drawer__reco">
           <a class="cart-drawer__reco-media" href="/products/broken-visions-tee/"><img src="/assets/images/products/broken-visions-tee-flat.png" alt="Broken Visions Tee"><span class="cart-drawer__reco-add" aria-hidden="true">+</span></a>

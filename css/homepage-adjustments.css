@@ -26,7 +26,7 @@
 .bestsellers .section-heading h2 {
   font-size: clamp(20px, 2vw, 30px);
   line-height: .9;
-  font-weight: 700 !important;
+  font-weight: 500 !important;
   letter-spacing: 0 !important;
   text-transform: none;
 }

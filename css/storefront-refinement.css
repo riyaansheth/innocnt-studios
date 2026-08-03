@@ -22,10 +22,14 @@ h1, h2, h3, .title, .page-hero h1,
 .world-intro__title,
 .collection-title,
 .checkout--shipping h1,
+.collections-section .section-heading h2,
 .collections .section-heading h2,
-.bestsellers .section-heading h2 {
+.bestsellers .section-heading h2,
+.cart-drawer__header h2,
+.cart-drawer__recommendation h3,
+.reco-block__title {
   font-family: var(--body) !important;
-  font-weight: 700 !important;
+  font-weight: 500 !important;
   letter-spacing: 0 !important;
   text-transform: none !important;
 }

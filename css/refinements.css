@@ -27,9 +27,12 @@
 .cart-drawer__item{--cart-item-height:145px;align-items:start}.cart-drawer__image,.cart-drawer__item>div{height:var(--cart-item-height)}.cart-drawer__item>div{display:flex;min-width:0;flex-direction:column}.cart-drawer__product-name{line-height:1.1}.cart-drawer__price{margin-top:6px}.cart-drawer__variant{margin-top:10px}.cart-drawer__controls{margin-top:auto}.cart-drawer__quantity{height:40px}.cart-drawer__quantity button{font-size:22px}.cart-drawer__quantity output{font-size:17px}@media(max-width:640px){.cart-drawer__item{--cart-item-height:125px}.cart-drawer__price{margin-top:5px}.cart-drawer__variant{margin-top:7px}.cart-drawer__controls{margin-top:auto}.cart-drawer__quantity{height:36px}}
 
 /* ===== Collection tiles (home + world): two full-bleed editorial tiles ===== */
+.collections-section{padding:clamp(40px,6vw,88px) 0 0}
+.collections-section .section-heading{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:0 clamp(16px,3vw,40px);margin-bottom:22px}
+.collections-section .section-heading h2{font-size:clamp(24px,2.4vw,34px);line-height:.9;margin:0}
 .collection-tiles{display:grid;grid-template-columns:1fr 1fr;gap:0}
-.collection-tile{position:relative;aspect-ratio:4/5;overflow:hidden;background:#111;display:block}
-.collection-tile img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.collection-tile{position:relative;aspect-ratio:1/1;overflow:hidden;background:#111;display:block}
+.collection-tile img{width:100%;height:100%;object-fit:cover;object-position:center 28%;transition:transform .8s cubic-bezier(.16,1,.3,1)}
 .collection-tile:hover img,.collection-tile:focus-visible img{transform:scale(1.04)}
 .collection-tile__label{position:absolute;left:clamp(20px,2.5vw,44px);bottom:clamp(20px,2.5vw,44px);color:#fff;font:700 clamp(17px,1.5vw,24px)/1 var(--body);letter-spacing:.04em;text-transform:uppercase}
 @media(max-width:760px){.collection-tiles{grid-template-columns:1fr}.collection-tile{aspect-ratio:3/4}}
@@ -37,7 +40,7 @@
 /* ===== World intro: heading left, body right (no image) ===== */
 .world-intro{border-top:1px solid #e5e5e5}
 .world-intro__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:start}
-.world-intro__title{margin:0;font:700 clamp(30px,3.4vw,52px)/1.02 var(--body);letter-spacing:0;text-transform:none}
+.world-intro__title{margin:0;font:500 clamp(30px,3.4vw,52px)/1.02 var(--body);letter-spacing:0;text-transform:none}
 .world-intro__body{display:grid;gap:18px;max-width:460px}
 .world-intro__body p{margin:0;color:#6f6f6f;font-size:15px;line-height:1.55}
 @media(max-width:760px){.world-intro__grid{grid-template-columns:1fr;gap:22px}}

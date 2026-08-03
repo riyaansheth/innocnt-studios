@@ -19,20 +19,20 @@
   align-items: center;
   justify-content: center;
   gap: 30px;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1;
-  letter-spacing: .055em;
-  text-transform: uppercase;
+  letter-spacing: .01em;
+  text-transform: none;
   white-space: nowrap;
 }
 
 .bag-link,
 .page-bag {
   justify-self: end;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1;
-  letter-spacing: .055em;
-  text-transform: uppercase;
+  letter-spacing: .01em;
+  text-transform: none;
 }
 
 /* A rounded editorial bar keeps the primary navigation distinct from the page. */

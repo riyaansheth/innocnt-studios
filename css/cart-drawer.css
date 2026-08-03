@@ -47,7 +47,7 @@
 }
 .cart-drawer__header h2 {
   margin: 0;
-  font: 700 20px/1 var(--body);
+  font: 500 20px/1 var(--body);
   letter-spacing: 0;
   text-transform: none;
 }
@@ -123,10 +123,10 @@
 .cart-drawer__recommendation { padding-block: 22px 8px; border-top: 1px solid #ececec; }
 .cart-drawer__recommendation h3 {
   margin: 0 0 16px;
-  font: 500 11px/1 var(--body);
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: #6f6f6f;
+  font: 500 14px/1.2 var(--body);
+  letter-spacing: 0;
+  text-transform: none;
+  color: #1a1a1a;
 }
 .cart-drawer__reco-row {
   display: grid;

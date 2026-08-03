@@ -66,10 +66,12 @@ html body .site-header:not(.is-on-dark):focus-within .menu-icon::before { backgr
 html body .site-header.is-on-dark .primary-nav a,
 html body .site-header.is-on-dark .bag-link,
 html body .site-header.is-on-dark .bag-link span,
+html body .site-header.is-on-dark .nav-icon,
 html body .site-header.is-on-dark .menu-toggle,
 html body .page-header.is-on-dark .page-nav a,
 html body .page-header.is-on-dark .page-bag,
 html body .page-header.is-on-dark .page-bag span,
+html body .page-header.is-on-dark .nav-icon,
 html body .page-header.is-on-dark .menu { color: #fff !important; }
 
 html body .site-header.is-on-dark .menu-icon,
@@ -78,3 +80,6 @@ html body .site-header.is-on-dark .menu-icon::before { background: #fff; }
 html body .site-header.is-on-dark .brand img,
 html body .page-header.is-on-dark .brand img,
 html body .page-header.is-on-dark > a:first-child img { filter: invert(1); }
+
+/* Nav links in Title Case (links only; the wordmark is the logo image). */
+.primary-nav a, .page-nav a, .bag-link, .page-bag, .nav-icon { text-transform: none !important; letter-spacing: .01em !important; }
