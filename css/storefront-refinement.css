@@ -27,6 +27,7 @@ h1, h2, h3, .title, .page-hero h1,
 .bestsellers .section-heading h2,
 .cart-drawer__header h2,
 .cart-drawer__recommendation h3,
+.bag-item h2,
 .reco-block__title {
   font-family: var(--body) !important;
   font-weight: 500 !important;

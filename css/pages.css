@@ -129,7 +129,7 @@ html body .page-header .page-bag span {
 .checkout--shipping{grid-template-columns:1fr .85fr;gap:clamp(32px,5vw,72px);align-items:start;max-width:1100px}
 .checkout--shipping .checkout-main{order:1}
 .checkout--shipping .checkout-side{order:2}
-.checkout--shipping h1{font:500 clamp(26px,3vw,42px)/1 var(--body)!important;letter-spacing:0!important;text-transform:none!important;margin:6px 0 30px}
+.checkout--shipping h1,.checkout--payment h1{font:500 clamp(26px,3vw,42px)/1 var(--body)!important;letter-spacing:0!important;text-transform:none!important;margin:6px 0 30px}
 .checkout-side{display:grid;gap:26px;position:sticky;top:100px}
 .order-summary__item{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;margin:16px 0 18px}
 .order-summary__item img{width:64px;aspect-ratio:3/4;object-fit:cover;background:#eee}

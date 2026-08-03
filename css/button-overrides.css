@@ -13,8 +13,7 @@
 
 .button-arrow { line-height: 1; }
 
-.cart-drawer__remove,
-.bag-delete {
+.cart-drawer__remove {
   display: grid;
   width: 28px;
   height: 28px;
@@ -22,8 +21,7 @@
   font-size: 0;
 }
 
-.cart-drawer__remove::after,
-.bag-delete::after {
+.cart-drawer__remove::after {
   content: "🗑";
   font-size: 18px;
   line-height: 1;
