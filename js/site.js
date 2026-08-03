@@ -304,46 +304,10 @@ document.querySelectorAll('[data-filter]').forEach((button)=>button.addEventList
 
 document.querySelectorAll('[data-size]').forEach((button)=>button.addEventListener('click',()=>button.parentElement.querySelectorAll('button').forEach((item)=>item.classList.toggle('active',item===button))));
 
-const cartDrawer = document.createElement('aside');
-cartDrawer.className = 'cart-drawer';
-cartDrawer.hidden = true;
-cartDrawer.setAttribute('aria-label', 'Shopping bag');
-cartDrawer.innerHTML = `
-  <button class="cart-drawer__backdrop" type="button" aria-label="Close bag"></button>
-  <div class="cart-drawer__panel" role="dialog" aria-modal="true" aria-labelledby="cart-drawer-title">
-    <header class="cart-drawer__header"><h2 id="cart-drawer-title">Cart <span data-cart-title-count>(1)</span></h2><button class="cart-drawer__close" type="button" aria-label="Close bag">×</button></header>
-    <section class="cart-drawer__item" aria-label="God’s Child Hoodie in bag">
-      <img class="cart-drawer__image" src="/assets/images/gods-child-hoodie-innocnt-red.webp" alt="God’s Child Hoodie">
-      <div class="cart-drawer__item-body">
-        <p class="cart-drawer__product-name">God’s Child Hoodie</p>
-        <p class="cart-drawer__variant">M</p>
-        <div class="cart-drawer__controls">
-          <div class="cart-drawer__quantity"><button type="button" data-cart-quantity="decrease" aria-label="Decrease quantity">−</button><output data-cart-count>1</output><button type="button" data-cart-quantity="increase" aria-label="Increase quantity">+</button></div>
-          <button class="cart-drawer__remove" type="button" aria-label="Remove God’s Child Hoodie">Remove</button>
-        </div>
-      </div>
-    </section>
-    <section class="cart-drawer__recommendation" aria-label="You may also like">
-      <h3>You May Also Like</h3>
-      <div class="cart-drawer__reco-row">
-        <article class="cart-drawer__reco">
-          <a class="cart-drawer__reco-media" href="/products/broken-visions-tee/"><img src="/assets/images/products/broken-visions-tee-flat.webp" alt="Broken Visions Tee"><span class="cart-drawer__reco-add" aria-hidden="true">+</span></a>
-          <p class="cart-drawer__reco-name">Broken Visions Tee</p>
-          <p class="cart-drawer__reco-price">₹4,200</p>
-        </article>
-        <article class="cart-drawer__reco">
-          <a class="cart-drawer__reco-media" href="/products/child-hoodie/"><img src="/assets/images/products/child-hoodie-flat.webp" alt="Child Hoodie"><span class="cart-drawer__reco-add" aria-hidden="true">+</span></a>
-          <p class="cart-drawer__reco-name">Child Hoodie</p>
-          <p class="cart-drawer__reco-price">₹8,700</p>
-        </article>
-      </div>
-    </section>
-    <footer class="cart-drawer__footer">
-      <div class="cart-drawer__subtotal"><span>Subtotal</span><span>₹<span data-cart-total>8,500</span></span></div>
-      <a class="cart-drawer__checkout" href="/checkout/shipping/">Checkout <span aria-hidden="true" style="margin-left:8px">&#8599;</span></a>
-    </footer>
-  </div>`;
-document.body.append(cartDrawer);
+// The cart drawer lives in one shared module loaded on every page (js/cart-drawer.js).
+const cartDrawerScript = document.createElement('script');
+cartDrawerScript.src = '/js/cart-drawer.js';
+document.body.append(cartDrawerScript);
 
 document.querySelectorAll('.button, .contact-form button').forEach((button) => {
   if (/[↗↘→]/.test(button.textContent)) return;
@@ -353,40 +317,6 @@ document.querySelectorAll('.button, .contact-form button').forEach((button) => {
   arrow.textContent = '↗';
   button.append(arrow);
 });
-
-let lastFocusedElement;
-const updateCartTotal = (quantity) => {
-  cartDrawer.querySelector('[data-cart-count]').textContent = quantity;
-  cartDrawer.querySelector('[data-cart-total]').textContent = (8500 * quantity).toLocaleString('en-IN');
-  cartDrawer.querySelector('[data-cart-title-count]').textContent = `(${quantity})`;
-};
-const setBagCount = (quantity) => document.querySelectorAll('.bag-link span, .page-bag span').forEach((count) => { count.textContent = `(${quantity})`; });
-const closeCart = () => {
-  cartDrawer.classList.remove('is-open');
-  document.body.classList.remove('cart-open');
-  window.setTimeout(() => { cartDrawer.hidden = true; lastFocusedElement?.focus(); }, 500);
-};
-const openCart = (trigger) => {
-  lastFocusedElement = trigger;
-  cartDrawer.hidden = false;
-  setBagCount(1);
-  requestAnimationFrame(() => cartDrawer.classList.add('is-open'));
-  document.body.classList.add('cart-open');
-  cartDrawer.querySelector('.cart-drawer__close').focus();
-};
-cartDrawer.querySelectorAll('.cart-drawer__close, .cart-drawer__backdrop').forEach((button) => button.addEventListener('click', closeCart));
-cartDrawer.addEventListener('click', (event) => {
-  const change = event.target.closest('[data-cart-quantity]');
-  if (!change) return;
-  const current = Number(cartDrawer.querySelector('[data-cart-count]').textContent);
-  updateCartTotal(Math.max(1, current + (change.dataset.cartQuantity === 'increase' ? 1 : -1)));
-});
-document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !cartDrawer.hidden) closeCart(); });
-document.querySelectorAll('a.button.dark').forEach((link) => {
-  if (!/add to bag/i.test(link.textContent)) return;
-  link.addEventListener('click', (event) => { event.preventDefault(); openCart(link); });
-});
-document.querySelectorAll('.bag-link, .page-bag').forEach((link) => link.addEventListener('click', (event) => { event.preventDefault(); openCart(link); }));
 
 document.querySelectorAll('[data-demo-form]').forEach((form)=>form.addEventListener('submit',(event)=>{event.preventDefault();const message=form.querySelector('[data-message]');message.textContent=form.dataset.demoForm==='contact'?'Message received. We will get back to you.':form.dataset.demoForm==='shipping'?'Shipping details saved. Continue to payment.':form.dataset.demoForm==='payment'?'Payment accepted. Your order is confirmed.':'Your try-on is ready to preview.';}));
 
