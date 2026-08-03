@@ -171,3 +171,5 @@ html body .page-header .page-bag span {
 .confirmation .button:hover{background:var(--red);color:#fff}
 
 .eyebrow--titlecase{text-transform:none;letter-spacing:.02em}
+
+.contact-assistance{padding-top:clamp(56px,6vw,96px)}
