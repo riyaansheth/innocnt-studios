@@ -35,7 +35,7 @@
 }
 
 .newsletter h2 {
-  font: 500 clamp(38px, 4vw, 64px)/.95 var(--body);
+  font: 500 clamp(36px, 4vw, 62px)/.95 var(--body);
   letter-spacing: .1em;
   text-transform: uppercase;
 }

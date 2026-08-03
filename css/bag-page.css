@@ -33,7 +33,7 @@
 @media (max-width: 760px) {
   .bag-page .section { padding: 34px 16px 56px; }
   .bag-page .section-head { align-items: flex-start; margin-bottom: 26px; }
-  .bag-page .section-head .title { font-size: clamp(62px, 18vw, 90px); }
+  .bag-page .section-head .title { font-size: clamp(60px, 18vw, 88px); }
   .bag-page .checkout { grid-template-columns: 1fr; gap: 30px; }
   .bag-page .checkout > div:first-child img { height: auto; }
 }

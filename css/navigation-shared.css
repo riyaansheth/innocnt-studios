@@ -9,7 +9,7 @@
 
 .brand img,
 .page-header > a:first-child img {
-  width: 114px;
+  width: 145px;
   height: auto;
 }
 
@@ -181,7 +181,7 @@ html body .site-header .primary-nav a,
 html body .site-header .bag-link,
 html body .site-header .bag-link span {
   color: #111;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /* The campaign image begins at the viewport edge; the transparent nav layers over it. */
@@ -243,7 +243,7 @@ body .hero-image {
   cursor: pointer;
   line-height: 0;
 }
-.nav-icon svg { width: 19px; height: 19px; }
+.nav-icon svg { width: 22px; height: 22px; }
 .bag-link.nav-icon,
 .page-bag.nav-icon {
   display: inline-flex;

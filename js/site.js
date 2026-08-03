@@ -340,7 +340,7 @@ cartDrawer.innerHTML = `
     </section>
     <footer class="cart-drawer__footer">
       <div class="cart-drawer__subtotal"><span>Subtotal</span><span>₹<span data-cart-total>8,500</span></span></div>
-      <a class="cart-drawer__checkout" href="/checkout/shipping/">Checkout</a>
+      <a class="cart-drawer__checkout" href="/checkout/shipping/">Checkout <span aria-hidden="true" style="margin-left:8px">&#8599;</span></a>
     </footer>
   </div>`;
 document.body.append(cartDrawer);

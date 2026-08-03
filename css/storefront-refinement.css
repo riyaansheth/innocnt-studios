@@ -104,7 +104,7 @@ body .page-header.is-on-dark > a:first-child img { filter: none; }
 
 .primary-nav, .page-nav { gap: 22px; }
 .primary-nav a, .page-nav a, .bag-link, .page-bag {
-  font-size: 10px;
+  font-size: 14px;
   letter-spacing: .08em;
 }
 
@@ -152,7 +152,7 @@ body .page-header.is-on-dark > a:first-child img { filter: none; }
 .product-layout { grid-template-columns: minmax(0, 1.42fr) minmax(310px, .58fr); gap: 0; }
 .gallery { gap: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .product-details { top: 86px; padding: 34px clamp(24px, 3vw, 52px); }
-.product-details h1 { font-size: clamp(30px, 3.1vw, 52px); line-height: .94; letter-spacing: -.04em; }
+.product-details h1 { font-size: clamp(28px, 3.1vw, 50px); line-height: .94; letter-spacing: -.04em; }
 .product-details .price { margin-bottom: 26px; }
 .product-details .eyebrow::before, .eyebrow::before { display: none; }
 .product-details .eyebrow { font-size: 10px; letter-spacing: .08em; }
