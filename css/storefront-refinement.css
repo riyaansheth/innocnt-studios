@@ -177,3 +177,6 @@ body .page-header.is-on-dark > a:first-child img { filter: none; }
   .product-details { padding: 28px 16px; }
   .filter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 64px; }
 }
+
+/* Client directive: every heading, every page, renders Medium (weight 500). */
+h1, h2, h3 { font-weight: 500 !important; }
