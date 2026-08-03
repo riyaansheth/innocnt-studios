@@ -14,25 +14,19 @@
   .page-nav--left {
     grid-column: 1;
     grid-row: 1;
-    justify-self: end;
-    margin-right: 64px;
+    justify-self: start;
+    margin-right: 0;
   }
 
   .primary-nav--right,
   .page-nav--right {
     display: flex;
+    align-items: center;
+    gap: 18px;
     grid-column: 3;
     grid-row: 1;
-    justify-self: start;
-    margin-left: 64px;
-  }
-
-  .bag-link,
-  .page-bag {
-    grid-column: 3;
-    grid-row: 1;
-    justify-self: start;
-    margin-left: 155px;
+    justify-self: end;
+    margin-left: 0;
   }
 }
 

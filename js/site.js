@@ -181,8 +181,8 @@ document.querySelectorAll('.page-header').forEach((header) => {
   sharedNav.dataset.nav = '';
   sharedNav.setAttribute('aria-label', 'Primary navigation');
   [
-    ['/world/', 'An Innocnt World'],
-    ['/collections/', 'Collections'],
+    ['/world/', 'About'],
+    ['/collections/', 'Shop'],
   ].forEach(([href, label]) => {
     const link = document.createElement('a');
     link.href = href;
@@ -202,11 +202,20 @@ document.querySelectorAll('.page-header').forEach((header) => {
   if (window.location.pathname === '/contact/') contactLink.setAttribute('aria-current', 'page');
   secondaryNav.append(contactLink);
 
+  const searchButton = document.createElement('button');
+  searchButton.type = 'button';
+  searchButton.className = 'nav-icon';
+  searchButton.setAttribute('aria-label', 'Search');
+  searchButton.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>';
+  secondaryNav.append(searchButton);
+
   const bag = existingBag || document.createElement('a');
-  bag.className = 'page-bag';
+  bag.className = 'page-bag nav-icon';
   if (!bag.getAttribute('href')) bag.href = '/bag/';
-  if (!bag.textContent.trim()) bag.innerHTML = 'Bag <span>(0)</span>';
-  header.replaceChildren(brand, menuButton, sharedNav, secondaryNav, bag);
+  bag.setAttribute('aria-label', 'Shopping bag');
+  bag.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="bag-count">(0)</span>';
+  secondaryNav.append(bag);
+  header.replaceChildren(brand, menuButton, sharedNav, secondaryNav);
 });
 
 if (window.location.pathname.startsWith('/bag')) {
@@ -229,8 +238,8 @@ if (nav) {
   );
 
   const navItems = [
-    findNavLink('world/', 'An Innocnt World'),
-    findNavLink('collections/', 'Collections'),
+    findNavLink('world/', 'About'),
+    findNavLink('collections/', 'Shop'),
   ].filter(Boolean);
 
   // Each page contains legacy navigation markup. Replace it with the one
@@ -302,16 +311,41 @@ cartDrawer.setAttribute('aria-label', 'Shopping bag');
 cartDrawer.innerHTML = `
   <button class="cart-drawer__backdrop" type="button" aria-label="Close bag"></button>
   <div class="cart-drawer__panel" role="dialog" aria-modal="true" aria-labelledby="cart-drawer-title">
-    <header class="cart-drawer__header"><h2 id="cart-drawer-title">Cart</h2><button class="cart-drawer__close" type="button" aria-label="Close bag">×</button></header>
+    <header class="cart-drawer__header"><h2 id="cart-drawer-title">Cart <span data-cart-title-count>(1)</span></h2><button class="cart-drawer__close" type="button" aria-label="Close bag">×</button></header>
     <section class="cart-drawer__item" aria-label="God’s Child Hoodie in bag">
       <img class="cart-drawer__image" src="/assets/images/gods-child-hoodie-innocnt-red.png" alt="God’s Child Hoodie">
-      <div><p class="cart-drawer__product-name">God’s Child Hoodie</p><p class="cart-drawer__price">₹8,500</p><p class="cart-drawer__variant">Washed black · M</p><div class="cart-drawer__controls"><div class="cart-drawer__quantity"><button type="button" data-cart-quantity="decrease" aria-label="Decrease quantity">−</button><output data-cart-count>1</output><button type="button" data-cart-quantity="increase" aria-label="Increase quantity">+</button></div><button class="cart-drawer__remove" type="button" aria-label="Remove God’s Child Hoodie">⌫</button></div></div>
+      <div class="cart-drawer__item-body">
+        <p class="cart-drawer__product-name">God’s Child Hoodie</p>
+        <p class="cart-drawer__variant">M</p>
+        <div class="cart-drawer__controls">
+          <div class="cart-drawer__quantity"><button type="button" data-cart-quantity="decrease" aria-label="Decrease quantity">−</button><output data-cart-count>1</output><button type="button" data-cart-quantity="increase" aria-label="Increase quantity">+</button></div>
+          <button class="cart-drawer__remove" type="button" aria-label="Remove God’s Child Hoodie">Remove</button>
+        </div>
+      </div>
     </section>
-    <footer class="cart-drawer__footer"><p class="cart-drawer__note">Add order note</p><p class="cart-drawer__shipping-note">Taxes and shipping calculated at checkout</p><input class="cart-drawer__discount" type="text" placeholder="Discount code" aria-label="Discount code"><a class="cart-drawer__checkout" href="/checkout/shipping/">Checkout · ₹<span data-cart-total>8,500</span></a></footer>
+    <section class="cart-drawer__recommendation" aria-label="You may also like">
+      <h3>You may also like</h3>
+      <div class="cart-drawer__reco-row">
+        <article class="cart-drawer__reco">
+          <a class="cart-drawer__reco-media" href="/products/broken-visions-tee/"><img src="/assets/images/products/broken-visions-tee-flat.png" alt="Broken Visions Tee"><span class="cart-drawer__reco-add" aria-hidden="true">+</span></a>
+          <p class="cart-drawer__reco-name">Broken Visions Tee</p>
+          <p class="cart-drawer__reco-price">₹4,200</p>
+        </article>
+        <article class="cart-drawer__reco">
+          <a class="cart-drawer__reco-media" href="/products/child-hoodie/"><img src="/assets/images/products/child-hoodie-flat.png" alt="Child Hoodie"><span class="cart-drawer__reco-add" aria-hidden="true">+</span></a>
+          <p class="cart-drawer__reco-name">Child Hoodie</p>
+          <p class="cart-drawer__reco-price">₹8,700</p>
+        </article>
+      </div>
+    </section>
+    <footer class="cart-drawer__footer">
+      <div class="cart-drawer__subtotal"><span>Subtotal</span><span>₹<span data-cart-total>8,500</span></span></div>
+      <a class="cart-drawer__checkout" href="/checkout/shipping/">Checkout</a>
+    </footer>
   </div>`;
 document.body.append(cartDrawer);
 
-document.querySelectorAll('.button, .cart-drawer__checkout, .contact-form button').forEach((button) => {
+document.querySelectorAll('.button, .contact-form button').forEach((button) => {
   if (/[↗↘→]/.test(button.textContent)) return;
   const arrow = document.createElement('span');
   arrow.className = 'button-arrow';
@@ -324,6 +358,7 @@ let lastFocusedElement;
 const updateCartTotal = (quantity) => {
   cartDrawer.querySelector('[data-cart-count]').textContent = quantity;
   cartDrawer.querySelector('[data-cart-total]').textContent = (8500 * quantity).toLocaleString('en-IN');
+  cartDrawer.querySelector('[data-cart-title-count]').textContent = `(${quantity})`;
 };
 const setBagCount = (quantity) => document.querySelectorAll('.bag-link span, .page-bag span').forEach((count) => { count.textContent = `(${quantity})`; });
 const closeCart = () => {

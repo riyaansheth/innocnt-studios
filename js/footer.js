@@ -6,48 +6,32 @@
 
   const root = new URL('/', window.location.href).href;
   const toRoot = (path) => new URL(path, root).href;
-  const existing = document.querySelector('.site-footer, footer.footer');
+  const existing = document.querySelector('.site-footer, footer.footer, .editorial-footer');
   const footer = existing || document.body.appendChild(document.createElement('footer'));
   footer.className = 'editorial-footer';
   footer.id = 'footer';
   footer.innerHTML = `
     <div class="footer-grid">
-      <section class="footer-about">
+      <div class="footer-brand">
         <img class="footer-signature" src="${toRoot('assets/identity/rabbit-black.svg')}" alt="INNOCNT rabbit mark">
-        <p class="footer-kicker">About INNOCNT</p>
-        <p>Made for the tender.<br>Built for the strange.</p>
-      </section>
-      <nav class="footer-nav" aria-label="Shop footer navigation">
-        <p class="footer-kicker">Shop</p>
-        <a href="${toRoot('collections/')}">Collections</a>
-        <a href="${toRoot('collections/')}">T-shirts</a>
-        <a href="${toRoot('collections/')}">Hoodies</a>
-      </nav>
-      <nav class="footer-nav" aria-label="Information footer navigation">
+      </div>
+      <nav class="footer-col" aria-label="Information">
         <p class="footer-kicker">Information</p>
-        <a href="${toRoot('world/')}">Our world</a>
+        <a href="${toRoot('world/')}">About Us</a>
+        <a href="${toRoot('contact/')}">Shipping &amp; Returns</a>
+        <a href="${toRoot('contact/')}">Customer Care</a>
         <a href="${toRoot('contact/')}">Contact</a>
-        <a href="${toRoot('bag/')}">Shipping &amp; returns</a>
-        <a href="${toRoot('contact/')}">Customer care</a>
       </nav>
-      <section>
-        <p class="footer-kicker">Newsletter</p>
-        <p class="footer-copy">A note when something new arrives. No noise, no filler.</p>
-        <form class="footer-subscribe" data-footer-subscribe novalidate>
-          <input name="email" type="email" autocomplete="email" placeholder="E-mail" aria-label="Email address" required>
-          <button type="submit">Subscribe</button>
-          <p class="footer-message" aria-live="polite"></p>
-        </form>
-        <nav class="footer-social" aria-label="Social links">
-          <a href="#footer" aria-label="Instagram"><img src="${toRoot('assets/icons/instagram.svg')}" alt=""></a>
-          <a href="#footer" aria-label="WhatsApp"><img src="${toRoot('assets/icons/whatsapp.svg')}" alt=""></a>
-          <a href="#footer" aria-label="TikTok"><img src="${toRoot('assets/icons/tiktok.svg')}" alt=""></a>
-        </nav>
-      </section>
+      <nav class="footer-col" aria-label="Socials">
+        <p class="footer-kicker">Socials</p>
+        <a href="#footer">Instagram</a>
+        <a href="#footer">Whatsapp</a>
+        <a href="#footer">Youtube</a>
+        <a href="#footer">X</a>
+      </nav>
     </div>
     <div class="footer-meta">
-      <p class="footer-location">Mumbai, India / INR</p>
-      <img class="footer-mark" src="${toRoot('assets/identity/wordmark.svg')}" alt="INNOCNT">
+      <p class="footer-copyright">©INNOCNT CLOTHING LIMITED</p>
       <div class="footer-payment" aria-label="Accepted payment methods">
         <img class="payment-icon payment-icon--visa" src="${toRoot('assets/icons/visa.svg')}" alt="Visa">
         <img class="payment-icon payment-icon--mastercard" src="${toRoot('assets/icons/mastercard.svg')}" alt="Mastercard">
@@ -55,13 +39,4 @@
         <img class="payment-icon payment-icon--amex" src="${toRoot('assets/icons/americanexpress.svg')}" alt="American Express">
       </div>
     </div>`;
-
-  footer.querySelector('[data-footer-subscribe]')?.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const message = form.querySelector('.footer-message');
-    if (!form.email.validity.valid) { message.textContent = 'Use a valid email address.'; form.email.focus(); return; }
-    message.textContent = 'You are on the list.';
-    form.reset();
-  });
 })();

@@ -26,7 +26,9 @@
 .bestsellers .section-heading h2 {
   font-size: clamp(20px, 2vw, 30px);
   line-height: .9;
-  text-transform: uppercase;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  text-transform: none;
 }
 
 /* Collection actions are deliberately reduced to copy and a direction cue. */
@@ -83,3 +85,5 @@
 .collections .text-link:focus-visible {
   color: #c50100;
 }
+
+/* Collection tiles live in refinements.css (loaded on home + world). */
