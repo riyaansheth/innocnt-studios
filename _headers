@@ -1,2 +1,9 @@
 /*
   Cache-Control: no-store, max-age=0, must-revalidate
+
+/assets/images/*
+  Cache-Control: public, max-age=604800
+/models/*
+  Cache-Control: public, max-age=604800
+/assets/fonts/*
+  Cache-Control: public, max-age=2592000, immutable

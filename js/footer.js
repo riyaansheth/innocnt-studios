@@ -49,14 +49,14 @@
   const root = new URL('/', window.location.href).href;
   const to = (p) => new URL(p, root).href;
   const PRODUCTS = [
-    { n: "God's Child Hoodie",  u: 'products/gods-child-hoodie/',  p: '₹8,500', i: 'assets/images/products/gods-child-hoodie-flat.png' },
-    { n: 'Broken Visions Tee',  u: 'products/broken-visions-tee/', p: '₹4,200', i: 'assets/images/products/broken-visions-tee-flat.png' },
-    { n: 'Black Tracks',        u: 'products/black-tracks/',       p: '₹6,800', i: 'assets/images/products/black-tracks-flat.png' },
-    { n: 'Battery Long Sleeve', u: 'products/battery-long-sleeve/',p: '₹5,400', i: 'assets/images/products/battery-long-sleeve-flat.png' },
-    { n: 'Washed Tracks',       u: 'products/washed-tracks/',      p: '₹6,800', i: 'assets/images/products/washed-tracks-flat.png' },
-    { n: 'Tiremark Tracks',     u: 'products/tiremark-tracks/',    p: '₹7,200', i: 'assets/images/products/tiremark-tracks-flat.png' },
-    { n: 'Child Hoodie',        u: 'products/child-hoodie/',       p: '₹8,700', i: 'assets/images/products/child-hoodie-flat.png' },
-    { n: 'Too Innocnt Tee',     u: 'products/too-innocnt-tee/',    p: '₹4,400', i: 'assets/images/products/too-innocnt-tee-flat.jpg' },
+    { n: "God's Child Hoodie",  u: 'products/gods-child-hoodie/',  p: '₹8,500', i: 'assets/images/products/gods-child-hoodie-flat.webp' },
+    { n: 'Broken Visions Tee',  u: 'products/broken-visions-tee/', p: '₹4,200', i: 'assets/images/products/broken-visions-tee-flat.webp' },
+    { n: 'Black Tracks',        u: 'products/black-tracks/',       p: '₹6,800', i: 'assets/images/products/black-tracks-flat.webp' },
+    { n: 'Battery Long Sleeve', u: 'products/battery-long-sleeve/',p: '₹5,400', i: 'assets/images/products/battery-long-sleeve-flat.webp' },
+    { n: 'Washed Tracks',       u: 'products/washed-tracks/',      p: '₹6,800', i: 'assets/images/products/washed-tracks-flat.webp' },
+    { n: 'Tiremark Tracks',     u: 'products/tiremark-tracks/',    p: '₹7,200', i: 'assets/images/products/tiremark-tracks-flat.webp' },
+    { n: 'Child Hoodie',        u: 'products/child-hoodie/',       p: '₹8,700', i: 'assets/images/products/child-hoodie-flat.webp' },
+    { n: 'Too Innocnt Tee',     u: 'products/too-innocnt-tee/',    p: '₹4,400', i: 'assets/images/products/too-innocnt-tee-flat.webp' },
   ];
 
   const style = document.createElement('style');

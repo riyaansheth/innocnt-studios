@@ -18,14 +18,14 @@
 .filter-grid .product:focus-visible .product-visual::after { opacity: 1; transform: scale(1); }
 .filter-grid .product:focus-visible { outline: 2px solid var(--red); outline-offset: 4px; }
 
-.filter-grid .product:nth-child(1) .product-visual::after { background-image: url("../assets/images/products/gods-child-hoodie-flat.png"); }
-.filter-grid .product:nth-child(2) .product-visual::after { background-image: url("../assets/images/products/broken-visions-tee-flat.png"); }
-.filter-grid .product:nth-child(3) .product-visual::after { background-image: url("../assets/images/products/washed-tracks-flat.png"); }
-.filter-grid .product:nth-child(4) .product-visual::after { background-image: url("../assets/images/products/tiremark-tracks-flat.png"); }
-.filter-grid .product:nth-child(5) .product-visual::after { background-image: url("../assets/images/products/battery-long-sleeve-flat.png"); }
-.filter-grid .product:nth-child(6) .product-visual::after { background-image: url("../assets/images/products/child-hoodie-flat.png"); }
-.filter-grid .product:nth-child(7) .product-visual::after { background-image: url("../assets/images/products/too-innocnt-tee-flat.jpg"); }
-.filter-grid .product:nth-child(8) .product-visual::after { background-image: url("../assets/images/products/black-tracks-flat.png"); }
+.filter-grid .product:nth-child(1) .product-visual::after { background-image: url("../assets/images/products/gods-child-hoodie-flat.webp"); }
+.filter-grid .product:nth-child(2) .product-visual::after { background-image: url("../assets/images/products/broken-visions-tee-flat.webp"); }
+.filter-grid .product:nth-child(3) .product-visual::after { background-image: url("../assets/images/products/washed-tracks-flat.webp"); }
+.filter-grid .product:nth-child(4) .product-visual::after { background-image: url("../assets/images/products/tiremark-tracks-flat.webp"); }
+.filter-grid .product:nth-child(5) .product-visual::after { background-image: url("../assets/images/products/battery-long-sleeve-flat.webp"); }
+.filter-grid .product:nth-child(6) .product-visual::after { background-image: url("../assets/images/products/child-hoodie-flat.webp"); }
+.filter-grid .product:nth-child(7) .product-visual::after { background-image: url("../assets/images/products/too-innocnt-tee-flat.webp"); }
+.filter-grid .product:nth-child(8) .product-visual::after { background-image: url("../assets/images/products/black-tracks-flat.webp"); }
 
 .filter-grid .product:nth-child(3) .product-visual::after,
 .filter-grid .product:nth-child(4) .product-visual::after,

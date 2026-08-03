@@ -17,12 +17,12 @@
 }
 
 .collection-card--featured .collection-card__visual {
-  background-image: url("../assets/images/gods-child-hoodie-innocnt-red.png");
+  background-image: url("../assets/images/gods-child-hoodie-innocnt-red.webp");
   transform-origin: 60% 43%;
 }
 
 .collection-card--archive .collection-card__visual {
-  background-image: url("../models/ref3-broken-visions-tee-cap-tracks.png");
+  background-image: url("../models/ref3-broken-visions-tee-cap-tracks.webp");
   transform-origin: 52% 37%;
 }
 

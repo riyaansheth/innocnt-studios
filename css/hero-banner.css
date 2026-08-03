@@ -9,19 +9,19 @@
 /* Reveal a category-specific red campaign image whenever a category is explored. */
 .category-card--hoodies:hover,
 .category-card--hoodies:focus-visible {
-  background-image: url("../assets/images/gods-child-hoodie-innocnt-red.png") !important;
+  background-image: url("../assets/images/gods-child-hoodie-innocnt-red.webp") !important;
 }
 .category-card--tees:hover,
 .category-card--tees:focus-visible {
-  background-image: url("../assets/images/category-tshirts-red.png") !important;
+  background-image: url("../assets/images/category-tshirts-red.webp") !important;
 }
 .category-card--tops:hover,
 .category-card--tops:focus-visible {
-  background-image: url("../assets/images/category-long-sleeves-red.png") !important;
+  background-image: url("../assets/images/category-long-sleeves-red.webp") !important;
 }
 .category-card--bottoms:hover,
 .category-card--bottoms:focus-visible {
-  background-image: url("../assets/images/category-tracks-red.png") !important;
+  background-image: url("../assets/images/category-tracks-red.webp") !important;
 }
 .category-card:hover,
 .category-card:focus-visible { background-position: center; }
@@ -30,7 +30,7 @@
 .category-grid:has(.category-card--tees:is(:hover, :focus-visible)) .category-card--hoodies,
 .category-grid:has(.category-card--tops:is(:hover, :focus-visible)) .category-card--hoodies,
 .category-grid:has(.category-card--bottoms:is(:hover, :focus-visible)) .category-card--hoodies {
-  background-image: url("../assets/images/category-hoodies-black.png") !important;
+  background-image: url("../assets/images/category-hoodies-black.webp") !important;
   background-position: center;
 }
 

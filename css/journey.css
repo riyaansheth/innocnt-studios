@@ -46,7 +46,7 @@
 .category-card { transition: color .35s ease; }
 .category-card--tees { background-position: 50% 31%; }
 .category-card--tops { background-position: 50% 28%; }
-.category-card--bottoms { background-image: url("../assets/images/products/washed-tracks-on-model.png"); background-position: 50% 52%; }
+.category-card--bottoms { background-image: url("../assets/images/products/washed-tracks-on-model.webp"); background-position: 50% 52%; }
 .category-card::before {
   z-index: 0;
   background: linear-gradient(180deg, rgba(0, 0, 0, .62) 0%, rgba(0, 0, 0, .22) 38%, transparent 68%);

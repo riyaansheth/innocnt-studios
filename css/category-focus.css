@@ -24,15 +24,15 @@
 
 /* Original campaign photography for the category cards. */
 .category-card--hoodies {
-  background-image: url("../assets/images/gods-child-hoodie-innocnt-red.png");
+  background-image: url("../assets/images/gods-child-hoodie-innocnt-red.webp");
 }
 
 .category-card--tees {
-  background-image: url("../assets/images/t-shirts-category.png");
+  background-image: url("../assets/images/t-shirts-category.webp");
   background-position: center 22%;
 }
 
 .category-card--tops {
-  background-image: url("../assets/images/long-sleeves-category-v2.png");
+  background-image: url("../assets/images/long-sleeves-category-v2.webp");
   background-position: center 18%;
 }

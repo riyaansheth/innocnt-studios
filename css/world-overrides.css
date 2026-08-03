@@ -1,6 +1,6 @@
 /* The brand's signature rabbit must retain its supplied red-and-black colourway. */
 .world {
-  background: var(--black) url("../assets/images/campaign-duo-banner.png") center / cover no-repeat;
+  background: var(--black) url("../assets/images/campaign-duo-banner.webp") center / cover no-repeat;
   color: var(--white);
 }
 

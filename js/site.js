@@ -140,8 +140,8 @@ if (!reduceMotion) {
 }
 
 // Keep every use of the God’s Child campaign shot on the red studio backdrop.
-const redHoodieImage = '/assets/images/gods-child-hoodie-innocnt-red.png';
-document.querySelectorAll('img[src*="ref4-gods-child-hoodie.png"]').forEach((image) => {
+const redHoodieImage = '/assets/images/gods-child-hoodie-innocnt-red.webp';
+document.querySelectorAll('img[src*="ref4-gods-child-hoodie.webp"]').forEach((image) => {
   image.src = redHoodieImage;
 });
 
@@ -313,7 +313,7 @@ cartDrawer.innerHTML = `
   <div class="cart-drawer__panel" role="dialog" aria-modal="true" aria-labelledby="cart-drawer-title">
     <header class="cart-drawer__header"><h2 id="cart-drawer-title">Cart <span data-cart-title-count>(1)</span></h2><button class="cart-drawer__close" type="button" aria-label="Close bag">×</button></header>
     <section class="cart-drawer__item" aria-label="God’s Child Hoodie in bag">
-      <img class="cart-drawer__image" src="/assets/images/gods-child-hoodie-innocnt-red.png" alt="God’s Child Hoodie">
+      <img class="cart-drawer__image" src="/assets/images/gods-child-hoodie-innocnt-red.webp" alt="God’s Child Hoodie">
       <div class="cart-drawer__item-body">
         <p class="cart-drawer__product-name">God’s Child Hoodie</p>
         <p class="cart-drawer__variant">M</p>
@@ -327,12 +327,12 @@ cartDrawer.innerHTML = `
       <h3>You May Also Like</h3>
       <div class="cart-drawer__reco-row">
         <article class="cart-drawer__reco">
-          <a class="cart-drawer__reco-media" href="/products/broken-visions-tee/"><img src="/assets/images/products/broken-visions-tee-flat.png" alt="Broken Visions Tee"><span class="cart-drawer__reco-add" aria-hidden="true">+</span></a>
+          <a class="cart-drawer__reco-media" href="/products/broken-visions-tee/"><img src="/assets/images/products/broken-visions-tee-flat.webp" alt="Broken Visions Tee"><span class="cart-drawer__reco-add" aria-hidden="true">+</span></a>
           <p class="cart-drawer__reco-name">Broken Visions Tee</p>
           <p class="cart-drawer__reco-price">₹4,200</p>
         </article>
         <article class="cart-drawer__reco">
-          <a class="cart-drawer__reco-media" href="/products/child-hoodie/"><img src="/assets/images/products/child-hoodie-flat.png" alt="Child Hoodie"><span class="cart-drawer__reco-add" aria-hidden="true">+</span></a>
+          <a class="cart-drawer__reco-media" href="/products/child-hoodie/"><img src="/assets/images/products/child-hoodie-flat.webp" alt="Child Hoodie"><span class="cart-drawer__reco-add" aria-hidden="true">+</span></a>
           <p class="cart-drawer__reco-name">Child Hoodie</p>
           <p class="cart-drawer__reco-price">₹8,700</p>
         </article>
