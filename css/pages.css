@@ -159,3 +159,5 @@ html body .page-header .page-bag span {
   transition:background .25s ease;
 }
 .form-stack .button.dark:hover{background:var(--red);color:#fff}
+
+.checkout-main .eyebrow{text-transform:none;letter-spacing:.02em}
