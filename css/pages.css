@@ -200,7 +200,8 @@ html body .page-header .page-bag span {
 .pdp-suggest { padding: 48px 0 8px; margin: 0; border-top: 0; }
 .pdp-suggest .section-head { display: block; margin: 0 0 22px; padding: 0 40px; }
 .pdp-suggest .section-head h2 { font: 500 15px/1.1 var(--body) !important; letter-spacing: .06em !important; text-transform: uppercase !important; white-space: nowrap !important; margin: 0; }
-.pdp-suggest .cards { display: flex; grid-template-columns: none; gap: 2px; overflow-x: auto; }
+.pdp-suggest .cards { display: flex; grid-template-columns: none; gap: 2px; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
+.pdp-suggest .cards::-webkit-scrollbar { display: none; }
 .pdp-suggest .product { flex: 0 0 22.5%; }
 .pdp-suggest .product-visual { height: auto; aspect-ratio: 4 / 5; background: #f1f1f1; position: relative; }
 .pdp-suggest .product-visual img { width: 100%; height: 100%; object-fit: cover; }
