@@ -131,7 +131,24 @@ body .page-header.is-on-dark > a:first-child img { filter: none; }
 }
 
 /* Catalogue is edge-to-edge, with the price treated as product data. */
-.filter-grid { column-gap: 0; row-gap: 100px; }
+.filter-grid { column-gap: 24px; row-gap: 100px; }
+
+/* Shop filters read as plain text, not boxed buttons. */
+.filters { gap: 24px; }
+.filters button {
+  border: 0;
+  background: none;
+  padding: 4px 0;
+  color: #9a9a9a;
+  letter-spacing: .04em;
+}
+.filters button:hover,
+.filters button.active {
+  background: none;
+  color: #111;
+  transform: none;
+}
+.filters button.active { text-decoration: underline; text-underline-offset: 4px; }
 .filter-grid .product-visual { height: clamp(300px, 39vw, 600px); }
 .filter-grid .product-meta {
   display: grid;
