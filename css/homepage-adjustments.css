@@ -91,15 +91,3 @@
 
 /* Collection tiles live in refinements.css (loaded on home + world). */
 
-/* Bestsellers as an end-to-end grid like the categories page (no carousel scroll/arrows). */
-.bestsellers { padding-left: 0; padding-right: 0; }
-#bestseller-carousel {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  column-gap: 2px;
-  row-gap: 56px;
-  overflow: visible;
-  padding-bottom: 0;
-}
-#bestseller-carousel .product-card { flex: none; width: auto; scroll-snap-align: none; }
-.bestsellers .carousel-controls { display: none; }

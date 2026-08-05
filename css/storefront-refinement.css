@@ -211,7 +211,9 @@ h1, h2, h3 { font-weight: 500 !important; }
   text-transform: none !important;
   margin: 0 0 8px;
 }
-.pdp-price { margin: 0 0 44px; font-size: 18px; color: #111; }
+.pdp-price { margin: 0 0 64px; font: 500 clamp(22px, 2.4vw, 26px)/1.25 var(--body); color: #111; }
+/* Suggested clothing at the bottom of each product page. */
+.product-page > .section { display: block !important; }
 .pdp-size-guide {
   margin: 0 0 20px; font-size: 15px; color: #111;
   text-decoration: underline; text-underline-offset: 5px;

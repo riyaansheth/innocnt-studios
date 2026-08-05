@@ -163,60 +163,25 @@ if (document.querySelector('.product-page')) {
   document.head.append(productPageReferenceStyles);
 }
 
-document.querySelectorAll('.page-header').forEach((header) => {
-  const existingBag = header.querySelector('.page-bag')?.cloneNode(true);
-  const brand = document.createElement('a');
-  brand.href = '/';
-  brand.className = 'brand';
-  brand.setAttribute('aria-label', 'INNOCNT home');
-  brand.innerHTML = '<img src="/assets/identity/wordmark.svg" alt="INNOCNT">';
-
-  const menuButton = document.createElement('button');
-  menuButton.type = 'button';
-  menuButton.className = 'menu';
-  menuButton.dataset.menu = '';
-  menuButton.textContent = 'Menu';
-
-  const sharedNav = document.createElement('nav');
-  sharedNav.className = 'page-nav page-nav--left';
-  sharedNav.dataset.nav = '';
-  sharedNav.setAttribute('aria-label', 'Primary navigation');
-  [
-    ['/world/', 'About'],
-    ['/collections/', 'Shop'],
-  ].forEach(([href, label]) => {
-    const link = document.createElement('a');
-    link.href = href;
-    link.textContent = label;
-    if (new URL(href, window.location.origin).pathname === window.location.pathname) {
-      link.setAttribute('aria-current', 'page');
-    }
-    sharedNav.append(link);
+// One shared navigation: the exact homepage header, rebuilt identically on every page.
+document.querySelectorAll('.page-header, .site-header').forEach((header) => {
+  header.className = 'site-header';
+  header.dataset.header = '';
+  header.innerHTML = `
+    <a class="brand" href="/" aria-label="INNOCNT home"><img src="/assets/identity/wordmark.svg" alt="INNOCNT"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-menu-toggle data-menu><span class="menu-label">Menu</span><span class="menu-icon" aria-hidden="true"></span></button>
+    <nav class="primary-nav primary-nav--left" id="primary-nav" aria-label="Primary navigation" data-nav>
+      <a href="/world/">About</a>
+      <a href="/collections/">Shop</a>
+    </nav>
+    <nav class="primary-nav primary-nav--right" aria-label="Secondary navigation">
+      <a href="/contact/">Contact</a>
+      <button class="nav-icon" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg></button>
+      <a class="bag-link nav-icon" href="/bag/" aria-label="Shopping bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="bag-count">(0)</span></a>
+    </nav>`;
+  header.querySelectorAll('a[href]').forEach((a) => {
+    try { if (new URL(a.getAttribute('href'), location.origin).pathname === location.pathname) a.setAttribute('aria-current', 'page'); } catch (e) {}
   });
-
-  const secondaryNav = document.createElement('nav');
-  secondaryNav.className = 'page-nav page-nav--right';
-  secondaryNav.setAttribute('aria-label', 'Secondary navigation');
-  const contactLink = document.createElement('a');
-  contactLink.href = '/contact/';
-  contactLink.textContent = 'Contact';
-  if (window.location.pathname === '/contact/') contactLink.setAttribute('aria-current', 'page');
-  secondaryNav.append(contactLink);
-
-  const searchButton = document.createElement('button');
-  searchButton.type = 'button';
-  searchButton.className = 'nav-icon';
-  searchButton.setAttribute('aria-label', 'Search');
-  searchButton.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>';
-  secondaryNav.append(searchButton);
-
-  const bag = existingBag || document.createElement('a');
-  bag.className = 'page-bag nav-icon';
-  if (!bag.getAttribute('href')) bag.href = '/bag/';
-  bag.setAttribute('aria-label', 'Shopping bag');
-  bag.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="bag-count">(0)</span>';
-  secondaryNav.append(bag);
-  header.replaceChildren(brand, menuButton, sharedNav, secondaryNav);
 });
 
 if (window.location.pathname.startsWith('/bag')) {
@@ -231,7 +196,7 @@ if (window.location.pathname.startsWith('/bag')) {
 
 const menu = document.querySelector('[data-menu]');
 const nav = document.querySelector('[data-nav]');
-const pageNavs = document.querySelectorAll('.page-nav');
+const pageNavs = document.querySelectorAll('.primary-nav, .page-nav');
 if (nav) {
   const findNavLink = (path, label) => (
     nav.querySelector(`a[href*="${path}"]`)
