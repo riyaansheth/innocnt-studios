@@ -14,11 +14,11 @@ globalFontStyles.href = '/css/font-overrides.css';
 document.head.append(globalFontStyles);
 
 document.querySelectorAll('.button').forEach((button) => {
-  if (/[↗↘→]/.test(button.textContent)) return;
+  if (/[↘→]/.test(button.textContent)) return;
   const arrow = document.createElement('span');
   arrow.className = 'button-arrow';
   arrow.setAttribute('aria-hidden', 'true');
-  arrow.textContent = '↗';
+  arrow.textContent = '';
   button.append(arrow);
 });
 

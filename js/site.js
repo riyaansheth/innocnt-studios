@@ -57,7 +57,7 @@ if (document.querySelector('.product-page .gallery')) {
   document.querySelectorAll('.product-page > .section .section-head').forEach((heading) => {
     heading.querySelector('.eyebrow')?.remove();
     const title = heading.querySelector('h2');
-    if (title) title.textContent = 'Keep it close.';
+    if (title) title.textContent = 'You May Also Like';
   });
 }
 
@@ -309,14 +309,6 @@ const cartDrawerScript = document.createElement('script');
 cartDrawerScript.src = '/js/cart-drawer.js';
 document.body.append(cartDrawerScript);
 
-document.querySelectorAll('.button, .contact-form button').forEach((button) => {
-  if (/[↗↘→]/.test(button.textContent)) return;
-  const arrow = document.createElement('span');
-  arrow.className = 'button-arrow';
-  arrow.setAttribute('aria-hidden', 'true');
-  arrow.textContent = '↗';
-  button.append(arrow);
-});
 
 document.querySelectorAll('[data-demo-form]').forEach((form)=>form.addEventListener('submit',(event)=>{event.preventDefault();const message=form.querySelector('[data-message]');message.textContent=form.dataset.demoForm==='contact'?'Message received. We will get back to you.':form.dataset.demoForm==='shipping'?'Shipping details saved. Continue to payment.':form.dataset.demoForm==='payment'?'Payment accepted. Your order is confirmed.':'Your try-on is ready to preview.';}));
 
