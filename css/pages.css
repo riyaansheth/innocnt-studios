@@ -143,8 +143,8 @@ html body .page-header .page-bag span {
 .reco-block__media{grid-column:1/-1;display:block;aspect-ratio:3/4;background:#f2f2f2;overflow:hidden;margin-bottom:12px}
 .reco-block__media img{width:100%;height:100%;object-fit:cover;padding:0}
 /* Name + price styled exactly like the shop products page. */
-.reco-block__name{grid-column:1;margin:0;font-size:16px;font-weight:500;letter-spacing:-.02em;line-height:1.3;color:var(--black)}
-.reco-block__price{grid-column:2;justify-self:end;margin:0;font-size:16px;font-weight:400;color:var(--black)}
+.reco-block__name{grid-column:1;margin:0;padding-left:14px;font-size:16px;font-weight:500;letter-spacing:-.02em;line-height:1.3;color:var(--black)}
+.reco-block__price{grid-column:2;justify-self:end;margin:0;padding-right:14px;font-size:16px;font-weight:400;color:var(--black)}
 .field-group{border:0;padding:0;margin:0 0 30px;display:grid;gap:12px}
 .form-stack .field-group:last-of-type{margin-bottom:6px}
 .field-group legend{padding:0;margin:0 0 16px;font:500 13px/1 var(--body);letter-spacing:.01em;text-transform:none;color:#1a1a1a}
@@ -195,7 +195,7 @@ html body .page-header .page-bag span {
 .site-header .nav-icon{display:inline-grid;place-items:center;padding:0;background:none;border:0}
 .site-header .nav-icon svg{width:22px;height:22px}
 @media(min-width:761px){.site-header .menu-toggle{display:none}}
-.editorial-footer .footer-signature{height:124px;width:auto}
+.editorial-footer .footer-signature{height:116px;width:auto}
 .editorial-footer .payment-icon{width:auto;height:22px}
 
 /* Suggested products: full-width edge-to-edge row below the product. */

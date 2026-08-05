@@ -14,8 +14,8 @@
   column-gap: 84px;
   align-items: stretch;
 }
-.footer-brand { align-self: start; padding-left: 48px; }
-.footer-signature { display: block; height: 124px; width: auto; }
+.footer-brand { align-self: start; padding-left: 0; }
+.footer-signature { display: block; height: 116px; width: auto; }
 
 .footer-col { display: grid; gap: 10px; align-content: start; }
 /* Socials pushed to a total 130px gap from Information (84px column-gap + 46px). */

@@ -132,7 +132,7 @@
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
-  gap: 0;
+  gap: 2px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   padding-bottom: 6px;
