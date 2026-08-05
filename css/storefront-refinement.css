@@ -151,6 +151,7 @@ body .page-header.is-on-dark > a:first-child img { filter: none; }
   transform: none;
   text-decoration: none;
 }
+.filters .filters__sort { margin-left: auto; color: #111; }
 .filter-grid .product-visual { height: clamp(300px, 39vw, 600px); }
 .filter-grid .product-meta {
   display: flex;
