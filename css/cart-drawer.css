@@ -131,8 +131,8 @@
 .cart-drawer__reco-row {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 46%;
-  gap: 14px;
+  grid-auto-columns: 1fr;
+  gap: 0;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   padding-bottom: 6px;
@@ -145,7 +145,7 @@
   background: #f2f2f2;
   overflow: hidden;
 }
-.cart-drawer__reco-media img { width: 100%; height: 100%; object-fit: contain; padding: 10%; }
+.cart-drawer__reco-media img { width: 100%; height: 100%; object-fit: cover; padding: 0; }
 .cart-drawer__reco-add {
   position: absolute;
   right: 8px;
@@ -191,5 +191,4 @@ body.cart-open { overflow: hidden; }
 
 @media (max-width: 640px) {
   .cart-drawer__panel { width: 100%; }
-  .cart-drawer__reco-row { grid-auto-columns: 60%; }
 }
