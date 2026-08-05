@@ -1,30 +1,27 @@
-/* Footer: a quiet white information desk. Rabbit mark + copyright on the left,
-   link columns starting just past the centre line, payments along the base. */
+/* Footer: rabbit mark on the left at column height, Information + Socials grouped
+   tight on the right, copyright + payments along the base. Shared on every page. */
 .editorial-footer {
   --footer-ink: #121212;
   background: #f4f4f2 !important;
   color: var(--footer-ink) !important;
-  padding: clamp(56px, 6vw, 96px) 40px 40px !important;
+  padding: clamp(52px, 5vw, 84px) 40px 26px !important;
   border-top: 1px solid #e5e5e5;
 }
 
 .footer-grid {
-  display: grid;
-  grid-template-columns: 50% auto auto;
-  column-gap: 24px;
-  align-items: start;
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
 }
-/* Keep Information 40px past centre while the Info↔Socials gap stays tight. */
-.footer-brand + .footer-col { margin-left: 16px; }
-
-.footer-brand { align-self: start; }
-/* Sized + nudged to sit centred above the copyright line (see .footer-meta). */
-.footer-signature { display: block; width: 140px; height: auto; margin-left: 7px; }
+/* Rabbit left, Information + Socials grouped tight on the right. */
+.footer-brand { margin-right: auto; }
+/* Logo height matches the link columns. */
+.footer-signature { display: block; height: 132px; width: auto; }
 
 .footer-col { display: grid; gap: 10px; align-content: start; }
 .footer-kicker {
-  margin: 0 0 10px;
-  font-size: 14px;
+  margin: 0 0 12px;
+  font-size: 16px;
   line-height: 1;
   font-weight: 400;
   color: var(--footer-ink);
@@ -32,8 +29,8 @@
 .footer-col a {
   width: max-content;
   color: #8a8a8a;
-  font-size: 13px;
-  line-height: 1.25;
+  font-size: 15px;
+  line-height: 1.3;
   transition: color .25s ease;
 }
 .footer-col a:hover { color: var(--footer-ink); }
@@ -44,7 +41,7 @@
   justify-content: space-between;
   gap: 24px;
   flex-wrap: wrap;
-  margin-top: clamp(64px, 8vw, 120px);
+  margin-top: 44px;
   color: #6f6f6f;
   font-size: 10px;
   letter-spacing: .04em;
@@ -57,13 +54,12 @@
 .payment-icon--amex { width: 50px; }
 
 @media (max-width: 900px) {
-  .footer-grid { grid-template-columns: 1fr 1fr; column-gap: 32px; row-gap: 40px; }
-  .footer-brand { grid-column: 1 / -1; }
-  .footer-brand + .footer-col { margin-left: 0; }
-  .footer-signature { margin-left: 0; }
+  .footer-grid { flex-wrap: wrap; gap: 32px 40px; }
+  .footer-brand { flex-basis: 100%; margin-right: 0; }
+  .footer-signature { height: auto; width: 140px; }
 }
 
 @media (max-width: 600px) {
-  .editorial-footer { padding: 48px 20px 24px !important; }
-  .footer-meta { margin-top: 44px; gap: 18px; }
+  .editorial-footer { padding: 44px 20px 22px !important; }
+  .footer-meta { margin-top: 36px; gap: 18px; }
 }
