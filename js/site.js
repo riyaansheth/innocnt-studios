@@ -77,6 +77,7 @@ document.querySelectorAll('.product-details').forEach((details) => {
   const collectionLabel = details.querySelector('.eyebrow');
   const collection = collectionByProduct[productName?.textContent];
   if (collectionLabel && collection) collectionLabel.textContent = `Collection: ${collection}`;
+  details.querySelector('.try-on')?.remove();
   [...details.querySelectorAll('a.button')].find((button) => /buy now/i.test(button.textContent))?.remove();
   const sizeLabel = [...details.children].find((element) => element.matches('.eyebrow') && /size guide/i.test(element.textContent));
   const sizes = details.querySelector('.sizes');
@@ -159,10 +160,6 @@ if (document.querySelector('.product-page')) {
   productPageReferenceStyles.rel = 'stylesheet';
   productPageReferenceStyles.href = '/css/product-page-reference.css';
   document.head.append(productPageReferenceStyles);
-
-  const tryOnScript = document.createElement('script');
-  tryOnScript.src = '/js/try-on.js';
-  document.body.append(tryOnScript);
 }
 
 document.querySelectorAll('.page-header').forEach((header) => {
