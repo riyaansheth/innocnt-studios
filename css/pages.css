@@ -178,7 +178,7 @@ html body .page-header .page-bag span {
 
 .order-summary dd,.order-summary__price{text-align:right}
 
-.payment-methods{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 30px}
+.payment-methods{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:0 0 30px}
 .payment-methods img{height:24px;width:auto;padding:6px 9px;border:1px solid #e4e4e4;border-radius:6px;background:#fff;box-sizing:content-box}
 
 /* Critical nav/footer sizing in the render-blocking head, so the JS-rebuilt
