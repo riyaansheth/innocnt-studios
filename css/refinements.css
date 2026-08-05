@@ -49,6 +49,5 @@
 .product-meta h3{font-weight:500}
 
 /* Homepage hero: brighter, and shifted so the model clears the centred wordmark. */
-.hero { background: #0d0d0d; }
-.hero-image { filter: brightness(1.12); object-position: center 34%; margin-top: 66px; }
-.hero-overlay { background: linear-gradient(180deg, rgba(0,0,0,.5), rgba(0,0,0,0) 20%); }
+.hero-image { filter: brightness(1.12); object-position: center 18%; }
+.hero-overlay { background: linear-gradient(180deg, rgba(0,0,0,.32), rgba(0,0,0,0) 22%); }
