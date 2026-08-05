@@ -284,32 +284,3 @@ if(target){let seconds=target.dataset.countdown*1||86400;const render=()=>{const
 const navigationContrastScript = document.createElement('script');
 navigationContrastScript.src = '/js/navigation-contrast.js';
 document.body.append(navigationContrastScript);
-
-// Auto-scroll the "You May Also Like" row. Clones the cards once for a
-// seamless loop; pauses on hover so people can actually look.
-if (!reduceMotion) {
-  const track = document.querySelector('.pdp-suggest .cards');
-  if (track && track.children.length) {
-    const clones = [...track.children].map((card) => {
-      const clone = card.cloneNode(true);
-      clone.removeAttribute('data-page-reveal'); // clones stay visible (no reveal observer)
-      clone.style.transitionDelay = '';
-      clone.setAttribute('aria-hidden', 'true');
-      clone.tabIndex = -1;
-      return clone;
-    });
-    track.append(...clones);
-    const half = () => track.scrollWidth / 2;
-    let paused = false;
-    track.addEventListener('pointerenter', () => { paused = true; });
-    track.addEventListener('pointerleave', () => { paused = false; });
-    const step = () => {
-      if (!paused && track.scrollWidth > track.clientWidth) {
-        track.scrollLeft += 0.6;
-        if (track.scrollLeft >= half()) track.scrollLeft -= half();
-      }
-      requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }
-}

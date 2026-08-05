@@ -197,13 +197,14 @@ html body .page-header .page-bag span {
 
 /* Suggested products: full-width edge-to-edge row below the product. */
 .product-details { position: static; }
-.pdp-suggest { padding: 48px 0 8px; margin: 0; border-top: 0; }
+.pdp-suggest { padding: 48px 0 88px; margin: 0; border-top: 0; }
 .pdp-suggest .section-head { display: block; margin: 0 0 22px; padding: 0 40px; }
 .pdp-suggest .section-head h2 { font: 500 15px/1.1 var(--body) !important; letter-spacing: .06em !important; text-transform: uppercase !important; white-space: nowrap !important; margin: 0; }
-.pdp-suggest .cards { display: flex; grid-template-columns: none; gap: 2px; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
-.pdp-suggest .cards::-webkit-scrollbar { display: none; }
-.pdp-suggest .product { flex: 0 0 22.5%; }
+.pdp-suggest .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
 .pdp-suggest .product-visual { height: auto; aspect-ratio: 4 / 5; background: #f1f1f1; position: relative; }
 .pdp-suggest .product-visual img { width: 100%; height: 100%; object-fit: cover; }
 .pdp-suggest .product-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin: 12px 14px 0; }
-.pdp-suggest .product-meta h3, .pdp-suggest .product-meta p { font-size: 13px; font-weight: 400; text-transform: none; letter-spacing: 0; }
+/* Name + price typography lifted straight from the shop grid. */
+.pdp-suggest .product-meta h3, .pdp-suggest .product-meta p { font-size: 16px; text-transform: none; color: var(--black); }
+.pdp-suggest .product-meta h3 { font-family: var(--body) !important; font-weight: 500 !important; letter-spacing: -0.02em; }
+.pdp-suggest .product-meta p { font-weight: 400; }
