@@ -21,7 +21,7 @@
 /* Sized + nudged to sit centred above the copyright line (see .footer-meta). */
 .footer-signature { display: block; width: 140px; height: auto; margin-left: 7px; }
 
-.footer-col { display: grid; gap: 16px; align-content: start; }
+.footer-col { display: grid; gap: 10px; align-content: start; }
 .footer-kicker {
   margin: 0 0 10px;
   font-size: 14px;
