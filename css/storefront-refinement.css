@@ -131,7 +131,7 @@ body .page-header.is-on-dark > a:first-child img { filter: none; }
 }
 
 /* Catalogue is edge-to-edge, with the price treated as product data. */
-.filter-grid { column-gap: 2px; row-gap: 2px; }
+.filter-grid { column-gap: 2px; row-gap: 56px; }
 
 /* Shop filters read as plain text: colour is the only active cue. */
 .filters { gap: 40px; }
@@ -196,7 +196,7 @@ body .page-header.is-on-dark > a:first-child img { filter: none; }
   .gallery { grid-template-columns: 1fr; }
   .product-layout { grid-template-columns: 1fr; }
   .product-details { padding: 28px 16px; }
-  .filter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 2px; }
+  .filter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 44px; }
 }
 
 /* Client directive: every heading, every page, renders Medium (weight 500). */
