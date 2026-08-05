@@ -18,6 +18,8 @@
 .footer-signature { display: block; height: 62px; width: auto; }
 
 .footer-col { display: grid; gap: 10px; align-content: start; }
+/* Socials pushed to a total 130px gap from Information (84px column-gap + 46px). */
+.footer-col[aria-label="Socials"] { margin-left: 46px; }
 .footer-kicker {
   margin: 0 0 12px;
   font-size: 15px;
