@@ -175,3 +175,5 @@ html body .page-header .page-bag span {
 .contact-assistance{padding-top:clamp(56px,6vw,96px)}
 
 .order-summary strong{font-weight:500}
+
+.order-summary dd,.order-summary__price{text-align:right}
