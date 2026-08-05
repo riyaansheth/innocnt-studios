@@ -177,7 +177,7 @@ document.querySelectorAll('.page-header, .site-header').forEach((header) => {
     <nav class="primary-nav primary-nav--right" aria-label="Secondary navigation">
       <a href="/contact/">Contact</a>
       <button class="nav-icon" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg></button>
-      <a class="bag-link nav-icon" href="/bag/" aria-label="Shopping bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="bag-count">(0)</span></a>
+      <a class="bag-link nav-icon" href="/" aria-label="Shopping bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="bag-count">(0)</span></a>
     </nav>`;
   header.querySelectorAll('a[href]').forEach((a) => {
     try { if (new URL(a.getAttribute('href'), location.origin).pathname === location.pathname) a.setAttribute('aria-current', 'page'); } catch (e) {}
