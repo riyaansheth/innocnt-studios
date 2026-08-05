@@ -48,7 +48,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; }
 
 .bestsellers { padding-top: 0; padding-bottom: 40px; }
 .bestsellers .section-heading { margin-bottom: 28px; }
-.product-carousel { gap: 24px; }
+.product-carousel { gap: 12px; }
 .product-carousel .product-card { flex-basis: calc((100% - 72px) / 4); }
 .product-image { background: #f4f4f4; }
 .product-meta { margin-top: 15px; font-size: 12px; }
