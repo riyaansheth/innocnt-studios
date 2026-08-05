@@ -42,7 +42,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 50px;
   font-size: 12px;
   line-height: 1;
   letter-spacing: .01em;
@@ -254,7 +254,7 @@ body .hero-image {
 .page-nav--right {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 50px;
 }
 .nav-icon {
   display: inline-grid;

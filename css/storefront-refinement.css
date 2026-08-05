@@ -103,7 +103,7 @@ body .page-header.is-on-dark .page-bag span {
 body .page-header.is-on-dark .brand img,
 body .page-header.is-on-dark > a:first-child img { filter: none; }
 
-.primary-nav, .page-nav { gap: 40px; }
+.primary-nav, .page-nav { gap: 50px; }
 .primary-nav a, .page-nav a, .bag-link, .page-bag {
   font-size: 14px;
   letter-spacing: .08em;

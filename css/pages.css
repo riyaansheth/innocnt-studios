@@ -186,7 +186,7 @@ html body .page-header .page-bag span {
 .site-header{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:74px;padding:0 56px;margin:0}
 .site-header .brand{grid-column:2;justify-self:center}
 .site-header .brand img{width:145px;height:auto}
-.site-header .primary-nav{display:flex;align-items:center;gap:40px;margin:0}
+.site-header .primary-nav{display:flex;align-items:center;gap:50px;margin:0}
 .site-header .primary-nav--left{grid-column:1;justify-self:start}
 .site-header .primary-nav--right{grid-column:3;justify-self:end}
 .site-header .nav-icon{display:inline-grid;place-items:center;padding:0;background:none;border:0}
@@ -204,6 +204,5 @@ html body .page-header .page-bag span {
 .pdp-suggest .product { flex: 0 0 22.5%; }
 .pdp-suggest .product-visual { height: auto; aspect-ratio: 4 / 5; background: #f1f1f1; position: relative; }
 .pdp-suggest .product-visual img { width: 100%; height: 100%; object-fit: cover; }
-.pdp-suggest .pdp-plus { position: absolute; right: 16px; bottom: 12px; font: 300 24px/1 var(--body); color: #111; }
 .pdp-suggest .product-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin: 12px 14px 0; }
 .pdp-suggest .product-meta h3, .pdp-suggest .product-meta p { font-size: 13px; font-weight: 400; text-transform: none; letter-spacing: 0; }
