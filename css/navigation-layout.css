@@ -22,7 +22,7 @@
   .page-nav--right {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 40px;
     grid-column: 3;
     grid-row: 1;
     justify-self: end;
