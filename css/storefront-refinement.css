@@ -142,6 +142,7 @@ body .page-header.is-on-dark > a:first-child img { filter: none; }
   color: #9a9a9a;
   letter-spacing: .02em;
   text-transform: none;
+  font-size: 16px;
 }
 .filters button:hover,
 .filters button.active {
