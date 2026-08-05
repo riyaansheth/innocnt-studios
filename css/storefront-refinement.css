@@ -202,3 +202,42 @@ body .page-header.is-on-dark > a:first-child img { filter: none; }
 
 /* Client directive: every heading, every page, renders Medium (weight 500). */
 h1, h2, h3 { font-weight: 500 !important; }
+
+/* Product detail panel — v2 redesign (title, price, size circles, cart, links) */
+.product-details[data-pdp-v2] { display: flex; flex-direction: column; }
+.product-details h1.pdp-title {
+  font: 500 clamp(22px, 2.4vw, 26px)/1.25 var(--body) !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  margin: 0 0 8px;
+}
+.pdp-price { margin: 0 0 44px; font-size: 18px; color: #111; }
+.pdp-size-guide {
+  margin: 0 0 20px; font-size: 15px; color: #111;
+  text-decoration: underline; text-underline-offset: 5px;
+}
+.product-details[data-pdp-v2] .sizes {
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 0;
+}
+.product-details[data-pdp-v2] .sizes button {
+  min-width: 46px; height: 46px; padding: 0;
+  display: grid; place-items: center;
+  border: 1px solid transparent; border-radius: 50%;
+  background: none; color: #111; font-size: 15px; cursor: pointer;
+  transition: border-color .2s ease;
+}
+.product-details[data-pdp-v2] .sizes button:hover { border-color: #cfcfcf; }
+.product-details[data-pdp-v2] .sizes button.active { border-color: #111; }
+.pdp-add {
+  width: 100%; justify-content: center; margin: 40px 0;
+  padding: 20px; border: 0; background: #000; color: #fff;
+  font-size: 13px; letter-spacing: .14em; text-transform: uppercase;
+}
+.pdp-add:hover { background: var(--red); color: #fff; }
+.pdp-links { display: grid; gap: 22px; }
+.pdp-link {
+  justify-self: start; padding: 0; border: 0; background: none;
+  color: #111; font-size: 16px; cursor: pointer;
+  text-decoration: underline; text-underline-offset: 5px;
+}
+.pdp-link:hover { color: var(--red); }

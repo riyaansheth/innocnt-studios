@@ -62,6 +62,7 @@ if (document.querySelector('.product-page .gallery')) {
 }
 
 document.querySelectorAll('.product-details').forEach((details) => {
+  if (details.hasAttribute('data-pdp-v2')) return; // v2 panel is self-contained
   const productName = details.querySelector('h1');
   if (productName) productName.textContent = productName.innerText.replace(/\s+/g, ' ').trim();
   const collectionByProduct = {

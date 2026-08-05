@@ -102,7 +102,7 @@
     const bag = event.target.closest('.bag-link, .page-bag');
     if (bag) { event.preventDefault(); return openCart(bag); }
     const add = event.target.closest('.button.dark');
-    if (add && /add to bag/i.test(add.textContent)) {
+    if (add && /add to (bag|cart)/i.test(add.textContent)) {
       event.preventDefault();
       if (quantity === 0) quantity = 1;
       syncAll();
