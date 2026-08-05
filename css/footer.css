@@ -14,7 +14,7 @@
   column-gap: 48px;
   align-items: stretch;
 }
-.footer-brand { align-self: stretch; }
+.footer-brand { align-self: center; }
 .footer-signature { display: block; height: 92px; width: auto; }
 
 .footer-col { display: grid; gap: 10px; align-content: start; }
