@@ -1,10 +1,34 @@
 /* One navigation rhythm for the homepage and every inner page. */
 .site-header,
 .page-header {
+  display: grid;
   height: 74px;
   padding: 0 56px;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
+}
+
+/* The menu button only appears on mobile (main.css handles this on the homepage;
+   inner pages don't load main.css, so keep it here for the shared header). */
+@media (min-width: 761px) {
+  .site-header .menu-toggle,
+  .page-header .menu-toggle,
+  .page-header .menu { display: none; }
+}
+@media (max-width: 760px) {
+  .site-header .menu-toggle,
+  .page-header .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 0;
+    background: none;
+    padding: 4px 0;
+    cursor: pointer;
+    font: 11px var(--body);
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
 }
 
 .brand img,

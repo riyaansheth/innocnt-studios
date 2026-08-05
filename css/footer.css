@@ -15,8 +15,7 @@
   align-items: stretch;
 }
 .footer-brand { align-self: stretch; }
-/* Logo height matches the link columns. */
-.footer-signature { display: block; height: 132px; width: auto; }
+.footer-signature { display: block; height: 92px; width: auto; }
 
 .footer-col { display: grid; gap: 10px; align-content: start; }
 .footer-kicker {
@@ -43,7 +42,7 @@
   flex-wrap: wrap;
   margin-top: 44px;
   color: #6f6f6f;
-  font-size: 10px;
+  font-size: 13px;
   letter-spacing: .04em;
   text-transform: uppercase;
 }
