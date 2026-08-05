@@ -1,27 +1,28 @@
-/* Footer: a quiet white information desk. Logo left, link columns right,
-   copyright and accepted payments along the base. */
+/* Footer: a quiet white information desk. Rabbit mark + copyright on the left,
+   link columns starting just past the centre line, payments along the base. */
 .editorial-footer {
   --footer-ink: #121212;
   background: #f4f4f2 !important;
   color: var(--footer-ink) !important;
-  padding: clamp(48px, 5.5vw, 88px) clamp(22px, 4vw, 72px) 28px !important;
+  padding: clamp(56px, 6vw, 96px) 40px 40px !important;
   border-top: 1px solid #e5e5e5;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.35fr .55fr .55fr .55fr;
-  gap: clamp(30px, 5vw, 90px);
+  grid-template-columns: 50% auto auto;
+  column-gap: 40px;
   align-items: start;
 }
 
 .footer-brand { align-self: start; }
-.footer-signature { display: block; width: clamp(58px, 6vw, 84px); height: auto; }
+/* Sized + nudged to sit centred above the copyright line (see .footer-meta). */
+.footer-signature { display: block; width: 190px; height: auto; margin-left: 12px; }
 
-.footer-col { display: grid; gap: 12px; align-content: start; }
+.footer-col { display: grid; gap: 16px; align-content: start; }
 .footer-kicker {
-  margin: 0 0 8px;
-  font-size: 14px;
+  margin: 0 0 10px;
+  font-size: 18px;
   line-height: 1;
   font-weight: 400;
   color: var(--footer-ink);
@@ -29,8 +30,8 @@
 .footer-col a {
   width: max-content;
   color: #8a8a8a;
-  font-size: 14px;
-  line-height: 1.2;
+  font-size: 17px;
+  line-height: 1.25;
   transition: color .25s ease;
 }
 .footer-col a:hover { color: var(--footer-ink); }
@@ -41,25 +42,25 @@
   justify-content: space-between;
   gap: 24px;
   flex-wrap: wrap;
-  margin-top: clamp(56px, 8vw, 120px);
+  margin-top: clamp(64px, 8vw, 120px);
   color: #6f6f6f;
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: .04em;
   text-transform: uppercase;
 }
 .footer-copyright { margin: 0; }
-.footer-payment { display: flex; align-items: center; gap: 9px; }
-.payment-icon { width: 40px; height: 26px; object-fit: contain; }
+.footer-payment { display: flex; align-items: center; gap: 12px; }
+.payment-icon { width: 52px; height: 34px; object-fit: contain; }
 .payment-icon--upi,
-.payment-icon--amex { width: 38px; }
+.payment-icon--amex { width: 50px; }
 
 @media (max-width: 900px) {
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px 32px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; column-gap: 32px; row-gap: 40px; }
   .footer-brand { grid-column: 1 / -1; }
+  .footer-signature { margin-left: 0; }
 }
 
 @media (max-width: 600px) {
-  .editorial-footer { padding: 48px 18px 22px !important; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .editorial-footer { padding: 48px 20px 24px !important; }
   .footer-meta { margin-top: 44px; gap: 18px; }
 }
