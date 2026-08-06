@@ -25,7 +25,11 @@
   let frame;
   const update = () => {
     frame = undefined;
-    header.classList.toggle('is-on-dark', isDarkBehindHeader());
+    const scrolled = window.scrollY > 10;
+    header.classList.toggle('is-scrolled', scrolled);
+    // Once scrolled the header is solid white, so ink is always dark — the
+    // background-behind detection only matters while translucent over the hero.
+    header.classList.toggle('is-on-dark', !scrolled && isDarkBehindHeader());
   };
   const requestUpdate = () => {
     if (!frame) frame = requestAnimationFrame(update);

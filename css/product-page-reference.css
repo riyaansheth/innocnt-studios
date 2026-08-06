@@ -11,11 +11,12 @@
   }
 
   .product-page .gallery {
-    height: calc(100svh - 74px);
+    height: 100svh;
+    margin-top: -74px;
   }
 
   .product-page .gallery img {
-    height: calc(100svh - 74px);
+    height: 100svh;
   }
 
   .product-page .product-details {

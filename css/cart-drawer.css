@@ -148,7 +148,7 @@
   grid-column: 1 / -1;
   position: relative;
   display: block;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   background: #f2f2f2;
   overflow: hidden;
   margin-bottom: 10px;

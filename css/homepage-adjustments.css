@@ -93,7 +93,7 @@
 
 
 /* Bestsellers: edge-to-edge single-row carousel, 2px gaps, no arrows. */
-.bestsellers { padding-left: 0; padding-right: 0; padding-top: 56px; }
+.bestsellers { padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 16px; }
 #bestseller-carousel { gap: 2px; }
 #bestseller-carousel .product-card { flex-basis: calc((100% - 6px) / 4); }
 .bestsellers .carousel-controls { display: none; }
