@@ -205,8 +205,29 @@ html body .page-header .page-bag span {
 .pdp-suggest .section-head h2 { font: 500 15px/1.1 var(--body) !important; letter-spacing: .06em !important; text-transform: uppercase !important; white-space: nowrap !important; margin: 0; }
 .pdp-suggest .cards { display: flex; gap: 2px; padding-right: 20px; }
 .pdp-suggest .product { flex: 1 1 0; min-width: 0; } /* 4 equal, equidistant cards filling the row */
-.pdp-suggest .product-visual { height: auto; aspect-ratio: 4 / 5; background: #f1f1f1; position: relative; }
-.pdp-suggest .product-visual img { width: 100%; height: 100%; object-fit: cover; }
+.pdp-suggest .product-visual { height: auto; aspect-ratio: 4 / 5; background: #f1f1f1; position: relative; overflow: hidden; }
+.pdp-suggest__link { position: absolute; inset: 0; display: block; }
+.pdp-suggest .product-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* Hover the card: reveal the size-chart image + Add to Cart, hide the + badge. */
+.pdp-suggest .product-visual img.pdp-suggest__chart { opacity: 0; object-fit: contain; background: #fff; transition: opacity .3s ease; }
+.pdp-suggest .product-visual:hover .pdp-suggest__chart { opacity: 1; }
+.pdp-suggest__plus {
+  position: absolute; right: 12px; bottom: 12px; z-index: 3;
+  width: 34px; height: 34px; display: grid; place-items: center;
+  background: #fff; border-radius: 50%; font: 300 22px/1 var(--body); color: #111;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .16); transition: opacity .2s ease; pointer-events: none;
+}
+.pdp-suggest .product-visual:hover .pdp-suggest__plus { opacity: 0; }
+.pdp-suggest__add {
+  position: absolute; left: 12px; right: 12px; bottom: 12px; z-index: 3;
+  min-width: 0; display: flex; justify-content: center; gap: 0;
+  padding: 13px; border: 0; background: #000; color: #fff;
+  font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+  opacity: 0; transform: translateY(8px); pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease, background .2s ease; cursor: pointer;
+}
+.pdp-suggest .product-visual:hover .pdp-suggest__add { opacity: 1; transform: none; pointer-events: auto; }
+.pdp-suggest__add:hover { background: var(--red); color: #fff; }
 .pdp-suggest .product-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin: 12px 14px 0; }
 /* Name + price typography lifted straight from the shop grid. */
 .pdp-suggest .product-meta h3, .pdp-suggest .product-meta p { font-size: 16px; text-transform: none; color: var(--black); }
