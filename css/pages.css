@@ -213,10 +213,11 @@ html body .page-header .page-bag span {
 .pdp-suggest .product-visual img.pdp-suggest__chart { opacity: 0; object-fit: contain; background: #fff; transition: opacity .3s ease; }
 /* The + and the Add bar share one footprint so hovering the + hands off to
    the Add bar with no gap (no flicker). The + reads as a bare glyph. */
+/* Small glyph in the corner — hovering it (only it) triggers the reveal.
+   Sits inside the size-row footprint so the hover hands off with no flicker. */
 .pdp-suggest__plus {
-  position: absolute; left: 12px; right: 12px; bottom: 12px; z-index: 4;
-  height: 46px; display: flex; align-items: center; justify-content: flex-end;
-  padding: 0 12px; background: transparent;
+  position: absolute; right: 16px; bottom: 16px; z-index: 4;
+  width: 34px; height: 34px; display: grid; place-items: center;
   font: 300 30px/1 var(--body); color: #111; cursor: pointer;
   text-shadow: 0 0 6px rgba(255, 255, 255, .8); transition: opacity .2s ease;
 }
