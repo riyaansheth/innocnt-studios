@@ -220,21 +220,25 @@ html body .page-header .page-bag span {
   font: 300 30px/1 var(--body); color: #111; cursor: pointer;
   text-shadow: 0 0 6px rgba(255, 255, 255, .8); transition: opacity .2s ease;
 }
-.pdp-suggest__add {
+.pdp-suggest__sizes {
   position: absolute; left: 12px; right: 12px; bottom: 12px; z-index: 3;
-  min-width: 0; height: 46px; display: flex; align-items: center; justify-content: center;
-  padding: 0 13px; border: 0; background: #000; color: #fff;
-  font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
-  opacity: 0; pointer-events: none;
-  transition: opacity .25s ease, background .2s ease; cursor: pointer;
+  height: 46px; display: flex; align-items: stretch; gap: 3px;
+  padding: 4px; background: rgba(255, 255, 255, .96);
+  opacity: 0; pointer-events: none; transition: opacity .25s ease;
 }
+.pdp-suggest__size {
+  flex: 1 1 0; min-width: 0; border: 1px solid transparent; border-radius: 50%;
+  background: none; color: #111; font-size: 12px; line-height: 1; cursor: pointer;
+  transition: border-color .15s ease, background .15s ease, color .15s ease;
+}
+.pdp-suggest__size:hover { border-color: #111; }
+.pdp-suggest__size:active { background: #111; color: #fff; border-color: #111; }
 .pdp-suggest .product-visual:has(.pdp-suggest__plus:hover) .pdp-suggest__chart,
-.pdp-suggest .product-visual:has(.pdp-suggest__add:hover) .pdp-suggest__chart { opacity: 1; }
-.pdp-suggest .product-visual:has(.pdp-suggest__plus:hover) .pdp-suggest__add,
-.pdp-suggest .product-visual:has(.pdp-suggest__add:hover) .pdp-suggest__add { opacity: 1; transform: none; pointer-events: auto; }
+.pdp-suggest .product-visual:has(.pdp-suggest__sizes:hover) .pdp-suggest__chart { opacity: 1; }
+.pdp-suggest .product-visual:has(.pdp-suggest__plus:hover) .pdp-suggest__sizes,
+.pdp-suggest .product-visual:has(.pdp-suggest__sizes:hover) .pdp-suggest__sizes { opacity: 1; pointer-events: auto; }
 .pdp-suggest .product-visual:has(.pdp-suggest__plus:hover) .pdp-suggest__plus,
-.pdp-suggest .product-visual:has(.pdp-suggest__add:hover) .pdp-suggest__plus { opacity: 0; pointer-events: none; }
-.pdp-suggest__add:hover { background: var(--red); color: #fff; }
+.pdp-suggest .product-visual:has(.pdp-suggest__sizes:hover) .pdp-suggest__plus { opacity: 0; pointer-events: none; }
 .pdp-suggest .product-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin: 12px 14px 0; }
 /* Name + price typography lifted straight from the shop grid. */
 .pdp-suggest .product-meta h3, .pdp-suggest .product-meta p { font-size: 16px; text-transform: none; color: var(--black); }

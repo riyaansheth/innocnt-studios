@@ -108,6 +108,14 @@
       syncAll();
       openCart(add);
     }
+    // Quick-add from a suggestion card: pick a size -> add to cart + open drawer.
+    const size = event.target.closest('[data-suggest-size]');
+    if (size) {
+      event.preventDefault();
+      if (quantity === 0) quantity = 1;
+      syncAll();
+      openCart(size);
+    }
   });
   document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !drawer.hidden) closeCart(); });
 
