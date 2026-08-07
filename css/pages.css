@@ -206,41 +206,40 @@ html body .page-header .page-bag span {
 .pdp-suggest .cards { display: flex; gap: 2px; padding-right: 20px; }
 .pdp-suggest .product { flex: 1 1 0; min-width: 0; } /* 4 equal, equidistant cards filling the row */
 .pdp-suggest .product-visual { height: auto; aspect-ratio: 4 / 5; background: #f1f1f1; position: relative; overflow: hidden; }
-.pdp-suggest__link { position: absolute; inset: 0; display: block; }
-.pdp-suggest .product-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-/* Hover the + : reveal the size-chart image + Add to Cart bar. Stays open
-   while the pointer is on the + or the Add to Cart bar, so it's clickable. */
-.pdp-suggest .product-visual img.pdp-suggest__chart { opacity: 0; object-fit: contain; background: #fff; transition: opacity .3s ease; }
-/* The + and the Add bar share one footprint so hovering the + hands off to
-   the Add bar with no gap (no flicker). The + reads as a bare glyph. */
-/* Small glyph in the corner — hovering it (only it) triggers the reveal.
-   Sits inside the size-row footprint so the hover hands off with no flicker. */
-.pdp-suggest__plus {
+/* ---- Quick-add overlay (shared: product suggestions + shop grid) ----------
+   Hover the bare + to reveal the size-chart image and a row of size circles;
+   click a size to add to cart. The + and the size row share the bottom
+   footprint so the hover hands off with no gap/flicker. */
+.filter-grid .product-visual { position: relative; }
+.qa-link { position: absolute; inset: 0; display: block; z-index: 1; }
+.qa-model, .qa-chart { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.qa-chart { opacity: 0; object-fit: contain; background: #fff; transition: opacity .3s ease; }
+.qa-plus {
   position: absolute; right: 16px; bottom: 16px; z-index: 4;
   width: 34px; height: 34px; display: grid; place-items: center;
   font: 300 30px/1 var(--body); color: #111; cursor: pointer;
   text-shadow: 0 0 6px rgba(255, 255, 255, .8); transition: opacity .2s ease;
 }
-.pdp-suggest__sizes {
+.qa-sizes {
   position: absolute; left: 12px; right: 12px; bottom: 12px; z-index: 3;
   height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 2px;
   padding: 0 10px; background: rgba(255, 255, 255, .96);
   opacity: 0; pointer-events: none; transition: opacity .25s ease;
 }
-.pdp-suggest__size {
+.qa-size {
   flex: 0 0 auto; width: 44px; height: 44px; display: grid; place-items: center;
   border: 1px solid transparent; border-radius: 50%;
   background: none; color: #111; font-size: 13px; line-height: 1; cursor: pointer;
   transition: border-color .15s ease;
 }
-.pdp-suggest__size:hover,
-.pdp-suggest__size:focus-visible { border-color: #111; outline: none; }
-.pdp-suggest .product-visual:has(.pdp-suggest__plus:hover) .pdp-suggest__chart,
-.pdp-suggest .product-visual:has(.pdp-suggest__sizes:hover) .pdp-suggest__chart { opacity: 1; }
-.pdp-suggest .product-visual:has(.pdp-suggest__plus:hover) .pdp-suggest__sizes,
-.pdp-suggest .product-visual:has(.pdp-suggest__sizes:hover) .pdp-suggest__sizes { opacity: 1; pointer-events: auto; }
-.pdp-suggest .product-visual:has(.pdp-suggest__plus:hover) .pdp-suggest__plus,
-.pdp-suggest .product-visual:has(.pdp-suggest__sizes:hover) .pdp-suggest__plus { opacity: 0; pointer-events: none; }
+.qa-size:hover,
+.qa-size:focus-visible { border-color: #111; outline: none; }
+.product-visual:has(.qa-plus:hover) .qa-chart,
+.product-visual:has(.qa-sizes:hover) .qa-chart { opacity: 1; }
+.product-visual:has(.qa-plus:hover) .qa-sizes,
+.product-visual:has(.qa-sizes:hover) .qa-sizes { opacity: 1; pointer-events: auto; }
+.product-visual:has(.qa-plus:hover) .qa-plus,
+.product-visual:has(.qa-sizes:hover) .qa-plus { opacity: 0; pointer-events: none; }
 .pdp-suggest .product-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin: 12px 14px 0; }
 /* Name + price typography lifted straight from the shop grid. */
 .pdp-suggest .product-meta h3, .pdp-suggest .product-meta p { font-size: 16px; text-transform: none; color: var(--black); }

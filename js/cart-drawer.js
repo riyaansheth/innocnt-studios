@@ -37,12 +37,20 @@
         <h3>You May Also Like</h3>
         <div class="cart-drawer__reco-row">
           <article class="cart-drawer__reco">
-            <a class="cart-drawer__reco-media" href="/products/broken-visions-tee/"><img src="/assets/images/products/broken-visions-tee-flat.webp" alt="Broken Visions Tee"><span class="cart-drawer__reco-add" aria-hidden="true">+</span></a>
+            <div class="cart-drawer__reco-media">
+              <a class="cqa-link" href="/products/broken-visions-tee/"><img class="cqa-model" src="/models/broken-visions-tee-base.webp" alt="Broken Visions Tee"><img class="cqa-chart" src="/assets/images/products/broken-visions-tee-flat.webp" alt="Broken Visions Tee size chart" aria-hidden="true"></a>
+              <span class="cqa-plus" aria-hidden="true">+</span>
+              <div class="cqa-sizes" role="group" aria-label="Add Broken Visions Tee — select a size"><button type="button" class="cqa-size" data-suggest-size="XS" data-suggest-slug="broken-visions-tee">XS</button><button type="button" class="cqa-size" data-suggest-size="S" data-suggest-slug="broken-visions-tee">S</button><button type="button" class="cqa-size" data-suggest-size="M" data-suggest-slug="broken-visions-tee">M</button><button type="button" class="cqa-size" data-suggest-size="L" data-suggest-slug="broken-visions-tee">L</button><button type="button" class="cqa-size" data-suggest-size="XL" data-suggest-slug="broken-visions-tee">XL</button><button type="button" class="cqa-size" data-suggest-size="XXL" data-suggest-slug="broken-visions-tee">XXL</button></div>
+            </div>
             <p class="cart-drawer__reco-name">Broken Visions Tee</p>
             <p class="cart-drawer__reco-price">₹4,200</p>
           </article>
           <article class="cart-drawer__reco">
-            <a class="cart-drawer__reco-media" href="/products/child-hoodie/"><img src="/assets/images/products/child-hoodie-flat.webp" alt="Child Hoodie"><span class="cart-drawer__reco-add" aria-hidden="true">+</span></a>
+            <div class="cart-drawer__reco-media">
+              <a class="cqa-link" href="/products/child-hoodie/"><img class="cqa-model" src="/assets/images/products/child-hoodie-base.webp" alt="Child Hoodie"><img class="cqa-chart" src="/assets/images/products/child-hoodie-flat.webp" alt="Child Hoodie size chart" aria-hidden="true"></a>
+              <span class="cqa-plus" aria-hidden="true">+</span>
+              <div class="cqa-sizes" role="group" aria-label="Add Child Hoodie — select a size"><button type="button" class="cqa-size" data-suggest-size="XS" data-suggest-slug="child-hoodie">XS</button><button type="button" class="cqa-size" data-suggest-size="S" data-suggest-slug="child-hoodie">S</button><button type="button" class="cqa-size" data-suggest-size="M" data-suggest-slug="child-hoodie">M</button><button type="button" class="cqa-size" data-suggest-size="L" data-suggest-slug="child-hoodie">L</button><button type="button" class="cqa-size" data-suggest-size="XL" data-suggest-slug="child-hoodie">XL</button><button type="button" class="cqa-size" data-suggest-size="XXL" data-suggest-slug="child-hoodie">XXL</button></div>
+            </div>
             <p class="cart-drawer__reco-name">Child Hoodie</p>
             <p class="cart-drawer__reco-price">₹8,700</p>
           </article>
