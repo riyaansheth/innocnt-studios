@@ -128,8 +128,9 @@
 }
 .product-image .qa-size:hover,
 .product-image .qa-size:focus-visible { border-color: #111; outline: none; }
-.product-image:has(.qa-plus:hover) .qa-chart,
-.product-image:has(.qa-sizes:hover) .qa-chart { opacity: 1; }
+/* Hovering the image (but not the +) swaps model -> flat product image. */
+.product-image:hover:not(:has(.qa-plus:hover)):not(:has(.qa-sizes:hover)) .qa-chart { opacity: 1; }
+/* Hovering the + shows the size circles over the current image (no swap). */
 .product-image:has(.qa-plus:hover) .qa-sizes,
 .product-image:has(.qa-sizes:hover) .qa-sizes { opacity: 1; pointer-events: auto; }
 .product-image:has(.qa-plus:hover) .qa-plus,
