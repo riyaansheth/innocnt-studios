@@ -110,8 +110,8 @@
 .product-image .qa-chart { opacity: 0; object-fit: contain; background: #fff; }
 .product-image .product-tag { z-index: 2; }
 .product-image .qa-plus {
-  position: absolute; right: 1px; bottom: 1px; z-index: 2;
-  width: 64px; height: 64px; display: grid; place-items: center; /* glyph stays put; +15px hover pad each side */
+  position: absolute; right: -19px; bottom: -19px; z-index: 2;
+  width: 104px; height: 104px; display: grid; place-items: center; /* glyph stays put; ~35px hover pad each side */
   font: 300 30px/1 var(--body); color: #111; cursor: pointer;
   text-shadow: 0 0 6px rgba(255, 255, 255, .8); transition: opacity .2s ease;
 }
